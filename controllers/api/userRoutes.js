@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const bcrypt = require('bcrypt');
 const { User } = require('../../models');
 
 // GET /users - Get all users
@@ -28,7 +29,8 @@ router.get('/:id', async (req, res) => {
 // POST /users - Create a new user
 router.post('/', async (req, res) => {
   try {
-    const newUser = await User.create(req.body);
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+    const newUser = await User.create({ ...req.body, password: hashedPassword });
     res.status(201).json(newUser);
   } catch (err) {
     res.status(500).json(err);
@@ -38,15 +40,14 @@ router.post('/', async (req, res) => {
 // PUT /users/:id - Update a user by ID
 router.put('/:id', async (req, res) => {
   try {
-    const [numAffectedRows, affectedRows] = await User.update(req.body, {
-      where: { user_id: req.params.id },
-      returning: true,
-    });
-    if (numAffectedRows === 0) {
+    const user = await User.findByPk(req.params.id);
+    if (!user) {
       res.status(404).json({ message: 'User not found' });
-    } else {
-      res.status(200).json(affectedRows[0]);
+      return;
     }
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+    const updatedUser = await user.update({ ...req.body, password: hashedPassword });
+    res.status(200).json(updatedUser);
   } catch (err) {
     res.status(500).json(err);
   }

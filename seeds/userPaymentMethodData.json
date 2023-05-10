@@ -1,0 +1,32 @@
+[
+    {
+      "user_id": "user[0].user_id",
+      "card_number": 1234567890123456,
+      "expiration_date": "12/25",
+      "cvv": 123
+    },
+    {
+      "user_id": "user[1].user_id",
+      "card_number": 2345678901234567,
+      "expiration_date": "11/24",
+      "cvv": 234
+    },
+    {
+      "user_id": "user[2].user_id",
+      "card_number": 3456789012345678,
+      "expiration_date": "10/23",
+      "cvv": 345
+    },
+    {
+      "user_id": "user[3].user_id",
+      "card_number": 4567890123456789,
+      "expiration_date": "09/22",
+      "cvv": 456
+    },
+    {
+      "user_id": "user[4].user_id",
+      "card_number": 5678901234567890,
+      "expiration_date": "08/21",
+      "cvv": 567
+    }
+  ]

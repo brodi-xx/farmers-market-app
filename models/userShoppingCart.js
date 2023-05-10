@@ -1,7 +1,8 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const User = require('./user');
-const Product = require('./product');
+const UserProduct = require('./userProduct');
+const CartProduct = require('./cartProduct');
 
 class UserShoppingCart extends Model {}
 
@@ -19,11 +20,12 @@ UserShoppingCart.init(
         model: User,
         key: 'user_id',
       },
+      unique: true, // A user can only have one shopping cart
     },
     product_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: Product,
+        model: UserProduct,
         key: 'product_id',
       },
     },
@@ -45,13 +47,27 @@ UserShoppingCart.init(
   }
 );
 
-User.hasMany(UserShoppingCart, {
+// User and UserShoppingCart associations
+User.hasOne(UserShoppingCart, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE',
 });
 
 UserShoppingCart.belongsTo(User, {
   foreignKey: 'user_id',
+});
+
+// UserShoppingCart and Product associations (many-to-many)
+UserShoppingCart.belongsToMany(UserProduct, {
+  through: CartProduct,
+  foreignKey: 'cart_id',
+  onDelete: 'CASCADE',
+});
+
+UserProduct.belongsToMany(UserShoppingCart, {
+  through: CartProduct,
+  foreignKey: 'product_id',
+  onDelete: 'CASCADE',
 });
 
 module.exports = UserShoppingCart;

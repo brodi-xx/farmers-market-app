@@ -8,13 +8,13 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['user_id', 'name', 'email', 'address', 'phone']
+          attributes: ['user_id', 'name', 'email', 'address', 'phone'],
         },
         {
           model: Product,
-          attributes: ['product_id', 'product_name', 'description', 'category', 'price', 'image_url']
-        }
-      ]
+          attributes: ['product_id', 'product_name', 'description', 'category', 'price', 'image_url'],
+        },
+      ],
     });
     res.status(200).json(shoppingCarts);
   } catch (err) {

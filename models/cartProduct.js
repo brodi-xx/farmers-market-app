@@ -1,29 +1,29 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const User = require('./user');
-const Product = require('./userProduct');
+const UserProduct = require('./userProduct');
+const UserShoppingCart = require('./userShoppingCart');
 
-class PurchaseHistory extends Model {}
+class CartProduct extends Model {}
 
-PurchaseHistory.init(
+CartProduct.init(
   {
-    purchase_id: {
+    cart_product_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    user_id: {
+    cart_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: User,
-        key: 'user_id',
+        model: UserShoppingCart,
+        key: 'cart_id',
       },
     },
     product_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: Product,
+        model: UserProduct,
         key: 'product_id',
       },
     },
@@ -31,26 +31,14 @@ PurchaseHistory.init(
       type: DataTypes.INTEGER,
       defaultValue: 1,
     },
-    purchase_date: {
-      type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW,
-    },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'purchase_history',
+    modelName: 'cart_product',
   }
 );
 
-User.hasMany(PurchaseHistory, {
-  foreignKey: 'user_id',
-});
-
-PurchaseHistory.belongsTo(User, {
-  foreignKey: 'user_id',
-});
-
-module.exports = PurchaseHistory;
+module.exports = CartProduct;

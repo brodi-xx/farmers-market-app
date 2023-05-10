@@ -15,7 +15,7 @@ UserPaymentMethod.init(
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: User,
+        model: 'user',
         key: 'user_id',
       },
     },

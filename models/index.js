@@ -1,23 +1,21 @@
 const User = require('./user');
 const UserPaymentMethod = require('./userPaymentMethod');
-const UserShoppingCart = require('./userShoppingCart');
-const UnregisteredShoppingCart = require('./unregisteredShoppingCart');
-const PurchaseHistory = require('./purchaseHistory');
 const UserProduct = require('./userProduct');
-const sequelize = require('./connection');
+const UserShoppingCart = require('./userShoppingCart');
+const CartProduct = require('./cartProduct');
+const UnregisteredShoppingCart = require('./unregisteredShoppingCart');
+const UnregisteredCartProduct = require('./unregisteredCartProduct');
+const PurchaseHistory = require('./purchaseHistory');
+const sequelize = require('../config/connection');
 
 // Define associations
-User.hasMany(UserShoppingCart, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE',
-});
 
 User.hasMany(UserPaymentMethod, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE',
 });
 
-UserShoppingCart.belongsTo(User, {
+UserPaymentMethod.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
@@ -31,20 +29,46 @@ User.hasMany(UserProduct, {
   onDelete: 'CASCADE',
 });
 
-PurchaseHistory.belongsTo(User, {
+User.hasOne(UserShoppingCart, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE',
+});
+
+UserShoppingCart.belongsTo(User, {
+  foreignKey: 'user_id',
+});
+
+UserShoppingCart.belongsToMany(UserProduct, {
+  through: CartProduct,
+  foreignKey: 'cart_id',
+  onDelete: 'CASCADE',
+});
+
+UserProduct.belongsToMany(UserShoppingCart, {
+  through: CartProduct,
+  foreignKey: 'product_id',
+  onDelete: 'CASCADE',
+});
+
+
+UnregisteredShoppingCart.belongsToMany(UserProduct, {
+  through: UnregisteredCartProduct,
+  foreignKey: 'cart_id',
+  onDelete: 'CASCADE',
+});
+
+UserProduct.belongsToMany(UnregisteredShoppingCart, {
+  through: UnregisteredCartProduct,
+  foreignKey: 'product_id',
+  onDelete: 'CASCADE',
+});
+
+PurchaseHistory.belongsTo(User, {
+  foreignKey: 'user_id',
 });
 
 User.hasMany(PurchaseHistory, {
   foreignKey: 'user_id',
-  onDelete: 'CASCADE',
 });
 
-// Sync all models and start the server
-sequelize.sync({ force: false }).then(() => {
-  console.log('All models synced successfully.');
-  // Start server here
-});
-
-module.exports = { User, UserPaymentMethod, UserShoppingCart, UnregisteredShoppingCart, PurchaseHistory, UserProduct };
+module.exports = { User, UserPaymentMethod, UserProduct, UserShoppingCart, CartProduct, UnregisteredShoppingCart, UnregisteredCartProduct, PurchaseHistory };

@@ -19,6 +19,10 @@ UserProduct.init(
         key: 'user_id',
       },
     },
+    seller_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     product_name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -30,6 +34,13 @@ UserProduct.init(
     category: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    quantity: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        min: 0,
+      },
     },
     price: {
       type: DataTypes.FLOAT,
