@@ -10,7 +10,7 @@ class User extends Model {
 
 User.init(
   {
-    id: {
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -35,6 +35,14 @@ User.init(
         len: [8],
       },
     },
+    address: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    phone: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   },
   {
     hooks: {
@@ -47,7 +55,7 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
+    modelName: 'user'
   }
 );
 
