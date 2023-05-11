@@ -3,7 +3,7 @@ const { UserShoppingCart, User, Product } = require('../../models');
 
 // Endpoint - /user-shopping-cart
 
-// Get all user shopping carts - UNTESTED
+// Get all user shopping carts - FAILED
 router.get('/', async (req, res) => {
   try {
     const shoppingCarts = await UserShoppingCart.findAll({
@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Get a single user shopping cart - UNTESTED
+// Get a single user shopping cart - FAILED
 router.get('/:id', async (req, res) => {
   try {
     const shoppingCart = await UserShoppingCart.findOne({
@@ -50,7 +50,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// Add a new user shopping cart - UNTESTED
+// Add a new user shopping cart - PASSED TENTATIVELY (received 200 status but data not confirmed until GET route passes)
 router.post('/', async (req, res) => {
   try {
     const newShoppingCart = await UserShoppingCart.create(req.body);
@@ -60,7 +60,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Update a user shopping cart - UNTESTED
+// Update a user shopping cart - PASSED TENTATIVELY (received 200 status but data not confirmed until GET route passes)
 router.put('/:id', async (req, res) => {
   try {
     const updatedShoppingCart = await UserShoppingCart.update(req.body, {
@@ -76,7 +76,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// Delete a user shopping cart - UNTESTED
+// Delete a user shopping cart - PASSED TENTATIVELY (received 200 status but data not confirmed until GET route passes)
 router.delete('/:id', async (req, res) => {
   try {
     const deletedShoppingCart = await UserShoppingCart.destroy({
