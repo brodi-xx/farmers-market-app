@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { UserPaymentMethod } = require('../../models');
 
+// Endpoint - /user-payment
+
 // Get all user payment methods
 router.get('/', async (req, res) => {
   try {
