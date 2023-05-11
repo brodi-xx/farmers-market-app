@@ -2,6 +2,8 @@ const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const { User } = require('../../models');
 
+// Endpoint - /user 
+
 // GET /user - Get all users
 router.get('/', async (req, res) => {
   try {
@@ -66,6 +68,8 @@ router.delete('/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// Endpoint - /user/login
 
 // POST /user/login - User login - FAILED
 router.post('/login', async (req, res) => {

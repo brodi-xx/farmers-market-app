@@ -1,7 +1,9 @@
 const router = require('express').Router();
 const { UserShoppingCart, User, Product } = require('../../models');
 
-// Get all user shopping carts
+// Endpoint - /user-shopping-cart
+
+// Get all user shopping carts - UNTESTED
 router.get('/', async (req, res) => {
   try {
     const shoppingCarts = await UserShoppingCart.findAll({
@@ -22,7 +24,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Get a single user shopping cart
+// Get a single user shopping cart - UNTESTED
 router.get('/:id', async (req, res) => {
   try {
     const shoppingCart = await UserShoppingCart.findOne({
@@ -48,7 +50,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// Add a new user shopping cart
+// Add a new user shopping cart - UNTESTED
 router.post('/', async (req, res) => {
   try {
     const newShoppingCart = await UserShoppingCart.create(req.body);
@@ -58,7 +60,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Update a user shopping cart
+// Update a user shopping cart - UNTESTED
 router.put('/:id', async (req, res) => {
   try {
     const updatedShoppingCart = await UserShoppingCart.update(req.body, {
@@ -74,7 +76,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// Delete a user shopping cart
+// Delete a user shopping cart - UNTESTED
 router.delete('/:id', async (req, res) => {
   try {
     const deletedShoppingCart = await UserShoppingCart.destroy({
