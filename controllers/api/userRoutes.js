@@ -67,7 +67,7 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
-// POST /user/login - User login
+// POST /user/login - User login - FAILED
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -100,7 +100,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// POST /user/logout - User logout
+// POST /user/logout - User logout - UNTESTED
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
