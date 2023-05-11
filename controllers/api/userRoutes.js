@@ -2,7 +2,7 @@ const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const { User } = require('../../models');
 
-// GET /users - Get all users
+// GET /user - Get all users
 router.get('/', async (req, res) => {
   try {
     const users = await User.findAll();
@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET /users/:id - Get user by ID
+// GET /user/:id - Get user by ID
 router.get('/:id', async (req, res) => {
   try {
     const user = await User.findByPk(req.params.id);
@@ -26,7 +26,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// POST /users - Create a new user
+// POST /user - Create a new user
 router.post('/', async (req, res) => {
   try {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
@@ -37,7 +37,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// PUT /users/:id - Update a user by ID
+// PUT /user/:id - Update a user by ID
 router.put('/:id', async (req, res) => {
   try {
     const user = await User.findByPk(req.params.id);
@@ -53,7 +53,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// DELETE /users/:id - Delete a user by ID
+// DELETE /user/:id - Delete a user by ID
 router.delete('/:id', async (req, res) => {
   try {
     const numAffectedRows = await User.destroy({ where: { user_id: req.params.id } });
@@ -67,7 +67,7 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
-// POST /users/login - User login
+// POST /user/login - User login
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -100,7 +100,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// POST /users/logout - User logout
+// POST /user/logout - User logout
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
