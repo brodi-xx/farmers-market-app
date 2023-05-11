@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { User, UserProduct } = require('../../models');
 
+// Endpoint - /user-product
+
 // Get all user products
 router.get('/', async (req, res) => {
   try {
@@ -31,7 +33,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// Create a new user product
+// Create a new user product - FAILED (requires seller name which should be referenced by id), (quantity NOT NULL error even with proper value passed)
 router.post('/', async (req, res) => {
   try {
     const userProductData = await UserProduct.create({
@@ -48,7 +50,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Update a user product by ID
+// Update a user product by ID - FAILED (quantity value does not update)
 router.put('/:id', async (req, res) => {
   try {
     const userProduct = await UserProduct.findByPk(req.params.id);

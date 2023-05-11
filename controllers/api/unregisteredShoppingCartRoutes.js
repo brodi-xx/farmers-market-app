@@ -1,7 +1,9 @@
 const router = require('express').Router();
 const { UnregisteredShoppingCart } = require('../../models');
 
-// Get all items in unregistered shopping cart
+// Endpoint //unregistered-shopping-cart
+
+// Get all items in unregistered shopping cart - FAILED (no model logic provided)
 router.get('/', async (req, res) => {
   try {
     const cartData = await UnregisteredShoppingCart.findAll();
@@ -11,7 +13,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Add item to unregistered shopping cart
+// Add item to unregistered shopping cart - FAILED (no model logic provided)
 router.post('/', async (req, res) => {
   try {
     const cartData = await UnregisteredShoppingCart.create(req.body);
@@ -21,7 +23,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Update item in unregistered shopping cart
+// Update item in unregistered shopping cart - FAILED (no model logic provided)
 router.put('/:id', async (req, res) => {
   try {
     const cartData = await UnregisteredShoppingCart.update(req.body, {
@@ -35,7 +37,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// Delete item from unregistered shopping cart
+// Delete item from unregistered shopping cart - FAILED (no model logic provided)
 router.delete('/:id', async (req, res) => {
   try {
     const cartData = await UnregisteredShoppingCart.destroy({
