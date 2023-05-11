@@ -1,7 +1,9 @@
 const router = require('express').Router();
 const { PurchaseHistory, User, Product } = require('../../models');
 
-// GET /purchase-history - Get all purchase history records
+// Endpoint /user-purchase-history
+
+// Get all purchase history records - FAILED
 router.get('/', async (req, res) => {
   try {
     const purchaseHistory = await PurchaseHistory.findAll({
@@ -13,7 +15,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET /purchase-history/:id - Get purchase history record by ID
+// Get purchase history record by ID - FAILED
 router.get('/:id', async (req, res) => {
   try {
     const purchaseHistory = await PurchaseHistory.findByPk(req.params.id, {
@@ -29,7 +31,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// POST /purchase-history - Create a new purchase history record
+// Create a new purchase history record - FAILED (does not allow multiple products to be added)
 router.post('/', async (req, res) => {
   try {
     const newPurchaseHistory = await PurchaseHistory.create(req.body);
@@ -39,7 +41,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// PUT /purchase-history/:id - Update a purchase history record by ID
+// Update a purchase history record by ID - We shouldn't need to update a purchase history record
 router.put('/:id', async (req, res) => {
   try {
     const [numAffectedRows, affectedRows] = await PurchaseHistory.update(req.body, {
@@ -56,7 +58,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// DELETE /purchase-history/:id - Delete a purchase history record by ID
+// Delete a purchase history record by ID - PASSED TENTATIVELY (received 200 status but data not confirmed until GET route passes)
 router.delete('/:id', async (req, res) => {
   try {
     const numAffectedRows = await PurchaseHistory.destroy({
