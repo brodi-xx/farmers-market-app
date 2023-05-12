@@ -7,7 +7,7 @@ const { User, UserProduct } = require('../../models');
 router.get('/', async (req, res) => {
   try {
     const userProducts = await UserProduct.findAll({
-      include: [{ model: User }],
+      include: [{ model: User, as: 'seller', attributes: ['name'] }],
     });
     res.status(200).json(userProducts);
   } catch (err) {
@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const userProduct = await UserProduct.findByPk(req.params.id, {
-      include: [{ model: User }],
+      include: [{ model: User, as: 'seller', attributes: ['name'] }],
     });
 
     if (!userProduct) {
@@ -36,19 +36,13 @@ router.get('/:id', async (req, res) => {
 // Create a new user product - FAILED (requires seller name which should be referenced by id), (quantity NOT NULL error even with proper value passed)
 router.post('/', async (req, res) => {
   try {
-    const userProductData = await UserProduct.create({
-      user_id: req.body.user_id,
-      product_name: req.body.product_name,
-      description: req.body.description,
-      category: req.body.category,
-      price: req.body.price,
-      image_url: req.body.image_url,
-    });
-    res.status(200).json(userProductData);
+    const userProductData = await UserProduct.create(req.body);
+    res.status(201).json(userProductData);
   } catch (err) {
     res.status(400).json(err);
   }
 });
+
 
 // Update a user product by ID - FAILED (quantity value does not update)
 router.put('/:id', async (req, res) => {
@@ -60,20 +54,13 @@ router.put('/:id', async (req, res) => {
       return;
     }
 
-    await userProduct.update({
-      product_name: req.body.product_name,
-      description: req.body.description,
-      category: req.body.category,
-      price: req.body.price,
-      image_url: req.body.image_url,
-    });
+    await userProduct.update(req.body);
 
     res.status(200).json({ message: 'User product updated successfully!' });
   } catch (err) {
     res.status(500).json(err);
   }
 });
-
 // Delete a user product by ID
 router.delete('/:id', async (req, res) => {
   try {

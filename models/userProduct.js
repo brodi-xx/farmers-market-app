@@ -21,7 +21,8 @@ UserProduct.init(
     },
     seller_name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
+      defaultValue: null,
     },
     product_name: {
       type: DataTypes.STRING,
@@ -70,6 +71,19 @@ User.hasMany(UserProduct, {
 
 UserProduct.belongsTo(User, {
   foreignKey: 'user_id',
+  targetKey: 'user_id',
+  as: 'seller',
+});
+
+UserProduct.addHook('beforeSave', async (userProduct) => {
+  const user = await User.findOne({
+    where: { user_id: userProduct.user_id },
+    attributes: ['name'],
+  });
+
+  if (user) {
+    userProduct.seller_name = user.name;
+  }
 });
 
 module.exports = UserProduct;
