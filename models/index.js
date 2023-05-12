@@ -15,15 +15,6 @@ User.hasMany(UserPaymentMethod, {
   onDelete: 'CASCADE',
 });
 
-UserPaymentMethod.belongsTo(User, {
-  foreignKey: 'user_id',
-});
-
-UserProduct.belongsTo(User, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE',
-});
-
 User.hasMany(UserProduct, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE',
@@ -34,14 +25,14 @@ User.hasOne(UserShoppingCart, {
   onDelete: 'CASCADE',
 });
 
-UserShoppingCart.belongsTo(User, {
+UserPaymentMethod.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
-UserShoppingCart.belongsToMany(UserProduct, {
-  through: CartProduct,
-  foreignKey: 'cart_id',
-  onDelete: 'CASCADE',
+UserProduct.belongsToMany(UnregisteredCartProduct, {
+  through: 'unregistered_cart_product',
+  foreignKey: 'product_id',
+  otherKey: 'cart_id',
 });
 
 UserProduct.belongsToMany(UserShoppingCart, {
@@ -50,17 +41,21 @@ UserProduct.belongsToMany(UserShoppingCart, {
   onDelete: 'CASCADE',
 });
 
+UserShoppingCart.belongsTo(User, {
+  foreignKey: 'user_id',
+});
 
-UnregisteredShoppingCart.belongsToMany(UserProduct, {
-  through: UnregisteredCartProduct,
+UserShoppingCart.belongsToMany(UserProduct, {
+  through: CartProduct,
   foreignKey: 'cart_id',
+  otherKey: 'product_id',
   onDelete: 'CASCADE',
 });
 
-UserProduct.belongsToMany(UnregisteredShoppingCart, {
-  through: UnregisteredCartProduct,
-  foreignKey: 'product_id',
-  onDelete: 'CASCADE',
+UnregisteredShoppingCart.belongsToMany(UserProduct, {
+  through: 'unregistered_cart_product',
+  foreignKey: 'cart_id',
+  otherKey: 'product_id'
 });
 
 PurchaseHistory.belongsTo(User, {

@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 const UserProduct = require('./userProduct');
 const UserShoppingCart = require('./userShoppingCart');
 
+
 class CartProduct extends Model {}
 
 CartProduct.init(
@@ -30,6 +31,14 @@ CartProduct.init(
     quantity: {
       type: DataTypes.INTEGER,
       defaultValue: 1,
+    },
+    price: {
+      type: DataTypes.FLOAT,
+      defaultValue: 0,
+      allowNull: false,
+      validate: {
+        min: 0,
+      },
     },
   },
   {

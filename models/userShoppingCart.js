@@ -22,17 +22,6 @@ UserShoppingCart.init(
       },
       unique: true, // A user can only have one shopping cart
     },
-    product_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: UserProduct,
-        key: 'product_id',
-      },
-    },
-    quantity: {
-      type: DataTypes.INTEGER,
-      defaultValue: 1,
-    },
     date_added: {
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
@@ -69,5 +58,7 @@ UserProduct.belongsToMany(UserShoppingCart, {
   foreignKey: 'product_id',
   onDelete: 'CASCADE',
 });
+
+// console.log(Object.keys(UserShoppingCart.prototype));
 
 module.exports = UserShoppingCart;
