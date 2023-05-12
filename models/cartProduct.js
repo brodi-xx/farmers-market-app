@@ -31,6 +31,14 @@ CartProduct.init(
       type: DataTypes.INTEGER,
       defaultValue: 1,
     },
+    price: {
+      type: DataTypes.FLOAT,
+      defaultValue: 0,
+      allowNull: false,
+      validate: {
+        min: 0,
+      },
+    },
   },
   {
     sequelize,

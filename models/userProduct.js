@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const User = require('./user');
 
-class UserProduct extends Model {}
+class UserProduct extends Model { }
 
 UserProduct.init(
   {
@@ -78,11 +78,11 @@ UserProduct.belongsTo(User, {
 UserProduct.addHook('beforeSave', async (userProduct) => {
   const user = await User.findOne({
     where: { user_id: userProduct.user_id },
-    attributes: ['name'],
+    attributes: ['username'],
   });
 
   if (user) {
-    userProduct.seller_name = user.name;
+    userProduct.seller_name = user.username;
   }
 });
 

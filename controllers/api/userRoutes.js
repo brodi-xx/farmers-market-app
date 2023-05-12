@@ -71,24 +71,20 @@ router.delete('/:id', async (req, res) => {
 
 // Endpoint - /user/login
 
-// POST /user/login - User login - FAILED
+// POST /user/login - User login
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
 
     if (!userData) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+      res.status(400).json({ message: 'Incorrect email, please try again' });
       return;
     }
 
-    const validPassword = await userData.checkPassword(req.body.password);
+    const validPassword = await bcrypt.compare(req.body.password, userData.password);
 
     if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+      res.status(400).json({ message: 'Incorrect password, please try again' });
       return;
     }
 
@@ -104,7 +100,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// POST /user/logout - User logout - UNTESTED
+// POST /user/logout - User logout
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {

@@ -16,6 +16,10 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -41,6 +45,18 @@ User.init(
     },
     phone: {
       type: DataTypes.STRING,
+      allowNull: false,
+    },
+    birthday: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    termsofservice: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    },
+    privatepolicyagreement: {
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
   },

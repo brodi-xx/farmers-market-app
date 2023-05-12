@@ -1,8 +1,6 @@
 const router = require('express').Router();
 const { UserShoppingCart, User, UserProduct } = require('../../models');
 
-// Endpoint - /user-shopping-cart
-
 // Get all user shopping carts
 router.get('/', async (req, res) => {
   try {
@@ -14,7 +12,7 @@ router.get('/', async (req, res) => {
         },
         {
           model: UserProduct,
-          attributes: ['product_id', 'product_name', 'description', 'category', 'price', 'image_url'],
+          attributes: ['product_id', 'product_name', 'description', 'category', 'price'],
           through: { attributes: ['quantity'] },
         },
       ],
@@ -37,7 +35,7 @@ router.get('/:id', async (req, res) => {
         },
         {
           model: UserProduct,
-          attributes: ['product_id', 'product_name', 'description', 'category', 'price', 'image_url'],
+          attributes: ['product_id', 'product_name', 'description', 'category', 'price'],
           through: { attributes: ['quantity'] },
         }
       ]
