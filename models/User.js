@@ -59,6 +59,11 @@ User.init(
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
+    loginstatus: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+      allowNull: false,
+    },
   },
   {
     hooks: {

@@ -13,14 +13,17 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ helpers });
 
+const sessionStore = new SequelizeStore({
+  db: sequelize,
+  expiration: 3 * 24 * 60 * 60 * 1000, // Session expires after 3 days
+});
+
 const sess = {
   secret: 'Super secret secret',
   cookie: {},
   resave: false,
   saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize
-  })
+  store: sessionStore,
 };
 
 app.use(session(sess));

@@ -1,9 +1,8 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const Product = require('./userProduct');
-const UnregisteredCartProduct = require('./unregisteredCartProduct');
+// const UserProduct = require('./userProduct');
+// const UnregisteredCartProduct = require('./unregisteredCartProduct');
 
-// UnregisteredShoppingCart model
 class UnregisteredShoppingCart extends Model {}
 
 UnregisteredShoppingCart.init(
@@ -14,8 +13,11 @@ UnregisteredShoppingCart.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    // Remove the product_id attribute
-    // Remove the quantity attribute
+    session_id: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true, // Unique to the session ID
+    },
     date_added: {
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
@@ -30,16 +32,17 @@ UnregisteredShoppingCart.init(
   }
 );
 
-UnregisteredShoppingCart.belongsToMany(Product, {
-  through: UnregisteredCartProduct,
-  foreignKey: 'cart_id',
-  onDelete: 'CASCADE',
-});
-
-Product.belongsToMany(UnregisteredShoppingCart, {
-  through: UnregisteredCartProduct,
-  foreignKey: 'product_id',
-  onDelete: 'CASCADE',
-});
+// Delete the UnregisteredShoppingCart after 3 days using a class method
+UnregisteredShoppingCart.deleteAfterThreeDays = async function () {
+  const threeDaysAgo = new Date();
+  threeDaysAgo.setDate(threeDaysAgo.getDate() - 3);
+  await UnregisteredShoppingCart.destroy({
+    where: {
+      date_added: {
+        [sequelize.Op.lt]: threeDaysAgo,
+      },
+    },
+  });
+};
 
 module.exports = UnregisteredShoppingCart;

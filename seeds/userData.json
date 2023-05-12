@@ -53,5 +53,60 @@
     "birthday": "1998-05-05",
     "termsofservice": true,
     "privatepolicyagreement": true
+  },
+  {
+    "username": "FunshineBear",
+    "name": "Sunshine Bear",
+    "email": "sunshine@example.com",
+    "password": "carebears1",
+    "address": "Care-a-Lot",
+    "phone": "1234567890",
+    "birthday": "1990-01-01",
+    "termsofservice": true,
+    "privatepolicyagreement": true
+  },
+  {
+    "username": "CheerBear",
+    "name": "Cheer Bear",
+    "email": "cheer@example.com",
+    "password": "carebears2",
+    "address": "Rainbow Valley",
+    "phone": "0987654321",
+    "birthday": "1992-02-02",
+    "termsofservice": true,
+    "privatepolicyagreement": true
+  },
+  {
+    "username": "GrumpyBear",
+    "name": "Grumpy Bear",
+    "email": "grumpy@example.com",
+    "password": "carebears3",
+    "address": "Gloomy Hollow",
+    "phone": "1122334455",
+    "birthday": "1994-03-03",
+    "termsofservice": true,
+    "privatepolicyagreement": true
+  },
+  {
+    "username": "ShareBear",
+    "name": "Share Bear",
+    "email": "share@example.com",
+    "password": "carebears4",
+    "address": "Sharing Meadows",
+    "phone": "2233445566",
+    "birthday": "1996-04-04",
+    "termsofservice": true,
+    "privatepolicyagreement": true
+  },
+  {
+    "username": "TenderheartBear",
+    "name": "Tenderheart Bear",
+    "email": "tenderheart@example.com",
+    "password": "carebears5",
+    "address": "Caring Cove",
+    "phone": "3344556677",
+    "birthday": "1998-05-05",
+    "termsofservice": true,
+    "privatepolicyagreement": true
   }
 ]

@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 const UserProduct = require('./userProduct');
 const UserShoppingCart = require('./userShoppingCart');
 
+
 class CartProduct extends Model {}
 
 CartProduct.init(

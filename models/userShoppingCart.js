@@ -59,4 +59,6 @@ UserProduct.belongsToMany(UserShoppingCart, {
   onDelete: 'CASCADE',
 });
 
+// console.log(Object.keys(UserShoppingCart.prototype));
+
 module.exports = UserShoppingCart;

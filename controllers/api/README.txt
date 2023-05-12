@@ -14,7 +14,7 @@ userRoutes:
     Login:
         {
         "email": "Al.Betta@example.com",
-        "password": "password1",
+        "password": "password1"
         }
 
 userProductRoutes:

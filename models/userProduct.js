@@ -1,6 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const User = require('./user');
+const UnregisteredCartProduct = require('./unregisteredCartProduct');
+const UnregisteredShoppingCart = require('./unregisteredShoppingCart');
+
 
 class UserProduct extends Model { }
 
@@ -73,6 +76,17 @@ UserProduct.belongsTo(User, {
   foreignKey: 'user_id',
   targetKey: 'user_id',
   as: 'seller',
+});
+
+UserProduct.hasMany(UnregisteredCartProduct, {
+  foreignKey: 'product_id',
+  sourceKey: 'product_id',
+});
+
+UserProduct.belongsToMany(UnregisteredShoppingCart, {
+  through: 'unregistered_cart_product',
+  foreignKey: 'product_id',
+  otherKey: 'cart_id',
 });
 
 UserProduct.addHook('beforeSave', async (userProduct) => {
