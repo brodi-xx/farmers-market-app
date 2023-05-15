@@ -57,17 +57,18 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Delete a purchase history record by ID - PASSED TENTATIVELY (received 200 status but data not confirmed until GET route passes)
+// Delete a purchase history record by ID
 router.delete('/:id', async (req, res) => {
   try {
-    const numAffectedRows = await PurchaseHistory.destroy({
-      where: { purchase_id: req.params.id },
+    const purchaseHistory = await PurchaseHistory.destroy({
+      where: { id: req.params.id },
     });
-    if (numAffectedRows === 0) {
-      res.status(404).json({ message: 'Purchase history record not found' });
-    } else {
-      res.status(204).end();
+
+    if (!purchaseHistory) {
+      return res.status(404).json({ message: 'The purchase record you requested could not be found.' });
     }
+    res.status(200).json({ message: 'The purchase record was deleted.' });
+
   } catch (err) {
     res.status(500).json(err);
   }
