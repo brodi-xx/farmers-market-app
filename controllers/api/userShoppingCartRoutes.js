@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const shoppingCart = await UserShoppingCart.findOne({
-      where: { cart_id: req.params.id },
+      where: { id: req.params.id },
       include: [
         {
           model: User,
@@ -64,7 +64,7 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   try {
     const updatedShoppingCart = await UserShoppingCart.update(req.body, {
-      where: { cart_id: req.params.id }
+      where: { id: req.params.id }
     });
     if (!updatedShoppingCart[0]) {
       res.status(404).json({ message: 'No shopping cart found with this id' });
@@ -80,7 +80,7 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   try {
     const deletedShoppingCart = await UserShoppingCart.destroy({
-      where: { cart_id: req.params.id }
+      where: { id: req.params.id }
     });
     if (!deletedShoppingCart) {
       res.status(404).json({ message: 'No shopping cart found with this id' });
