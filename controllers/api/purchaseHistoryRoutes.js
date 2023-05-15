@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { PurchaseHistory, User, Product } = require('../../models');
+const { UserShoppingCart, PurchaseHistory } = require('../../models');
 
 // Endpoint /user-purchase-history
 
@@ -7,10 +7,11 @@ const { PurchaseHistory, User, Product } = require('../../models');
 router.get('/', async (req, res) => {
   try {
     const purchaseHistory = await PurchaseHistory.findAll({
-      include: [{ model: User }, { model: Product }],
+      include: [{ model: UserShoppingCart }],
     });
     res.status(200).json(purchaseHistory);
   } catch (err) {
+    console.error(err);
     res.status(500).json(err);
   }
 });
