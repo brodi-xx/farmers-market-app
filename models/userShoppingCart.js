@@ -8,7 +8,7 @@ class UserShoppingCart extends Model {}
 
 UserShoppingCart.init(
   {
-    cart_id: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
