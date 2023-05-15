@@ -16,18 +16,22 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Get purchase history record by ID - FAILED
-router.get('/:id', async (req, res) => {
+// Get all purchase history records for a cart
+router.get('/:cart_id', async (req, res) => {
+  const cartId = req.params.cart_id;
   try {
-    const purchaseHistory = await PurchaseHistory.findByPk(req.params.id, {
-      include: [{ model: User }, { model: Product }],
+    const purchaseHistory = await PurchaseHistory.findAll({
+      where: { cart_id: cartId },
+      include: [{ model: UserShoppingCart }],
     });
-    if (!purchaseHistory) {
-      res.status(404).json({ message: 'Purchase history record not found' });
-    } else {
-      res.status(200).json(purchaseHistory);
-    }
+
+    if (purchaseHistory.length === 0) {
+      return res.status(404).json({ message: 'The purchase record you requested could not be found.' });
+    };
+    res.status(200).json(purchaseHistory);
+    
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
