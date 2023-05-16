@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { CartProduct, UserShoppingCart, UserProduct } = require('../../models');
+const { CartProduct, UserShoppingCart, User, UserProduct } = require('../../models');
 
 // Get all cart products
 router.get('/', async (req, res) => {
