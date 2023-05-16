@@ -35,7 +35,7 @@ router.get('/:id', async (req, res) => {
 // POST /user - Create a new user
 router.post('/', async (req, res) => {
   try {
-    const password = req.body.password;
+    const password = await bcrypt.hash(req.body.password, 10);
     const newUser = await User.create({ ...req.body, password: password });
     res.status(201).json(newUser);
   } catch (err) {
@@ -54,7 +54,7 @@ router.put('/:id', async (req, res) => {
 
     // Check if password is included in the update request
     if (req.body.password) {
-      const hashedPassword = await bcrypt.hash(req.body.password, 8);
+      const hashedPassword = await bcrypt.hash(req.body.password, 10);
       req.body.password = hashedPassword;
     }
 
