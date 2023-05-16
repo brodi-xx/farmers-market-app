@@ -11,11 +11,7 @@ router.get('/', async (req, res) => {
         {
           model: UserShoppingCart,
           attributes: ['user_id'],
-          include: [
-            { model: UserProduct,
-              attributes: ['product_id']
-             },
-          ],
+          include: [UserProduct],
         },
       ],
     });
@@ -32,7 +28,13 @@ router.get('/:cart_id', async (req, res) => {
   try {
     const purchaseHistory = await PurchaseHistory.findAll({
       where: { cart_id: cartId },
-      include: [{ model: UserShoppingCart }],
+      include: [
+        {
+          model: UserShoppingCart,
+          attributes: ['user_id'],
+          include: [UserProduct],
+        },
+      ],
     });
 
     if (purchaseHistory.length === 0) {
