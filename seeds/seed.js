@@ -1,18 +1,27 @@
 const sequelize = require('../config/connection');
-const { User, UserPaymentMethod, UserProduct, UserShoppingCart, CartProduct } = require('../models');
+const { User, UserPaymentMethod, UserProduct, UserShoppingCart, CartProduct, UserEvent, PurchaseHistory } = require('../models');
+const bcrypt = require('bcrypt');
 
 const userData = require('./userData.json');
 const userPaymentMethodData = require('./userPaymentMethodData.json');
 const userProductData = require('./userProductData.json');
 const cartProductData = require('./cartProductData.json');
 const userShoppingCartData = require('./userShoppingCartData.json');
+const userEventData = require('./userEventData.json');
+const purchaseHistoryData = require('./userPurchaseHistoryData.json')
 
 const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
+  await sequelize.sync({ force: true, alter: true, drop: true });
   console.log('\n----- DATABASE SYNCED -----\n');
 
   // Seed users
-  const usersPromises = userData.map((user) => User.create(user));
+  const usersPromises = userData.map(async (user) => {
+    const hashedPassword = await bcrypt.hash(user.password, 10);
+    return User.create({
+      ...user,
+      password: hashedPassword,
+    });
+  });
   const users = await Promise.all(usersPromises);
   console.log('\n----- USERS SEEDED -----\n');
 
@@ -64,8 +73,25 @@ const seedDatabase = async () => {
   await CartProduct.bulkCreate(cartProductData);
   console.log('\n----- CART PRODUCTS SEEDED -----\n');
 
+  // Seed user events
+  const userEventsPromises = userEventData.map((event, index) => {
+    const foundUser = users[index % users.length];
+    return UserEvent.create({
+      ...event,
+      user_id: foundUser.user_id,
+    });
+  });
+  await Promise.all(userEventsPromises);
+  console.log('\n----- USER EVENTS SEEDED -----\n');
+
+
+  // Seed purchase history
+  const purchaseHistoryPromises = purchaseHistoryData.map((history) => PurchaseHistory.create(history));
+  await Promise.all(purchaseHistoryPromises);
+  console.log('\n----- PURCHASE HISTORY SEEDED -----\n');
+
+
   process.exit(0);
 };
 
 seedDatabase();
-
