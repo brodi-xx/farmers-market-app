@@ -1,5 +1,6 @@
 const sequelize = require('../config/connection');
 const { User, UserPaymentMethod, UserProduct, UserShoppingCart, CartProduct, UserEvent, PurchaseHistory } = require('../models');
+const bcrypt = require('bcrypt');
 
 const userData = require('./userData.json');
 const userPaymentMethodData = require('./userPaymentMethodData.json');
@@ -14,7 +15,13 @@ const seedDatabase = async () => {
   console.log('\n----- DATABASE SYNCED -----\n');
 
   // Seed users
-  const usersPromises = userData.map((user) => User.create(user));
+  const usersPromises = userData.map(async (user) => {
+    const hashedPassword = await bcrypt.hash(user.password, 10);
+    return User.create({
+      ...user,
+      password: hashedPassword,
+    });
+  });
   const users = await Promise.all(usersPromises);
   console.log('\n----- USERS SEEDED -----\n');
 
