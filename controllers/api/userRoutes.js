@@ -35,7 +35,7 @@ router.get('/:id', async (req, res) => {
 // POST /user - Create a new user
 router.post('/', async (req, res) => {
   try {
-    const password = req.body.password;
+    const password = await bcrypt.hash(req.body.password, 10);
     const newUser = await User.create({ ...req.body, password: password });
     res.status(201).json(newUser);
   } catch (err) {
@@ -54,7 +54,7 @@ router.put('/:id', async (req, res) => {
 
     // Check if password is included in the update request
     if (req.body.password) {
-      const hashedPassword = await bcrypt.hash(req.body.password, 8);
+      const hashedPassword = await bcrypt.hash(req.body.password, 10);
       req.body.password = hashedPassword;
     }
 
@@ -84,13 +84,14 @@ router.delete('/:id', async (req, res) => {
 // POST /user/login - User login
 router.post('/login', async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { username: req.body.username } });
+    const userData = await User.findOne({ where: { email: req.body.email } });
 
     if (!userData) {
-      res.status(400).json({ message: 'Incorrect username, please try again' });
+      res.status(400).json({ message: 'Incorrect email, please try again' });
       return;
     }
 
+    // Compare the hashed password with the stored hashed password
     const validPassword = await bcrypt.compare(req.body.password, userData.password);
 
     if (!validPassword) {
