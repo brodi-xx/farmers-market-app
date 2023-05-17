@@ -33,7 +33,7 @@ router.get('/', startSessionForUnregisteredUser, withAuth, async (req, res) => {
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/');
+    res.redirect('/homepage');
     return;
   }
 
@@ -41,11 +41,21 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/signup', (req, res) => {
-  res.render ('signup')
+  if (req.session.logged_in) {
+    res.redirect('/profile');
+    return;
+  }
+
+  res.render('signup');
 });
 
 router.get('/mycart', (req, res) => {
-  res.render ('signup')
+  res.render ('mycart')
 })
+
+router.get('/productspage', (req, res) => {
+  res.render ('productspage')
+})
+
 
 module.exports = router;
