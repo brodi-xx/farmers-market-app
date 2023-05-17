@@ -33,21 +33,37 @@ router.get('/', startSessionForUnregisteredUser, withAuth, async (req, res) => {
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/homepage');
+    res.redirect('homepage');
     return;
   }
 
   res.render('login');
 });
 
-router.get('/signup', (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect('/profile');
-    return;
-  }
+// router.post('/signup', (req, res) => {
+//   res.redirect('/profile');
 
-  res.render('signup');
-});
+// });
+
+// router.get('/signup', (req, res) => {
+//   if (req.session.logged_in) {
+//     res.render('signup');
+//     return;
+//   }
+
+// });
+
+// router.get('/homepage', (req, res) => {
+//   if (req.session.logged_in) {
+//     res.render('homepage');
+//     return;
+//   }
+
+// });
+
+router.get('/homepage', (req, res) => {
+  res.render ('homepage')
+})
 
 router.get('/mycart', (req, res) => {
   res.render ('mycart')
@@ -57,5 +73,12 @@ router.get('/productspage', (req, res) => {
   res.render ('productspage')
 })
 
+router.get('/signup', (req, res) => {
+  res.render ('signup')
+})
+
+router.get('/profile', (req, res) => {
+  res.render ('profile')
+})
 
 module.exports = router;
