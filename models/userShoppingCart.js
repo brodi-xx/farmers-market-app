@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const User = require('./user');
+const User = require('./User');
 const UserProduct = require('./userProduct');
 const CartProduct = require('./cartProduct');
 
@@ -26,13 +26,13 @@ UserShoppingCart.init(
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
     },
-    product: [{
+    product: {
       type: DataTypes.INTEGER,
       references: {
         model: UserProduct,
         key: 'product_id'
       }
-    }]
+    }
   },
   {
     sequelize,
