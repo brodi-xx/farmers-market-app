@@ -768,6 +768,28 @@ nav {
      color: #000;
 }
 
+/**my cart **/
 
+
+#cart {
+     float: left;
+     width: 40%;
+   }
+   #products {
+     float: right;
+     width: 40%;
+   }
+   #products li {
+     margin-bottom: 10px;
+   }
+   .add-to-cart-btn {
+     margin-left: 10px;
+   }
+   #cart-total {
+     font-weight: bold;
+   }
+   #checkout-btn {
+     margin-top: 10px;
+   }
 /** end footer **/
 

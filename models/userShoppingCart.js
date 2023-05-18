@@ -44,7 +44,7 @@ UserShoppingCart.init(
 );
 
 // User and UserShoppingCart associations
-User.hasOne(UserShoppingCart, {
+User.hasMany(UserShoppingCart, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE',
 });

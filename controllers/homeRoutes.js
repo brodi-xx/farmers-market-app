@@ -12,7 +12,7 @@ const startSessionForUnregisteredUser = (req, res, next) => {
   next();
 };
 
-router.get('/', startSessionForUnregisteredUser, withAuth, async (req, res) => {
+router.get('/', startSessionForUnregisteredUser, async (req, res) => {
   try {
     const userData = await User.findAll({
       attributes: { exclude: ['password'] },
@@ -31,17 +31,18 @@ router.get('/', startSessionForUnregisteredUser, withAuth, async (req, res) => {
   }
 });
 
-router.get('/login', (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect('/');
-    return;
-  }
+// Protect the routes that require authentication with the withAuth middleware
 
+router.get('/login', (req, res) => {
   res.render('login');
 });
 
 router.get('/homepage', (req, res) => {
   res.render('homepage');
+});
+
+router.get('/eventsList', (req, res) => {
+  res.render('eventsList');
 });
 
 router.get('/mycart', (req, res) => {

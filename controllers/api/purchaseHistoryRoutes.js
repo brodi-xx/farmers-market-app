@@ -1,13 +1,19 @@
 const router = require('express').Router();
-const { UserShoppingCart, PurchaseHistory } = require('../../models');
+const { UserShoppingCart, PurchaseHistory, UserProduct } = require('../../models');
 
 // Endpoint /user-purchase-history
 
-// Get all purchase history records - FAILED
+// Get all purchase history records
 router.get('/', async (req, res) => {
   try {
     const purchaseHistory = await PurchaseHistory.findAll({
-      include: [{ model: UserShoppingCart }],
+      include: [
+        {
+          model: UserShoppingCart,
+          attributes: ['user_id'],
+          include: [UserProduct],
+        },
+      ],
     });
     res.status(200).json(purchaseHistory);
   } catch (err) {
@@ -22,7 +28,13 @@ router.get('/:cart_id', async (req, res) => {
   try {
     const purchaseHistory = await PurchaseHistory.findAll({
       where: { cart_id: cartId },
-      include: [{ model: UserShoppingCart }],
+      include: [
+        {
+          model: UserShoppingCart,
+          attributes: ['user_id'],
+          include: [UserProduct],
+        },
+      ],
     });
 
     if (purchaseHistory.length === 0) {
@@ -44,8 +56,11 @@ router.post('/', async (req, res) => {
     
     if (!cart) {
       res.status(404).json({ message: 'There was no cart found with that ID.' });
+      return;
     }
     const purchaseHistory = await PurchaseHistory.create({
+      purchase_date: new Date(),
+      user_id: cart.user_id,
       cart_id: cart.id,
     });
 

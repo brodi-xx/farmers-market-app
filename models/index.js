@@ -6,6 +6,7 @@ const CartProduct = require('./cartProduct');
 const UnregisteredShoppingCart = require('./unregisteredShoppingCart');
 const UnregisteredCartProduct = require('./unregisteredCartProduct');
 const PurchaseHistory = require('./purchaseHistory');
+const UserEvent = require('./userEvent');
 
 // Association definitions
 
@@ -14,17 +15,19 @@ User.hasMany(UserPaymentMethod, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE',
 });
+User.hasMany(PurchaseHistory, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE',
+});
 User.hasMany(UserProduct, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE',
 });
-User.hasOne(UserShoppingCart, {
+User.hasMany(UserShoppingCart, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE',
 });
-User.hasMany(PurchaseHistory, {
-  foreignKey: 'user_id',
-});
+
 
 // Association by UserPaymentMethod
 UserPaymentMethod.belongsTo(User, {
@@ -49,7 +52,8 @@ UserShoppingCart.belongsToMany(UserProduct, {
   foreignKey: 'cart_id',
   otherKey: 'product_id',
   onDelete: 'CASCADE',
-});
+}); 
+
 UserShoppingCart.belongsTo(User, { 
   foreignKey: 'user_id',
   onDelete: 'CASCADE',
@@ -60,10 +64,9 @@ UserShoppingCart.hasMany(PurchaseHistory, {
   onDelete: 'CASCADE'
 });
 
-// Associations by PurchaseHistory
+// In PurchaseHistory model file
 PurchaseHistory.belongsTo(UserShoppingCart, {
   foreignKey: 'cart_id',
-  targetKey: 'id'
 });
 
 // Associations by UnregisteredShoppingCart
@@ -72,6 +75,11 @@ UnregisteredShoppingCart.belongsToMany(UserProduct, {
   foreignKey: 'cart_id',
   otherKey: 'product_id'
 });
+
+UserEvent.belongsTo(User, {
+  foreignKey: 'user_id',
+});
+
 
 module.exports = {
   User,
@@ -82,4 +90,5 @@ module.exports = {
   UnregisteredShoppingCart,
   UnregisteredCartProduct,
   PurchaseHistory,
+  UserEvent
 };
