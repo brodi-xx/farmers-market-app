@@ -6,7 +6,7 @@
         "category": "Fruit",
         "quantity": 10,
         "price": 1.99,
-        "image_url": "https: //images.unsplash.com/photo-1607081683834-c9f3a4eb8d1d"
+        "image_url": "https://images.unsplash.com/photo-1607081683834-c9f3a4eb8d1d"
     },
     {
         "user_id": 1,
@@ -15,7 +15,7 @@
         "category": "Fruit",
         "quantity": 8,
         "price": 2.49,
-        "image_url": "https: //images.unsplash.com/photo-1603337013576-7b08f1c93d7d"
+        "image_url": "https://images.unsplash.com/photo-1603337013576-7b08f1c93d7d"
     },
     {
         "user_id": 1,
@@ -24,7 +24,7 @@
         "category": "Vegetable",
         "quantity": 20,
         "price": 1.25,
-        "image_url": "https: //images.unsplash.com/photo-1611070535202-bf6c0e934b91"
+        "image_url": "https://images.unsplash.com/photo-1611070535202-bf6c0e934b91"
     },
     {
         "user_id": 1,
@@ -33,7 +33,7 @@
         "category": "Vegetable",
         "quantity": 15,
         "price": 1.75,
-        "image_url": "https: //images.unsplash.com/photo-1620245325085-47c8d79de840"
+        "image_url": "https://images.unsplash.com/photo-1620245325085-47c8d79de840"
     },
     {
         "user_id": 2,
@@ -42,7 +42,7 @@
         "category": "Fruit",
         "quantity": 12,
         "price": 3.99,
-        "image_url": "https: //images.unsplash.com/photo-1505481358715-9d6d1c8d0f1c"
+        "image_url": "https://images.unsplash.com/photo-1505481358715-9d6d1c8d0f1c"
     },
     {
         "user_id": 2,
@@ -51,7 +51,7 @@
         "category": "Fruit",
         "quantity": 8,
         "price": 1.99,
-        "image_url": "https: //images.unsplash.com/photo-1551218808-94a5b5aa8c6a"
+        "image_url": "https://images.unsplash.com/photo-1551218808-94a5b5aa8c6a"
     },
     {
         "user_id": 2,
@@ -60,7 +60,7 @@
         "category": "Vegetable",
         "quantity": 16,
         "price": 1.49,
-        "image_url": "https: //images.unsplash.com/photo-1580232788869-0a56c683f0d3"
+        "image_url": "https://images.unsplash.com/photo-1580232788869-0a56c683f0d3"
     },
     {
         "user_id": 3,
@@ -69,7 +69,7 @@
         "category": "Fruit",
         "quantity": 15,
         "price": 2.99,
-        "image_url": "https: //images.unsplash.com/photo-1569258086849-eb88e1b2420b"
+        "image_url": "https://images.unsplash.com/photo-1569258086849-eb88e1b2420b"
     },
     {
         "user_id": 3,
@@ -78,7 +78,7 @@
         "category": "Fruit",
         "quantity": 10,
         "price": 4.49,
-        "image_url": "https: //images.unsplash.com/photo-1524800502101-a068f2c6e5c0"
+        "image_url": "https://images.unsplash.com/photo-1524800502101-a068f2c6e5c0"
     },
     {
         "user_id": 3,
@@ -87,7 +87,7 @@
         "category": "Vegetable",
         "quantity": 12,
         "price": 2.25,
-        "image_url": "https: //images.unsplash.com/photo-1558681860-527698c4b7d1"
+        "image_url": "https://images.unsplash.com/photo-1558681860-527698c4b7d1"
     },
     {
         "user_id": 3,
@@ -96,7 +96,7 @@
         "category": "Vegetable",
         "quantity": 8,
         "price": 1.99,
-        "image_url": "https: //images.unsplash.com/photo-1600876798473-fbe2d1e8f8c2"
+        "image_url": "https://images.unsplash.com/photo-1600876798473-fbe2d1e8f8c2"
     },
     {
         "user_id": 3,
@@ -105,7 +105,7 @@
         "category": "Vegetable",
         "quantity": 10,
         "price": 1.49,
-        "image_url": "https: //images.unsplash.com/photo-1597811456141-ae18a7c88a97"
+        "image_url": "https://images.unsplash.com/photo-1597811456141-ae18a7c88a97"
     },
     {
         "user_id": 4,
@@ -114,7 +114,7 @@
         "category": "Fruit",
         "quantity": 8,
         "price": 2.99,
-        "image_url": "https: //images.unsplash.com/photo-1611823649396-476bf6c8a56c"
+        "image_url": "https://images.unsplash.com/photo-1611823649396-476bf6c8a56c"
     },
     {
         "user_id": 4,
@@ -123,7 +123,7 @@
         "category": "Fruit",
         "quantity": 6,
         "price": 2.49,
-        "image_url": "https: //images.unsplash.com/photo-1580087325537-1c31a7f12f9c"
+        "image_url": "https://images.unsplash.com/photo-1580087325537-1c31a7f12f9c"
     },
     {
         "user_id": 4,
@@ -132,7 +132,7 @@
         "category": "Vegetable",
         "quantity": 12,
         "price": 1.99,
-        "image_url": "https: //images.unsplash.com/photo-1520905253426-e07c8d9680c4"
+        "image_url": "https://images.unsplash.com/photo-1520905253426-e07c8d9680c4"
     },
     {
         "user_id": 4,
@@ -141,7 +141,7 @@
         "category": "Vegetable",
         "quantity": 10,
         "price": 2.99,
-        "image_url": "https: //images.unsplash.com/photo-1603707642119-1090c08b1fb1"
+        "image_url": "https://images.unsplash.com/photo-1603707642119-1090c08b1fb1"
     },
     {
         "user_id": 5,
@@ -150,7 +150,7 @@
         "category": "Fruit",
         "quantity": 12,
         "price": 3.49,
-        "image_url": "https: //images.unsplash.com/photo-1592225157983-245c2d1d3bc3"
+        "image_url": "https://images.unsplash.com/photo-1592225157983-245c2d1d3bc3"
     },
     {
         "user_id": 5,
@@ -159,7 +159,7 @@
         "category": "Fruit",
         "quantity": 4,
         "price": 7.99,
-        "image_url": "https: //images.unsplash.com/photo-1592478872495-5d5fe8dd5c5a"
+        "image_url": "https://images.unsplash.com/photo-1592478872495-5d5fe8dd5c5a"
     },
     {
         "user_id": 5,
@@ -168,7 +168,7 @@
         "category": "Fruit",
         "quantity": 6,
         "price": 2.99,
-        "image_url": "https: //images.unsplash.com/photo-1606547953141-569fa1bea3c3"
+        "image_url": "https://images.unsplash.com/photo-1606547953141-569fa1bea3c3"
     },
     {
         "user_id": 5,
@@ -177,7 +177,7 @@
         "category": "Vegetable",
         "quantity": 10,
         "price": 1.75,
-        "image_url": "https: //images.unsplash.com/photo-1526226722959-07f4591c73f7"
+        "image_url": "https://images.unsplash.com/photo-1526226722959-07f4591c73f7"
     },
     {
         "user_id": 5,
@@ -186,7 +186,7 @@
         "category": "Vegetable",
         "quantity": 8,
         "price": 2.49,
-        "image_url": "https: //images.unsplash.com/photo-1523384277528-876f66125c95"
+        "image_url": "https://images.unsplash.com/photo-1523384277528-876f66125c95"
     }
 ]
       

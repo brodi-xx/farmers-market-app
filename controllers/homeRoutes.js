@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, UserProduct } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Middleware to start a session for unregistered users
@@ -40,8 +40,33 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/home', (req, res) => {
-  res.render ('homepage')
+router.get('/homepage', (req, res) => {
+  res.render('homepage');
+});
+
+router.get('/mycart', (req, res) => {
+  res.render('mycart');
+});
+
+router.get('/productspage', async (req, res) => {
+  // findAll on the userProducts to retrieve all of the products in the database, and pass that as an array of objects
+  const productData = await UserProduct.findAll();
+  console.log(productData);
+
+  const products = productData.map(product => product.get({ plain: true}));
+  console.log(products);
+
+  res.render('productspage', {
+    products
+  });
+});
+
+router.get('/signup', (req, res) => {
+  res.render('signup');
+});
+
+router.get('/profile', withAuth, (req, res) => {
+  res.render('profile');
 });
 
 module.exports = router;

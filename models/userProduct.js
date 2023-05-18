@@ -92,7 +92,7 @@ UserProduct.belongsToMany(UnregisteredShoppingCart, {
 UserProduct.addHook('beforeSave', async (userProduct) => {
   const user = await User.findOne({
     where: { user_id: userProduct.user_id },
-    attributes: ['username'],
+    attributes: ['name'],
   });
 
   if (user) {

@@ -26,6 +26,13 @@ UserShoppingCart.init(
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
     },
+    product: [{
+      type: DataTypes.INTEGER,
+      references: {
+        model: UserProduct,
+        key: 'product_id'
+      }
+    }]
   },
   {
     sequelize,
