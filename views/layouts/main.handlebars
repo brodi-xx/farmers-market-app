@@ -34,30 +34,34 @@
    </head> 
    
 <nav class="navbar fixed-top" style="background-color: #b66850">
-  <div class="container-fluid row">
+  <div class="container-fluid">
     <div class="col-4">
       <a class="navbar-brand" href="../homepage"><i class="fa-sharp fa-solid fa-house-chimney fa-xl" style="color: #498292;"></i></a>
     </div>
-    <div class="col-2 d-flex flex-column align-items-center">
+    <div class="col-4">
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+    <div class="col-1 d-flex flex-column align-items-center">
       <a href="../eventsList"><i class="fa-solid fa-store fa-xl" style="color: #498292;"></i></a>
       <a href="../eventsList" style= "font-size:small; color: #498292">Markets</a>
     </div>
-    <div class="col-2 d-flex flex-column align-items-center">
+    <div class="col-1 d-flex flex-column align-items-center">
       <a href="../productspage"><i class="fa-solid fa-carrot fa-xl" style="color: #498292;"></i></a>
       <a href="../productspage" style= "font-size:small; color: #498292">Products</a>
     </div>
-    <div class="col-2">
+    {{!-- <div class="col-2">
       <a href="../signup" style= "color: #498292">Sign Up</a>
+    </div> --}}
+    <div class="col-1 d-flex flex-column align-items-center">
+      <a href="../mycart"><i class="fa-solid fa-cart-shopping fa-xl" style="color: #498292"></i></a>
+      <a href="../mycart" style= "font-size:small; color: #498292">My Cart</a>
     </div>
-    <div class="col-2 d-flex flex-row justify-content-between">
-      <div class="d-flex flex-column align-items-center">
-        <a href="../mycart"><i class="fa-solid fa-cart-shopping fa-xl" style="color: #498292"></i></a>
-        <a href="../mycart" style= "font-size:small; color: #498292">My Cart</a>
-      </div>
-      <div class="d-flex flex-column align-items-center">
-        <a href="../profile"><i class="fa-regular fa-user fa-xl" style="color: #498292"></i></a>
-        <a href="../profile" style= "font-size:small; color: #498292">My Profile</a>
-      </div>
+    <div class="col-1 d-flex flex-column align-items-center">
+      <a href="../profile"><i class="fa-regular fa-user fa-xl" style="color: #498292"></i></a>
+      <a href="../profile" style= "font-size:small; color: #498292">My Profile</a>
     </div>
   </div>
 </nav>
