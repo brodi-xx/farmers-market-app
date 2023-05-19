@@ -7,6 +7,7 @@
     "phone": "1234567890",
     "birthday": "1990-01-01",
     "termsofservice": true,
+    "profile_picture": "https://cdn.pixabay.com/photo/2018/03/18/18/57/animal-3237908_960_720.jpg",
     "privatepolicyagreement": true
   },
   {
@@ -17,6 +18,7 @@
     "phone": "0987654321",
     "birthday": "1992-02-02",
     "termsofservice": true,
+    "profile_picture": "https://cdn.pixabay.com/photo/2015/07/20/12/57/ambassador-852766_960_720.jpg",
     "privatepolicyagreement": true
   },
   {
@@ -27,6 +29,7 @@
     "phone": "1122334455",
     "birthday": "1994-03-03",
     "termsofservice": true,
+    "profile_picture": "https://cdn.pixabay.com/photo/2018/04/27/08/55/water-3354062_960_720.jpg",
     "privatepolicyagreement": true
   },
   {
@@ -37,6 +40,7 @@
     "phone": "2233445566",
     "birthday": "1996-04-04",
     "termsofservice": true,
+    "profile_picture": "https://cdn.pixabay.com/photo/2016/11/21/14/04/beautiful-1845578_960_720.jpg",
     "privatepolicyagreement": true
   },
   {
@@ -47,6 +51,7 @@
     "phone": "3344556677",
     "birthday": "1998-05-05",
     "termsofservice": true,
+    "profile_picture": "https://cdn.pixabay.com/photo/2019/08/22/14/14/mountains-4423621_960_720.jpg",
     "privatepolicyagreement": true
   },
   {
@@ -57,6 +62,7 @@
     "phone": "1234567890",
     "birthday": "1990-01-01",
     "termsofservice": true,
+    "profile_picture": "https://cdn.pixabay.com/photo/2017/02/26/02/37/girl-2099363_960_720.jpg",
     "privatepolicyagreement": true
   },
   {
@@ -67,6 +73,7 @@
     "phone": "0987654321",
     "birthday": "1992-02-02",
     "termsofservice": true,
+    "profile_picture": "https://cdn.pixabay.com/photo/2015/07/08/10/21/ballet-835757_960_720.jpg",
     "privatepolicyagreement": true
   },
   {
@@ -77,6 +84,7 @@
     "phone": "1122334455",
     "birthday": "1994-03-03",
     "termsofservice": true,
+    "profile_picture": "https://cdn.pixabay.com/photo/2016/11/29/13/55/man-1870016_960_720.jpg",
     "privatepolicyagreement": true
   },
   {
@@ -87,6 +95,7 @@
     "phone": "2233445566",
     "birthday": "1996-04-04",
     "termsofservice": true,
+    "profile_picture": "https://cdn.pixabay.com/photo/2019/03/05/05/12/model-4035591_960_720.jpg",
     "privatepolicyagreement": true
   },
   {
@@ -97,6 +106,7 @@
     "phone": "3344556677",
     "birthday": "1998-05-05",
     "termsofservice": true,
+    "profile_picture": "https://cdn.pixabay.com/photo/2020/04/25/03/46/indian-sadhu-5089394_960_720.jpg",
     "privatepolicyagreement": true
   }
 ]

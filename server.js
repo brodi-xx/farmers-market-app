@@ -11,7 +11,24 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({
+    helpers: {
+        formatTime: function(time) {
+            const [hours, minutes, seconds] = time.split(':');
+            let period = 'AM';
+            let hours_12 = Number(hours);
+            if (hours_12 >= 12) {
+                period = 'PM';
+                if (hours_12 > 12) {
+                    hours_12 -= 12;
+                }
+            } else if (hours_12 === 0) {
+                hours_12 = 12;
+            }
+            return `${hours_12}:${minutes} ${period}`;
+        }
+    }
+});
 
 const sessionStore = new SequelizeStore({
   db: sequelize,

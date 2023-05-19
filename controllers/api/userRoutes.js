@@ -98,39 +98,7 @@ router.post('/login', async (req, res) => {
       res.status(400).json({ message: 'Incorrect password, please try again' });
       return;
     }
-
-    // // Transfer items from UnregisteredShoppingCart to UserShoppingCart
-    // const unregisteredCart = await UnregisteredShoppingCart.findOne({ where: { session_id: req.session.id } });
-    // console.log("Unregistered Cart", unregisteredCart);
-    // if (unregisteredCart) {
-    //   // Fetch products in the unregistered cart
-    //   const products = await UnregisteredCartProduct.findAll({
-    //     where: { cart_id: unregisteredCart.cart_id },
-    //     include: [{ model: UserProduct }],
-    //   });
-    //   console.log("products", products);
-
-    //   // Get or create UserShoppingCart for the user
-    //   let userCart = await UserShoppingCart.findOne({ where: { user_id: userData.user_id } });
-    //   if (!userCart) {
-    //     userCart = await UserShoppingCart.create({ user_id: userData.user_id });
-    //   }
-    //   console.log("usercart", userCart);
-
-    //   // Add products to the user's cart
-    //   for (let product of products) {
-    //     const userProduct = await UserProduct.findOne({ where: { product_id: product.UserProduct.product_id } });
-    //     if (userProduct) {
-    //       await userCart.addUserProduct(userProduct, { through: { quantity: product.quantity } });
-    //     }
-    //     console.log("userproduct", userProduct);
-    //   }
-
-    //   // Delete the unregistered cart
-    //   await UnregisteredCartProduct.destroy({ where: { cart_id: unregisteredCart.cart_id } });
-    //   await unregisteredCart.destroy();
-    // }
-
+    
     req.session.save(async () => {
       req.session.user_id = userData.user_id;
       req.session.logged_in = true;
@@ -158,8 +126,5 @@ router.post('/logout', async (req, res) => {
     res.status(401).json({ message: 'User not logged in' });
   }
 });
-
-
-
 
 module.exports = router;

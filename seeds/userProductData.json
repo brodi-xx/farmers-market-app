@@ -4,189 +4,209 @@
         "product_name": "Apples",
         "description": "Fresh, juicy apples from the orchard.",
         "category": "Fruit",
-        "quantity": 10,
+        "sold_by": "lb",
+        "amount_available": 10,
         "price": 1.99,
-        "image_url": "https://images.unsplash.com/photo-1607081683834-c9f3a4eb8d1d"
+        "image_url": "https://cdn.pixabay.com/photo/2016/11/30/15/00/apples-1872997_960_720.jpg"
     },
     {
         "user_id": 1,
         "product_name": "Oranges",
         "description": "Sweet and tangy oranges from Florida.",
         "category": "Fruit",
-        "quantity": 8,
+        "sold_by": "lb",
+        "amount_available": 8,
         "price": 2.49,
-        "image_url": "https://images.unsplash.com/photo-1603337013576-7b08f1c93d7d"
+        "image_url": "https://cdn.pixabay.com/photo/2017/01/20/15/06/oranges-1995056_960_720.jpg"
     },
     {
         "user_id": 1,
         "product_name": "Carrots",
         "description": "Organic, farm-fresh carrots.",
         "category": "Vegetable",
-        "quantity": 20,
+        "sold_by": "lb",
+        "amount_available": 20,
         "price": 1.25,
-        "image_url": "https://images.unsplash.com/photo-1611070535202-bf6c0e934b91"
+        "image_url": "https://cdn.pixabay.com/photo/2015/03/14/14/00/carrots-673184_960_720.jpg"
     },
     {
         "user_id": 1,
         "product_name": "Spinach",
         "description": "Fresh, leafy spinach for salads and cooking.",
         "category": "Vegetable",
-        "quantity": 15,
+        "sold_by": "lb",
+        "amount_available": 15,
         "price": 1.75,
-        "image_url": "https://images.unsplash.com/photo-1620245325085-47c8d79de840"
+        "image_url": "https://cdn.pixabay.com/photo/2018/09/27/22/37/spinach-3708115_960_720.jpg"
     },
     {
         "user_id": 2,
         "product_name": "Blueberries",
         "description": "Plump, ripe blueberries for snacking or baking.",
         "category": "Fruit",
-        "quantity": 12,
+        "sold_by": "lb",
+        "amount_available": 12,
         "price": 3.99,
-        "image_url": "https://images.unsplash.com/photo-1505481358715-9d6d1c8d0f1c"
+        "image_url": "https://cdn.pixabay.com/photo/2018/06/07/16/38/blueberries-3460423_960_720.jpg"
     },
     {
         "user_id": 2,
         "product_name": "Bananas",
         "description": "Yellow, ripe bananas for smoothies or snacks.",
         "category": "Fruit",
-        "quantity": 8,
+        "sold_by": "lb",
+        "amount_available": 8,
         "price": 1.99,
-        "image_url": "https://images.unsplash.com/photo-1551218808-94a5b5aa8c6a"
+        "image_url": "https://cdn.pixabay.com/photo/2015/11/05/23/08/banana-1025109_960_720.jpg"
     },
     {
         "user_id": 2,
         "product_name": "Tomatoes",
         "description": "Plump, juicy tomatoes for sandwiches and salads.",
         "category": "Vegetable",
-        "quantity": 16,
+        "sold_by": "lb",
+        "amount_available": 16,
         "price": 1.49,
-        "image_url": "https://images.unsplash.com/photo-1580232788869-0a56c683f0d3"
+        "image_url": "https://cdn.pixabay.com/photo/2016/03/26/16/44/tomatoes-1280859_960_720.jpg"
     },
     {
         "user_id": 3,
         "product_name": "Grapes",
         "description": "Sweet, seedless grapes for snacking.",
         "category": "Fruit",
-        "quantity": 15,
+        "sold_by": "lb",
+        "amount_available": 15,
         "price": 2.99,
-        "image_url": "https://images.unsplash.com/photo-1569258086849-eb88e1b2420b"
+        "image_url": "https://cdn.pixabay.com/photo/2018/07/20/14/02/grapes-3550733_960_720.jpg"
     },
     {
         "user_id": 3,
         "product_name": "Strawberries",
         "description": "Fresh, red strawberries for desserts and snacks.",
         "category": "Fruit",
-        "quantity": 10,
+        "sold_by": "lb",
+        "amount_available": 10,
         "price": 4.49,
-        "image_url": "https://images.unsplash.com/photo-1524800502101-a068f2c6e5c0"
+        "image_url": "https://cdn.pixabay.com/photo/2018/05/26/10/54/strawberries-3431122_960_720.jpg"
     },
     {
         "user_id": 3,
         "product_name": "Broccoli",
         "description": "Organic, farm-fresh broccoli for salads and cooking.",
         "category": "Vegetable",
-        "quantity": 12,
+        "sold_by": "lb",
+        "amount_available": 12,
         "price": 2.25,
-        "image_url": "https://images.unsplash.com/photo-1558681860-527698c4b7d1"
+        "image_url": "https://cdn.pixabay.com/photo/2014/10/19/21/50/broccoli-494754_960_720.jpg"
     },
     {
         "user_id": 3,
         "product_name": "Zucchini",
         "description": "Fresh, green zucchini for grilling and sautéing.",
         "category": "Vegetable",
-        "quantity": 8,
+        "sold_by": "lb",
+        "amount_available": 8,
         "price": 1.99,
-        "image_url": "https://images.unsplash.com/photo-1600876798473-fbe2d1e8f8c2"
+        "image_url": "https://cdn.pixabay.com/photo/2016/09/10/13/25/zucchini-1659094_960_720.jpg"
     },
     {
         "user_id": 3,
         "product_name": "Cucumbers",
         "description": "Crisp, refreshing cucumbers for salads and sandwiches.",
         "category": "Vegetable",
-        "quantity": 10,
+        "sold_by": "lb",
+        "amount_available": 10,
         "price": 1.49,
-        "image_url": "https://images.unsplash.com/photo-1597811456141-ae18a7c88a97"
+        "image_url": "https://cdn.pixabay.com/photo/2015/07/17/13/44/cucumbers-849269_960_720.jpg"
     },
     {
         "user_id": 4,
         "product_name": "Peaches",
         "description": "Sweet, juicy peaches for desserts and snacks.",
         "category": "Fruit",
-        "quantity": 8,
+        "sold_by": "lb",
+        "amount_available": 8,
         "price": 2.99,
-        "image_url": "https://images.unsplash.com/photo-1611823649396-476bf6c8a56c"
+        "image_url": "https://cdn.pixabay.com/photo/2016/07/16/20/48/peaches-1522680_960_720.jpg"
     },
     {
         "user_id": 4,
         "product_name": "Grapefruits",
         "description": "Tangy grapefruits for juice and snacks.",
         "category": "Fruit",
-        "quantity": 6,
+        "sold_by": "lb",
+        "amount_available": 6,
         "price": 2.49,
-        "image_url": "https://images.unsplash.com/photo-1580087325537-1c31a7f12f9c"
+        "image_url": "https://cdn.pixabay.com/photo/2016/09/05/20/52/grapefruit-1647688_1280.jpg"
     },
     {
         "user_id": 4,
         "product_name": "Bell Peppers",
         "description": "Fresh, colorful bell peppers for salads and cooking.",
         "category": "Vegetable",
-        "quantity": 12,
+        "sold_by": "lb",
+        "amount_available": 12,
         "price": 1.99,
-        "image_url": "https://images.unsplash.com/photo-1520905253426-e07c8d9680c4"
+        "image_url": "https://cdn.pixabay.com/photo/2014/10/22/21/54/bell-peppers-499068_960_720.jpg"
     },
     {
         "user_id": 4,
         "product_name": "Asparagus",
         "description": "Fresh, green asparagus for grilling and sautéing.",
         "category": "Vegetable",
-        "quantity": 10,
+        "sold_by": "lb",
+        "amount_available": 10,
         "price": 2.99,
-        "image_url": "https://images.unsplash.com/photo-1603707642119-1090c08b1fb1"
+        "image_url": "https://cdn.pixabay.com/photo/2018/05/29/23/14/asparagus-3440348_960_720.jpg"
     },
     {
         "user_id": 5,
         "product_name": "Strawberries",
         "description": "Fresh, red strawberries for desserts and snacks.",
         "category": "Fruit",
-        "quantity": 12,
+        "sold_by": "lb",
+        "amount_available": 12,
         "price": 3.49,
-        "image_url": "https://images.unsplash.com/photo-1592225157983-245c2d1d3bc3"
+        "image_url": "https://cdn.pixabay.com/photo/2013/04/02/21/47/strawberries-99551_960_720.jpg"
     },
     {
         "user_id": 5,
         "product_name": "Watermelons",
         "description": "Juicy, refreshing watermelons for summer parties.",
         "category": "Fruit",
-        "quantity": 4,
+        "sold_by": "Count",
+        "amount_available": 4,
         "price": 7.99,
-        "image_url": "https://images.unsplash.com/photo-1592478872495-5d5fe8dd5c5a"
+        "image_url": "https://cdn.pixabay.com/photo/2010/12/13/10/18/watermelons-2636_960_720.jpg"
     },
     {
         "user_id": 5,
         "product_name": "Cantaloupes",
         "description": "Sweet, ripe cantaloupes for breakfast and snacks.",
         "category": "Fruit",
-        "quantity": 6,
+        "sold_by": "Count",
+        "amount_available": 6,
         "price": 2.99,
-        "image_url": "https://images.unsplash.com/photo-1606547953141-569fa1bea3c3"
+        "image_url": "https://cdn.pixabay.com/photo/2018/02/12/18/51/fruit-3148885_960_720.jpg"
     },
     {
         "user_id": 5,
         "product_name": "Green Beans",
         "description": "Fresh, crisp green beans for salads and cooking.",
         "category": "Vegetable",
-        "quantity": 10,
+        "sold_by": "lb",
+        "amount_available": 10,
         "price": 1.75,
-        "image_url": "https://images.unsplash.com/photo-1526226722959-07f4591c73f7"
+        "image_url": "https://cdn.pixabay.com/photo/2013/02/18/18/35/soya-83087_960_720.jpg"
     },
     {
         "user_id": 5,
         "product_name": "Cauliflower",
         "description": "Organic, farm-fresh cauliflower for salads and cooking.",
         "category": "Vegetable",
-        "quantity": 8,
+        "sold_by": "lb",
+        "amount_available": 8,
         "price": 2.49,
-        "image_url": "https://images.unsplash.com/photo-1523384277528-876f66125c95"
+        "image_url": "https://cdn.pixabay.com/photo/2016/06/18/21/56/cauliflower-1465732_960_720.jpg"
     }
 ]
-      

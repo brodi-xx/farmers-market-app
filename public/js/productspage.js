@@ -41,3 +41,4 @@ function addToLocalStorage(product) {
   localStorage.setItem("cartItems", JSON.stringify(cartItems));
 }
 
+
