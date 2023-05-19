@@ -1,8 +1,10 @@
-<!-- loader  -->
-<div class="loader_bg" style="background-color: #efeadd">
-   <div class="loader"><img src="images/loadingPlant.gif" alt="plant" /></div>
-</div>
-<!-- end loader -->
+<body>
+   <!-- loader  -->
+   <div class="loader_bg" style="background-color: #efeadd">
+      <div class="loader"><img src="images/loadingPlant.gif" alt="plant" /></div>
+   </div>
+   <!-- end loader -->
+
    <!-- banner -->
    <section class="banner_main">
       <div class="container-fluid">
@@ -26,6 +28,7 @@
       </div>
    </section>
    <!-- end banner -->
+
    <!-- about -->
    <div id="about"  class="about" style="background-color: #efeadd">
       <div class="container-fluid">
@@ -42,7 +45,30 @@
                   <div class="titlepage d-flex flex-column align-items-center text-center">
                      <h2 style="color: #b66850">Search Nearby</h2>
                      <p style="color:#efeadd">Searching for markets in your area is a breeze. Our user-friendly platform offers a seamless search feature to help you discover local markets near you. Simply enter your location or allow the app to access your location automatically, and our intelligent search algorithm will display a list of nearby farmers markets.</p>
-                     <a class="read_more" href="#">Read More</a>
+
+                     <!-- Button trigger modal -->
+                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                     Launch demo modal
+                     </button>
+
+                     <!-- Modal -->
+                     <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                     <div class="modal-dialog">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                           </div>
+                           <div class="modal-body">
+                           ...
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary">Save changes</button>
+                           </div>
+                        </div>
+                     </div>
+                     </div>
                   </div>
                </div>
             </div>
@@ -50,6 +76,7 @@
       </div>
    </div>
    <!-- end about -->
+
    <!-- our_fruit -->
    <div id="our_fruit"  class="our_fruit pt-0" style="background-color: #efeadd">
       <div class="container-fluid">
@@ -93,6 +120,7 @@
       </div>
    </div>
    <!-- end our_fruit -->
+
    <!-- testimonial -->
    <div class="testimonial">
       <div class="container-fluid ">
@@ -170,6 +198,7 @@
       </div>
    </div>
    <!-- end testimonial -->
+
    <!-- ======= Team Section ======= -->
    <section id="team" class="team" style="background-color: #efeadd">
    <div class="container">
@@ -283,6 +312,7 @@
    </div>
    </section>
    <!-- End Team Section -->
+
    <!--  footer -->
    <footer>
       <div class="footer">
@@ -310,6 +340,7 @@
       </div>
    </footer>
    <!-- end footer -->
+
    <!-- Javascript files-->
    <script src="js/jquery.min.js"></script>
    <script src="js/popper.min.js"></script>
@@ -320,4 +351,7 @@
    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
    <script src="js/custom.js"></script>
    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-
+   <!-- modal -->
+   <script src="js/homepage.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
