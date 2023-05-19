@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const User = require('./user');
+const User = require('./User');
 const UnregisteredCartProduct = require('./unregisteredCartProduct');
 const UnregisteredShoppingCart = require('./unregisteredShoppingCart');
 
@@ -92,7 +92,7 @@ UserProduct.belongsToMany(UnregisteredShoppingCart, {
 UserProduct.addHook('beforeSave', async (userProduct) => {
   const user = await User.findOne({
     where: { user_id: userProduct.user_id },
-    attributes: ['username'],
+    attributes: ['name'],
   });
 
   if (user) {
