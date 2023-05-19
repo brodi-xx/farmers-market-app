@@ -56,44 +56,30 @@ const seedDatabase = async () => {
       user_id: foundUser.user_id,
     });
   });
-  // const userShoppingCarts = await Promise.all(userShoppingCartsPromises);
-  // console.log('\n----- USER SHOPPING CARTS SEEDED -----\n');
 
-  // // // Seed cart products
-  // // for (let cartProduct of cartProductData) {
-  //   // find corresponding product
-  //   const product = userProducts.find(prod => prod.product_id === cartProduct.product_id);
-  //   if (!product) {
-  //     console.log(`Product with id ${cartProduct.product_id} not found`);
-  //     continue;
-  //   }
-  //   // add price to cartProduct
-  //   cartProduct.price = product.price;
-  // }
-  // await CartProduct.bulkCreate(cartProductData);
-  // console.log('\n----- CART PRODUCTS SEEDED -----\n');
+  function convertTo12Hour(time) {
+    const [hours, minutes, seconds] = time.split(':');
+    let period = 'AM';
+  
+    let adjustedHours = parseInt(hours);
+  
+    if (adjustedHours >= 12) {
+      period = 'PM';
+      if (adjustedHours > 12) {
+        adjustedHours -= 12;
+      }
+    } else if (adjustedHours === 0) {
+      adjustedHours = 12;
+    }
+  
+    return `${adjustedHours}:${minutes}:${seconds} ${period}`;
+  }
+  
 
-  // Seed user events
-  // const userEventsPromises = userEventData.map((event, index) => {
-  //   const foundUser = users[index % users.length];
-  //   return UserEvent.create({
-  //     ...event,
-  //     user_id: foundUser.user_id,
-  //   });
-  // });
-  // await Promise.all(userEventsPromises);
-  // console.log('\n----- USER EVENTS SEEDED -----\n');
-
-
-  // Seed purchase history
-  // const purchaseHistoryPromises = purchaseHistoryData.map((history) => PurchaseHistory.create(history));
-  // await Promise.all(purchaseHistoryPromises);
-  // console.log('\n----- PURCHASE HISTORY SEEDED -----\n');
-
-
-  // Seed user events
   const userEventsPromises = userEventData.map((event, index) => {
     const foundUser = users[index % users.length];
+    
+    // You do not convert time here. Keep it in 24-hour format.
     return UserEvent.create({
       ...event,
       user_id: foundUser.user_id,

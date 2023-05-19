@@ -1,0 +1,22 @@
+<div class='menu-container'>
+  <div class='card-header col-md'>
+    <h2 class='text-center'>
+      Upcoming Events
+    </h2>
+  </div>
+  <div id="googleMap"></div>
+  {{#each events as |event|}}
+  <div class='card text-center'>
+    <p>Host: {{event.user.name}}</p>
+    <p>Event: {{event.event_name}}</p>
+    <p>Location: {{event.location}}</p>
+    <p>Date: {{event.date}}</p>
+    <p>Start: {{formatTime event.time_start}} Ends: {{formatTime event.time_end}}</p>
+  </div>
+  {{/each}}
+</div>
+
+<!-- JavaScript files -->
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7LSZB-NbGaXCie1yVVi5ptF0Mta50NvA&libraries=places&callback=initMap"></script>
+<script src="js/events.js"></script>

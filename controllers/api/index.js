@@ -18,5 +18,6 @@ router.use('/unregistered-shopping-cart', unregisteredShoppingCartRoutes);
 router.use('/unregistered-cart-product', unregisteredCartProduct);
 router.use('/user-purchase-history', purchaseHistoryRoutes);
 router.use('/userEventRoutes', userEventRoutes);
+router.use('/events', userEventRoutes);
 
 module.exports = router;

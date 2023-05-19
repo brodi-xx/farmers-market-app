@@ -23,19 +23,19 @@ UserEvent.init(
         key: 'user_id',
       },
     },
-    event_date: {
+    date: {
       type: DataTypes.DATEONLY,
       allowNull: false,
     },
-    event_time_start: {
+    time_start: {
       type: DataTypes.TIME,
       allowNull: false,
     },
-    event_time_end: {
+    time_end: {
       type: DataTypes.TIME,
       allowNull: false,
     },
-    event_location: {
+    location: {
       type: DataTypes.STRING,
       allowNull: false,
     },
