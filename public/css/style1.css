@@ -1,4 +1,17 @@
-
+/* * {box-sizing: border-box} */
+input[type=text], input[type=password] {
+     width: 100%;
+     padding: 15px;
+     margin: 5px 0 22px 0;
+     display: inline-block;
+     border: none;
+     background: #f1f1f1;
+   }
+   
+   input[type=text]:focus, input[type=password]:focus {
+     background-color: #949798;
+     outline: none;
+   }
 
 /*--------------------------------------------------------------------- File Name: responsive.css ---------------------------------------------------------------------*/
 
@@ -525,6 +538,12 @@ button {
      width: 100%;
 }
 
+.avatar {
+     vertical-align: middle;
+     width: 150px;
+     height: 150px;
+     border-radius: 0%;
+   }
 
 /** end our_fruit section **/
 
