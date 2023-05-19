@@ -2,42 +2,42 @@
     {
       "event_name": "Spring Fling",
       "user_id": 1,
-      "event_date": "2023-05-20",
-      "event_time_start": "09:00:00",
-      "event_time_end": "12:00:00",
-      "event_location": "10840 Beinhorn Rd, Houston, TX 77024"
+      "date": "2023-05-20",
+      "time_start": "09:00:00",
+      "time_end": "12:00:00",
+      "location": "10840 Beinhorn Rd, Houston, TX 77024"
     },
     {
       "event_name": "Summer Soiree",
       "user_id": 2,
-      "event_date": "2023-05-21",
-      "event_time_start": "14:00:00",
-      "event_time_end": "17:00:00",
-      "event_location": "3449 Pearland Pkwy, Pearland, TX 77581"
+      "date": "2023-05-21",
+      "time_start": "14:00:00",
+      "time_end": "17:00:00",
+      "location": "3449 Pearland Pkwy, Pearland, TX 77581"
     },
     {
       "event_name": "Autumn Harvest",
       "user_id": 3,
-      "event_date": "2023-05-22",
-      "event_time_start": "18:00:00",
-      "event_time_end": "21:00:00",
-      "event_location": "234 Matlage Way, Sugar Land, TX 77478"
+      "date": "2023-05-22",
+      "time_start": "18:00:00",
+      "time_end": "21:00:00",
+      "location": "234 Matlage Way, Sugar Land, TX 77478"
     },
     {
       "event_name": "Winter Wonderland",
       "user_id": 4,
-      "event_date": "2023-05-23",
-      "event_time_start": "10:00:00",
-      "event_time_end": "13:00:00",
-      "event_location": "10503 Westheimer Rd, Houston, TX 77042"
+      "date": "2023-05-23",
+      "time_start": "10:00:00",
+      "time_end": "13:00:00",
+      "location": "10503 Westheimer Rd, Houston, TX 77042"
     },
     {
       "event_name": "Season's Greetings",
       "user_id": 5,
-      "event_date": "2023-05-24",
-      "event_time_start": "15:00:00",
-      "event_time_end": "18:00:00",
-      "event_location": "4711 Center St, Deer Park, TX 77536"
+      "date": "2023-05-24",
+      "time_start": "15:00:00",
+      "time_end": "18:00:00",
+      "location": "4711 Center St, Deer Park, TX 77536"
     }
   ]
   

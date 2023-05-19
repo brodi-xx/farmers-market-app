@@ -46,6 +46,10 @@ User.init(
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
+    profile_picture: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     privatepolicyagreement: {
       type: DataTypes.BOOLEAN,
       allowNull: false,

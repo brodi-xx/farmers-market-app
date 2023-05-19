@@ -28,8 +28,8 @@ CartProduct.init(
         key: 'product_id',
       },
     },
-    quantity: {
-      type: DataTypes.INTEGER,
+    amount: {
+      type: DataTypes.FLOAT,
       defaultValue: 1,
     },
     price: {

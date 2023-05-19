@@ -1,39 +1,20 @@
 <!-- profile.hbs -->
-<div class="profile">
-  <img src="{{profilePicture}}" alt="Profile Picture">
-  <div>
-    <h1>{{name}}</h1>
-    <p>Location: {{location}}</p>
+<div class="profile_card mb-2 p-3 flexy">
+  <img class="profile_img" src={{profile_picture}} alt="Profile Picture">
+  <div class="p-3">
+    <h1>{{user.name}}</h1>
+    <p>User ID: {{user_id}}</p>
+    <p>Address: {{address}}</p>
+    <p>Birthday: {{birthday}}</p>
+    <h2>About Me</h2>
+    <p>{{about}}</p>
+    <h2>Contact Information</h2>
+    <p>Email: {{email}}</p>
+    <p>Phone: {{phone}}</p>
   </div>
 </div>
-<h2>About Me</h2>
-<p>{{about}}</p>
-<h2>Contact Information</h2>
-<p>Email: {{email}}</p>
-<p>Phone: {{phone}}</p>
+  <button class="blocky" id="logout">Logout</button>
 
-<button id="logout">Logout</button>
 
-<script>
-async function logout() {
-  try {
-    const response = await fetch('/api/user/logout', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    if (response.ok) {
-      const data = await response.json();
-      console.log('Success:', data);
-      location.reload(); // Refresh the page
-    } else {
-      throw new Error('Error:', response.statusText);
-    }
-  } catch (error) {
-    console.error('Error:', error);
-  }
-}
 
-document.querySelector('#logout').addEventListener('click', logout);
-</script>
+<script src="js/profile.js"></script>
