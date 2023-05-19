@@ -79,9 +79,33 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-router.get('/profile', withAuth, (req, res) => {
-  res.render('profile');
+router.get('/profile', withAuth, async (req, res) => {
+  try {
+    let user;
+    if (req.session.user_id) {
+      const userData = await User.findByPk(req.session.user_id, {
+        attributes: { exclude: ['password'] },
+      });
+
+      user = userData.get({ plain: true });
+    }
+
+    res.render('profile', {
+      profile_picture: user ? user.profile_picture : '',
+      user: user || {}, 
+      user_id: user ? user.user_id : '', 
+      address: user ? user.address : '', 
+      birthday: user ? user.birthday : '', 
+      about: user ? user.about : '', 
+      email: user ? user.email : '', 
+      phone: user ? user.phone : '', 
+      logged_in: req.session.logged_in || false,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
+
 
 
 module.exports = router;

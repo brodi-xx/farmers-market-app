@@ -1,19 +1,20 @@
 <!-- profile.hbs -->
-<div class="profile">
-  <img src="{{profilePicture}}" alt="Profile Picture">
-  <div>
+<div class="profile_card mb-2 p-3 flexy">
+  <img class="profile_img" src={{profile_picture}} alt="Profile Picture">
+  <div class="p-3">
     <h1>{{user.name}}</h1>
     <p>User ID: {{user_id}}</p>
     <p>Address: {{address}}</p>
     <p>Birthday: {{birthday}}</p>
+    <h2>About Me</h2>
+    <p>{{about}}</p>
+    <h2>Contact Information</h2>
+    <p>Email: {{email}}</p>
+    <p>Phone: {{phone}}</p>
   </div>
 </div>
-<h2>About Me</h2>
-<p>{{about}}</p>
-<h2>Contact Information</h2>
-<p>Email: {{email}}</p>
-<p>Phone: {{phone}}</p>
+  <button class="blocky" id="logout">Logout</button>
 
-<button id="logout">Logout</button>
+
 
 <script src="js/profile.js"></script>

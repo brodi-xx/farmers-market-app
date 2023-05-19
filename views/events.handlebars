@@ -7,10 +7,11 @@
   <div id="googleMap"></div>
   {{#each events as |event|}}
   <div class='card text-center'>
-    <p> Host: {{event.user.name}}</p>
+    <p>Host: {{event.user.name}}</p>
     <p>Event: {{event.event_name}}</p>
-    <p>Location: {{event.event_location}}</p>
-    <p>Start: {{formatTime event.event_time_start}} Ends: {{formatTime event.event_time_end}}</p>
+    <p>Location: {{event.location}}</p>
+    <p>Date: {{event.date}}</p>
+    <p>Start: {{formatTime event.time_start}} Ends: {{formatTime event.time_end}}</p>
   </div>
   {{/each}}
 </div>

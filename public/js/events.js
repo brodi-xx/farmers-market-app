@@ -48,7 +48,7 @@ function updateEvents() {
       // For each event, create a marker
       data.forEach(event => {
         const geocoder = new google.maps.Geocoder();
-        geocoder.geocode({ address: event.event_location }, (results, status) => {
+        geocoder.geocode({ address: event.location }, (results, status) => {
           if (status === 'OK') {
             const marker = new google.maps.Marker({
               position: results[0].geometry.location,
@@ -57,14 +57,15 @@ function updateEvents() {
             });
 
             // Convert the event time to 12-hour format
-            const startTime = convertTo12HourFormat(event.event_time_start);
-            const endTime = convertTo12HourFormat(event.event_time_end);
+            const startTime = convertTo12HourFormat(event.time_start);
+            const endTime = convertTo12HourFormat(event.time_end);
 
             // Define the content of the InfoWindow
             const infowindowContent = `
               <p>Host: ${event.user.name}</p>
               <p>Event: ${event.event_name}</p>
-              <p>Location: ${event.event_location}</p>
+              <p>Location: ${event.location}</p>
+              <p>Date: ${event.date}</p>
               <p>Start: ${startTime} Ends: ${endTime}</p>
             `;
 

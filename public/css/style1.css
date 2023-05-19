@@ -777,6 +777,42 @@ nav {
      color: #000;
 }
 
+/* Profile Image */
+.profile_card {
+     margin-right: auto;
+     margin-left: auto;
+     max-width: 50%;
+     max-height: 55%;
+     position:relative;
+     display: flex;
+     flex:content;
+     flex-direction: row;
+   }
+
+.profile_img {
+     position: relative;
+}
+
+.flexy {
+     display: flex;
+}
+
+.blocky {
+     display: block;
+     margin-right: auto;
+     margin-left: auto;
+}
+
+@media (max-width: 800px) {
+     .profile_card,
+     .flexy,
+     .blocky {
+       display: block;
+       margin: 0 auto;
+     }
+   }
+
+
 /**my cart **/
 
 
