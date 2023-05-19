@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, UserProduct } = require('../models');
+const { User, UserProduct, UserEvent} = require('../models');
 const withAuth = require('../utils/auth');
 
 // Middleware to start a session for unregistered users
@@ -60,6 +60,23 @@ router.get('/productspage', async (req, res) => {
   res.render('productspage', {
     products
   });
+});
+
+router.get('/events', async (req, res) => {
+  try {
+    const events = await UserEvent.findAll({
+      include: [{
+        model: User,
+        attributes: ['name']
+      }]
+    });
+    const eventsData = events.map((event) => event.get({ plain: true }));
+
+    res.render('events', { events: eventsData });  // Assuming 'events' is the name of your Handlebars template
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
 });
 
 router.get('/signup', (req, res) => {

@@ -616,6 +616,15 @@ button {
 
 /** end testimonial section **/
 
+/* Events Page */
+
+#googleMap {
+     width: 100%;
+     height: 400px; /* or any other size */
+ }
+
+ /* End Events Page */
+
 /*------------------#Team------------------*/
 .team {
      background: #fff;
