@@ -29,12 +29,12 @@
                                 <!-- Product name-->
                                 <h5 class="fw-bolder">{{product.product_name}}</h5>
                                 <!-- Product price-->
-                                {{product.price}}
+                                <p id="product-price-{{product.id}}">{{product.price}}</p>
                             </div>
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add To Cart</a>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/mycart">Add To Cart</a>
                             </div>
                         </div>
                     </div>
