@@ -1,21 +1,16 @@
 <div class='menu-container'>
-  <div class='card-header col-md-10'>
-    <h2>
+  <div class='card-header col-md'>
+    <h2 class='text-center'>
       Upcoming Events
     </h2>
   </div>
   <div id="googleMap"></div>
   {{#each events as |event|}}
-  <div class='col-md-7'>
-    <p>
-      Host:
-      {{event.user.name}}
-    </p>
-  </div>
-  <div class='dish col-md-5'>
+  <div class='card text-center'>
+    <p> Host: {{event.user.name}}</p>
     <p>Event: {{event.event_name}}</p>
     <p>Location: {{event.event_location}}</p>
-    <p>Start: {{event.event_start_time}} Ends: {{event.event_end_time}}</p>
+    <p>Start: {{formatTime event.event_time_start}} Ends: {{formatTime event.event_time_end}}</p>
   </div>
   {{/each}}
 </div>

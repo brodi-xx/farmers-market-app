@@ -32,6 +32,30 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+// Get user profile
+router.get('/profile', async (req, res) => {
+  if (!req.session.user_id) {
+    res.redirect('/login');
+    return;
+  }
+
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+    });
+
+    const user = userData.get({ plain: true });
+    console.log(user);
+
+    res.render('profile', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // POST /user - Create a new user
 router.post('/', async (req, res) => {
   try {

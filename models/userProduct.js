@@ -39,8 +39,12 @@ UserProduct.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    quantity: {
-      type: DataTypes.INTEGER,
+    sold_by: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    amount_available: {
+      type: DataTypes.FLOAT,
       allowNull: false,
       validate: {
         min: 0,
@@ -96,7 +100,7 @@ UserProduct.addHook('beforeSave', async (userProduct) => {
   });
 
   if (user) {
-    userProduct.seller_name = user.username;
+    userProduct.seller_name = user.name;
   }
 });
 

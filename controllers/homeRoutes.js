@@ -41,10 +41,6 @@ router.get('/homepage', (req, res) => {
   res.render('homepage');
 });
 
-router.get('/eventsList', (req, res) => {
-  res.render('eventsList');
-});
-
 router.get('/mycart', (req, res) => {
   res.render('mycart');
 });
