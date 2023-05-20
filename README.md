@@ -22,8 +22,10 @@ This Little Piggy offers the following features:
 Here are a few screenshots showcasing the features of the This Little Piggy application:
 
 1.  Home screen   
-![Home](public\images\sshome.png):  
-2. ![Screenshot 2](screenshot2.png): Products page.
+![Home](public\images\sshome.png)
+2.  Upcoming Markets
+![Markets](public\images\ssevents.png)  
+3. ![Screenshot 2](screenshot2.png): Products page
 3. ![Screenshot 3](screenshot3.png): Sign up page to create a profile.
 4. ![Screenshot 4](screenshot4.png): Shopping cart.
 
