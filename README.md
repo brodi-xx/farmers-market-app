@@ -14,7 +14,9 @@ This Little Piggy offers the following features:
 
 2. **Product Catalog**: Customers can explore the wide variety of fruits and vegetables offered by the vendors. The application includes product descriptions, pricing information, and images to help users make informed choices.  Customers can then add products to their cart for easy checkout.
 
-3. **Profile**: Users can create a profile to gain access to the entire application and streamline the checkout process.
+3. **My Cart**: Customers can add products to their cart and review before checkout.
+
+4. **Profile**: Users can sign up and create a profile to gain access to the entire application and streamline the checkout process.
 
 
 ## Screenshots
