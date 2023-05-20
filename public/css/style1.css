@@ -862,5 +862,6 @@ nav {
 .sign-up {
      display: flex;
      align-items: left;
+     padding: 10px;
    }
    
