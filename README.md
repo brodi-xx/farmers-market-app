@@ -29,8 +29,11 @@ Here are a few screenshots showcasing the features of the This Little Piggy appl
 ![Products](screenshot2.png): 
 4. My Cart 
 ![My Cart](public\images\ssmycart.png)
-5. Login 
-![login](public\images\sslogin.png)
+5. Sign Up 
+![Sign Up 1](public\images\sssignup1.png)
+![Sign Up 2](public\images\sssignup2.png)
+6. Login 
+![Login](public\images\sslogin.png)
 
 
 
