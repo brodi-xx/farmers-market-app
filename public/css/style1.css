@@ -857,3 +857,19 @@ nav {
    }
 /** end footer **/
 
+/** sign up **/
+
+.sign-up {
+     display: flex;
+     align-items: left;
+     padding: 10px;
+   }
+
+.sign-up-btn {
+     margin-top: 20px;
+     margin-bottom: 20px;
+     background-color: #F1F1F1 !important;
+     border: 2px solid #ddd;
+     padding: 12px 40px;
+     font-size: 16px;
+}
