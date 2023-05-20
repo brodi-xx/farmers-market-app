@@ -19,7 +19,7 @@ This Little Piggy offers the following features:
 
 ## Screenshots
 
-Here are a few screenshots showcasing the This Little Piggy application:
+Here are a few screenshots showcasing the features of the This Little Piggy application:
 
 1. ![Screenshot 1](screenshot1.png): Home screen.
 2. ![Screenshot 2](screenshot2.png): Products page.
