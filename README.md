@@ -26,7 +26,7 @@ Here are a few screenshots showcasing the features of the This Little Piggy appl
 1.  Home Page   
 ![Home](public\images\sshome.png)
 2.  Upcoming Markets
-![Markets](public\images\ssevents.png)  
+![Markets](public\images\ssevents1.png)  
 3.  Products Page 
 ![Products](screenshot2.png): 
 4. My Cart 
