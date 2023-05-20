@@ -1,8 +1,8 @@
-# "This Little Piggy": Farmer's Market Application
+# This Little Piggy
 
 ## Introduction
 
-"This Little Piggy" is a Farmer's Market application, developed by a group of developers which allows customers to easily find local farmer's markets and purchase items directly from the vendors after creating a profile.
+This Little Piggy is an application developed by a group of developers which allows customers to easily find local farmer's markets and purchase items directly from the vendors after creating a profile.
 
 ## Features
 
@@ -19,11 +19,11 @@ This Little Piggy offers the following features:
 
 ## Screenshots
 
-Here are a few screenshots showcasing the Farmer's Market application:
+Here are a few screenshots showcasing This Little Piggy Farmer's Market Application:
 
-1. ![Screenshot 1](screenshot1.png): Home screen displaying nearby farmer's markets.
-2. ![Screenshot 2](screenshot2.png): Vendor profile page with available produce.
-3. ![Screenshot 3](screenshot3.png): Product catalog showing detailed descriptions and pricing.
+1. ![Screenshot 1](screenshot1.png): Home screen.
+2. ![Screenshot 2](screenshot2.png): Products page showing available produce.
+3. ![Screenshot 3](screenshot3.png): Sign up page to create a profile.
 4. ![Screenshot 4](screenshot4.png): Shopping cart and checkout process.
 5. ![Screenshot 5](screenshot5.png): Order tracking and status updates.
 
@@ -33,12 +33,12 @@ Please note that these screenshots are for illustrative purposes and may not ref
 
 This applicationlication was developed by the following contributors:
 
-- [Brodi LeBlanc](https://github.com/brodi-xx): Front-End    
-- [Erica Leyba](https://github.com/LeybaAir): Front-End
-- [Joey Stanion](https://github.com/Jstanion): Back-End
-- [Lanre Abu](https://github.com/lanreabu77): Front-End  
-- [Russo Borneo](https://github.com/RussoB22): Back-End
-- [Stephanie Jauch](https://github.com/SKJauch): Front-End
+- [Brodi LeBlanc](https://github.com/brodi-xx)  
+- [Erica Leyba](https://github.com/LeybaAir)  
+- [Joey Stanion](https://github.com/Jstanion)  
+- [Lanre Abu](https://github.com/lanreabu77)   
+- [Russo Borneo](https://github.com/RussoB22)  
+- [Stephanie Jauch](https://github.com/SKJauch)  
 
 We express our gratitude to all contributors for their dedication and hard work in creating the "This Little Piggy" Farmer's Market application.
 
