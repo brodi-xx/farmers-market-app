@@ -857,3 +857,10 @@ nav {
    }
 /** end footer **/
 
+/** sign up **/
+
+.sign-up {
+     display: flex;
+     align-items: left;
+   }
+   
