@@ -1,0 +1,24 @@
+.card {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .card:hover .card-img-top {
+    opacity: 0.5;
+  }
+  
+  .card:hover .card-body {
+    display: block;
+  }
+  
+  .card-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: rgba(73, 140, 136, 0.5);
+    color: #fff;
+    padding: 10px;
+  }

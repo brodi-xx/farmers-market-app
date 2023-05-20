@@ -41,4 +41,13 @@ function addToLocalStorage(product) {
   localStorage.setItem("cartItems", JSON.stringify(cartItems));
 }
 
+// If you have multiple cards, you can use a loop or querySelectorAll to get all the cards
+var card = document.querySelector('.card');
 
+card.addEventListener('mouseover', function() {
+  this.querySelector('.card-img-top').classList.add('darken');
+});
+
+card.addEventListener('mouseout', function() {
+  this.querySelector('.card-img-top').classList.remove('darken');
+});
