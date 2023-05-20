@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This Little Piggy is an application developed by a group of developers which allows customers to easily find local farmer's markets and purchase items directly from the vendors after creating a profile.
+This Little Piggy is an application created by a group of developers which allows customers to easily find local farmer's markets and purchase items directly from the vendors after creating a profile.
 
 ## Features
 
