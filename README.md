@@ -10,7 +10,7 @@ This Little Piggy offers the following features:
 
 1. **Market Locator**: The application utilizes location services to help customers find nearby farmer's markets. Users can search for markets based on their current location or enter a specific address.
 
-2. **Product Catalog**: Customers can explore the wide variety of fruits and vegetables offered by the vendors. The application includes detailed product descriptions, pricing information, and images to help users make informed choices.
+2. **Product Catalog**: Customers can explore the wide variety of fruits and vegetables offered by the vendors. The application includes product descriptions, pricing information, and images to help users make informed choices.  Customers can then add products to their cart for easy checkout.
 
 3. **Profile**: Users can create a profile to gain access to the entire application and streamline the checkout process.
 
