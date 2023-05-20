@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, UserProduct } = require('../models');
+const { User, UserProduct, UserEvent} = require('../models');
 const withAuth = require('../utils/auth');
 
 // Middleware to start a session for unregistered users
@@ -41,10 +41,6 @@ router.get('/homepage', (req, res) => {
   res.render('homepage');
 });
 
-router.get('/eventsList', (req, res) => {
-  res.render('eventsList');
-});
-
 router.get('/mycart', (req, res) => {
   res.render('mycart');
 });
@@ -62,12 +58,54 @@ router.get('/productspage', async (req, res) => {
   });
 });
 
+router.get('/events', async (req, res) => {
+  try {
+    const events = await UserEvent.findAll({
+      include: [{
+        model: User,
+        attributes: ['name']
+      }]
+    });
+    const eventsData = events.map((event) => event.get({ plain: true }));
+
+    res.render('events', { events: eventsData });  // Assuming 'events' is the name of your Handlebars template
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
+});
+
 router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-router.get('/profile', withAuth, (req, res) => {
-  res.render('profile');
+router.get('/profile', withAuth, async (req, res) => {
+  try {
+    let user;
+    if (req.session.user_id) {
+      const userData = await User.findByPk(req.session.user_id, {
+        attributes: { exclude: ['password'] },
+      });
+
+      user = userData.get({ plain: true });
+    }
+
+    res.render('profile', {
+      profile_picture: user ? user.profile_picture : '',
+      user: user || {}, 
+      user_id: user ? user.user_id : '', 
+      address: user ? user.address : '', 
+      birthday: user ? user.birthday : '', 
+      about: user ? user.about : '', 
+      email: user ? user.email : '', 
+      phone: user ? user.phone : '', 
+      logged_in: req.session.logged_in || false,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
+
+
 
 module.exports = router;

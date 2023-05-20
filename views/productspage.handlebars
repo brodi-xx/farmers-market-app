@@ -1,11 +1,5 @@
-<body class="main-layout">
-    <!-- loader  -->
-    <div class="loader_bg">
-        <div class="loader"><img src="images/loadingPlant.gif" alt="plant" /></div>
-    </div>
-    <!-- end loader -->
-    <!-- header -->
-    <header class="py-5">
+    <!-- title -->
+    <section class="py-5">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
                 <h1 class="display-4 fw-bolder">Shop Fresh</h1>
@@ -13,7 +7,7 @@
                 <img src="images/logo.png" class="img-fluid" alt="this little piggy logo">
             </div>
         </div>
-    </header>
+    </section>
     <!-- Section-->
     <section class="py-5">
         <div class="container px-4 px-lg-5 mt-5">
@@ -27,14 +21,16 @@
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <!-- Product name-->
-                                <h5 class="fw-bolder">{{product.product_name}}</h5>
-                                <!-- Product price-->
-                                <p id="product-price-{{product.id}}">{{product.price}}</p>
+                                <h4 class="product-name fw-bolder">{{product.product_name}} </h4>
+                                <h5 class="seller-name">Seller: {{product.seller_name}} </h5>
+                                <p class="price"> Price: ${{product.price}}/{{product.sold_by}} </p>
+                                <p class="amount-available"> Amount available: {{product.amount_available}} </p>
                             </div>
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/mycart">Add To Cart</a>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/mycart">
+                            Add To Cart</a>
                             </div>
                         </div>
                     </div>
@@ -43,55 +39,3 @@
             </div>
         </div>
     </section>
-    <!--  footer -->
-    <div class="container my-5">
-
-        <footer class="bg-light text-center text-white">
-            <!-- Grid container -->
-            <div class="container p-4 pb-0">
-                <!-- Section: Social media -->
-                <!-- Facebook -->
-                <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;" href="#!"
-                    role="button"><i class="fab fa-facebook-f"></i></a>
-
-                <!-- Twitter -->
-                <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee;" href="#!"
-                    role="button"><i class="fab fa-twitter"></i>
-                </a>
-
-                <!-- Google -->
-                <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39;" href="#!"
-                    role="button"><i class="fab fa-google"></i>
-                </a>
-
-                <!-- Instagram -->
-                <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac;" href="#!" role="button">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                </section>
-                <!-- Section: Social media -->
-            </div>
-            <!-- Grid container -->
-
-            <!-- Copyright -->
-            <div class="copyright">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>Copyright 2023 UTABootcamp Group 4 <a href="https://html.design/"></a></p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Copyright -->
-        </footer>
-        <!-- end footer -->
-        <!-- Javascript files-->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/jquery-3.0.0.min.js"></script>
-        <script src="js/plugin.js"></script>
-        <!-- sidebar -->
-        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-        <script src="js/custom.js"></script>
-        <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
