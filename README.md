@@ -54,12 +54,18 @@ This application was developed by the following contributors:
 
 We express our gratitude to all contributors for their dedication and hard work in creating the This Little Piggy application.
 
-## Technology Used
+## Technologies/Frameworks Used
 
-The This Little Piggy application was built using the following technologies:
+The This Little Piggy application was built using the following:
 
-- Handlebars, CSS, JavaScript, SQL, Node.js, Express.js  
-* *Miro* was used to organize and streamline collaboration
+-Node.js  
+-Express.js  
+-Sequelize  
+-MySQL  
+-Bootstrap   
+-Handlebars    
+*   
+*Miro* was used to organize and streamline collaboration
 
 ## Conclusion
 
