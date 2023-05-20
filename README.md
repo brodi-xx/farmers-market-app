@@ -1,5 +1,7 @@
 # This Little Piggy
 
+![logo](public\images\P2-logo.png)
+
 ## Introduction
 
 This Little Piggy is an application developed by a group of developers which allows customers to easily find local farmer's markets and purchase items directly from the vendors after creating a profile.
@@ -17,7 +19,7 @@ This Little Piggy offers the following features:
 
 ## Screenshots
 
-Here are a few screenshots showcasing This Little Piggy Farmer's Market Application:
+Here are a few screenshots showcasing the This Little Piggy application:
 
 1. ![Screenshot 1](screenshot1.png): Home screen.
 2. ![Screenshot 2](screenshot2.png): Products page.
@@ -48,4 +50,4 @@ The This Little Piggy application was built using the following technologies:
 
 ## Conclusion
 
-This Little Piggy offers a convenient and user-friendly platform for customers to discover local farmer's markets and purchase fresh fruits and vegetables from vendors. With its intuitive and user friendly features, the application aims to enhance the connection between customers and local agriculture.
+This Little Piggy brings the market to you by offering a convenient and user-friendly platform for customers to discover local farmer's markets and purchase fresh fruits and vegetables from vendors. With its intuitive and user friendly features, the application aims to enhance the connection between customers and local agriculture.
