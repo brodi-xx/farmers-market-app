@@ -16,51 +16,60 @@ btn.onclick = function() {
   body.style.overflow = "hidden";
 }
 
-// close the modal and post the data when clicking on 'submit'
 submitBtn.onclick = async function(event) {
   event.preventDefault(); // prevent form from submitting and refreshing the page
 
   // Fetch the user_id from the current session
-  const response = await fetch('/api/user/session');
-  const data = await response.json();
-  const user_id = data.user_id;
+  try {
+    const response = await fetch('/api/user/session');
+    console.log(response);
+    const data = await response.json();
+    console.log(data);
 
-  let eventName = document.getElementById("eventName").value;
-  let eventDate = document.getElementById("eventDate").value;
-  let startTime = document.getElementById("startTime").value;
-  let endTime = document.getElementById("endTime").value;
-  let eventLocation = document.getElementById("eventLocation").value;
+    if (data.user_id) {
+      let eventName = document.getElementById("eventName").value;
+      let eventDate = document.getElementById("eventDate").value;
+      let startTime = document.getElementById("startTime").value;
+      let endTime = document.getElementById("endTime").value;
+      let eventLocation = document.getElementById("eventLocation").value;
 
-  if (eventName && eventDate && startTime && endTime && eventLocation && user_id) {
-    try {
-      const response = await fetch('/api/events', {
-        method: 'POST',
-        body: JSON.stringify({
-          eventName: eventName,
-          user_id: user_id,
-          eventDate: eventDate,
-          startTime: startTime,
-          endTime: endTime,
-          eventLocation: eventLocation
-        }),
-        headers: { 'Content-Type': 'application/json' },
-      });
+      if (eventName && eventDate && startTime && endTime && eventLocation) {
+        try {
+          const response = await fetch('/api/events', {
+            method: 'POST',
+            body: JSON.stringify({
+              eventName: eventName,
+              user_id: data.user_id,
+              eventDate: eventDate,
+              startTime: startTime,
+              endTime: endTime,
+              eventLocation: eventLocation
+            }),
+            headers: { 'Content-Type': 'application/json' },
+          });
 
-      if (response.ok) {
-        console.log('Event submitted successfully');
+          if (response.ok) {
+            console.log('Event submitted successfully');
+          } else {
+            throw new Error('Error:', response.statusText);
+          }
+        } catch (error) {
+          console.error('Error:', error);
+        }
       } else {
-        throw new Error('Error:', response.statusText);
+        console.log('Please fill out all fields');
       }
-    } catch (error) {
-      console.error('Error:', error);
+    } else {
+      console.log("Unauthorized:", data.message);
     }
-  } else {
-    console.log('Please fill out all fields');
+  } catch (error) {
+    console.error(error);
   }
 
   modal.style.display = "none";
   body.style.overflow = "auto"; 
 }
+
 
 
 
