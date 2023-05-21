@@ -1,20 +1,45 @@
-<!-- profile.hbs -->
 <div class="profile_card mb-2 p-3 flexy">
-  <img class="profile_img" src={{profile_picture}} alt="Profile Picture">
+  <img class="profile_img" src={{user.profile_picture}} alt="Profile Picture">
   <div class="p-3">
     <h1>{{user.name}}</h1>
-    <p>User ID: {{user_id}}</p>
-    <p>Address: {{address}}</p>
-    <p>Birthday: {{birthday}}</p>
+    <p>User ID: {{user.user_id}}</p>
+    <p>Address: {{user.address}}</p>
+    <p>Birthday: {{user.birthday}}</p>
     <h2>About Me</h2>
-    <p>{{about}}</p>
+    <p>{{user.about}}</p>
     <h2>Contact Information</h2>
-    <p>Email: {{email}}</p>
-    <p>Phone: {{phone}}</p>
+    <p>Email: {{user.email}}</p>
+    <p>Phone: {{user.phone}}</p>
+  </div>
+  <div class="p-3">
+    <button id="createEvent" class="blocky">Create Event</button>
   </div>
 </div>
-  <button class="blocky" id="logout">Logout</button>
+<button class="blocky" id="logout">Logout</button>
 
+<!-- Modal -->
+<div id="eventModal" class="modal">
+  <div class="modal-content">
+    <h2>Create Event</h2>
+    <form id="eventForm">
+      <label for="eventName">Event Name:</label>
+      <input type="text" id="eventName" name="eventName">
 
+      <label for="eventDate">Date:</label>
+      <input type="date" id="eventDate" name="eventDate">
+
+      <label for="startTime">Start Time:</label>
+      <input type="time" id="startTime" name="startTime">
+
+      <label for="endTime">End Time:</label>
+      <input type="time" id="endTime" name="endTime">
+
+      <label for="eventLocation">Location:</label>
+      <input type="text" id="eventLocation" name="eventLocation">
+
+      <button type="submit" id="submitEvent" class="blocky">Create</button>
+    </form>
+  </div>
+</div>
 
 <script src="js/profile.js"></script>

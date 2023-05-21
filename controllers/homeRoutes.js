@@ -2,17 +2,7 @@ const router = require('express').Router();
 const { User, UserProduct, UserEvent} = require('../models');
 const withAuth = require('../utils/auth');
 
-// Middleware to start a session for unregistered users
-const startSessionForUnregisteredUser = (req, res, next) => {
-  if (!req.session.logged_in) {
-    // Set a flag indicating that the user is an unregistered user
-    req.session.unregistered = true;
-    // You can also set other session data specific to unregistered users if needed
-  }
-  next();
-};
-
-router.get('/', startSessionForUnregisteredUser, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const userData = await User.findAll({
       attributes: { exclude: ['password'] },
@@ -48,10 +38,8 @@ router.get('/mycart', (req, res) => {
 router.get('/productspage', async (req, res) => {
   // findAll on the userProducts to retrieve all of the products in the database, and pass that as an array of objects
   const productData = await UserProduct.findAll();
-  console.log(productData);
 
   const products = productData.map(product => product.get({ plain: true}));
-  console.log(products);
 
   res.render('productspage', {
     products
@@ -81,30 +69,16 @@ router.get('/signup', (req, res) => {
 
 router.get('/profile', withAuth, async (req, res) => {
   try {
-    let user;
-    if (req.session.user_id) {
-      const userData = await User.findByPk(req.session.user_id, {
-        attributes: { exclude: ['password'] },
-      });
+    // Retrieve the user data from the session
+    const user = req.session.user;
 
-      user = userData.get({ plain: true });
-    }
-
-    res.render('profile', {
-      profile_picture: user ? user.profile_picture : '',
-      user: user || {}, 
-      user_id: user ? user.user_id : '', 
-      address: user ? user.address : '', 
-      birthday: user ? user.birthday : '', 
-      about: user ? user.about : '', 
-      email: user ? user.email : '', 
-      phone: user ? user.phone : '', 
-      logged_in: req.session.logged_in || false,
-    });
+    // Render the profile template and pass the user data
+    res.render('profile', { user });
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
 
 
 
