@@ -79,7 +79,22 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
-// Endpoint - /user/login
+router.get('/session', async (req, res) => {
+  // Check if the user is logged in
+  if (req.session.logged_in) {
+    try {
+      // Assuming the session user data contains the data.user_id property
+      const user_id = req.session.data.user_id;
+      res.json({ user_id });
+    } catch (error) {
+      res.status(500).json({ message: 'Error retrieving user ID from session' });
+    }
+  } else {
+    res.status(401).json({ message: 'Unauthorized' });
+  }
+});
+
+
 
 // POST /user/login - User login
 router.post('/login', async (req, res) => {
@@ -98,23 +113,29 @@ router.post('/login', async (req, res) => {
       res.status(400).json({ message: 'Incorrect password, please try again' });
       return;
     }
-    
+
+    // Exclude the password from the user data stored in the session
+    const { password, ...userWithoutPassword } = userData.get({ plain: true });
+
     req.session.save(async () => {
-      req.session.user_id = userData.user_id;
+      req.session.user = userWithoutPassword;
+      req.session.user_id = userWithoutPassword.user_id;
       req.session.logged_in = true;
-      await User.update({ loginstatus: true }, { where: { user_id: req.session.user_id } }); // Set loginstatus to true in the database
-      res.json({ user: userData, message: 'You are now logged in!' });
+      await User.update({ loginstatus: true }, { where: { user_id: req.session.user.user_id } }); // Set loginstatus to true in the database
+      res.json({ user: userWithoutPassword, message: 'You are now logged in!' });
     });
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
+
 // POST /user/logout - User logout
 router.post('/logout', async (req, res) => {
   if (req.session.logged_in) {
-    const userId = req.session.user_id;
+    const userId = req.session.user.user_id; // changed from .id to .user_id
     await User.update({ loginstatus: false }, { where: { user_id: userId } }); // Set loginstatus to false in the database
+
     try {
       req.session.destroy(() => {
         res.status(200).json({ message: 'You are now logged out!' });
