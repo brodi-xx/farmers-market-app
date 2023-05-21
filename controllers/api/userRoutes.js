@@ -79,7 +79,16 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
-// Endpoint - /user/login
+// Get Session user_id
+router.get('/session', (req, res) => {
+  console.log(req.session);
+  // Check if the user is logged in
+  if (req.session.user && req.session.user.user_id) {
+      res.json({ user_id: req.session.user.user_id });
+  } else {
+      res.status(401).json({ message: 'Unauthorized' });
+  }
+});
 
 // POST /user/login - User login
 router.post('/login', async (req, res) => {
