@@ -1,24 +1,28 @@
-.card {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .card:hover .card-img-top {
-    opacity: 0.5;
-  }
-  
-  .card:hover .card-body {
-    display: block;
-  }
-  
-  .card-body {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    background-color: rgba(73, 140, 136, 0.5);
-    color: #fff;
-    padding: 10px;
-  }
+.header-section {
+    background-color: #917066
+}
+
+.card.h-100 {
+    background-color: #498292;
+}
+
+h5,
+h4,
+h1,
+p {
+    color:#efeadd
+}
+
+.btn.btn-outline-dark {
+    color:#efeadd;
+    border-color:#efeadd
+}
+
+.btn.btn-outline-dark:hover {
+    /* Set styles for hover state */
+    background-color: #6d797c;
+}
+
+.rounded-circle {
+    border: 5px solid #498292
+}
