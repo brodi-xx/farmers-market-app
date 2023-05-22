@@ -1,3 +1,51 @@
+/* CSS variables */
+:root {
+    --icon-main: #498292;
+    --icon-hover: #efeadd;
+}
+
+/* Class Selectors */
 .main_background {
     background-color: #efeadd
+}
+
+.navbar {
+    background-color: #b66850
+}
+
+.navbar_icon {
+    color: var(--icon-main)
+}
+
+.navbar_title {
+    font-size:small;
+    color: var(--icon-main)
+}
+
+.btn.btn-outline-success {
+    color: var(--icon-main)
+}
+
+
+.btn.btn-outline-success:hover {
+    background-color: var(--icon-hover);
+    color: var(--icon-main)
+}
+
+.navbar_icon:hover,
+.navbar_title:hover {
+    color: var(--icon-hover)
+}
+
+/* ID Selectors */
+#footer_border {
+    border: 5px solid #b66850
+}
+
+#footer_title {
+    color:#b66850
+}
+
+#copyright_section {
+    background-color:#498292
 }
