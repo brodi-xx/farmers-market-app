@@ -3,11 +3,17 @@ label {
     font-size: larger;
 }
 
+h2
+
 /* Class Selectors */
 .profile_card,
 .profile_container,
 .event_container {
     background-color:#498292
+}
+
+.profile_h2 {
+    color:#b66850
 }
 
 .profile_img {
@@ -31,7 +37,7 @@ label {
 }
 
 /* ID Selectors */
-h2,
+#modal_h2,
 #eventForm {
     color:#efeadd;
     background-color: #498292;
