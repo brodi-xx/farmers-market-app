@@ -32,7 +32,7 @@ router.get('/homepage', (req, res) => {
   res.render('homepage');
 });
 
-router.get('/mycart', async (req, res) => {
+router.get('/mycart', withAuth, async (req, res) => {
   try {
     const cartData = await UserShoppingCart.findOne({
       where: { user_id: req.session.user.user_id },
