@@ -1,7 +1,9 @@
-.cart_section {
-    background-color: #b66850 ;
+#cart_section {
+    background-color: #b66850
 }
 
-#cart_products {
-    color: #efeadd
+#cart_h2,
+#cart_h1 {
+    color: #efeadd;
+    background-color: #b66850
 }

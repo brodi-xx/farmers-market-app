@@ -1,16 +1,18 @@
 <title>TLP - My Cart</title>
 
-<div class="cart_section container-fluid">
-  <h1>My Shopping Cart</h1>
-  <div id="cart">
-    <h2 id="cart_h2">Cart Products</h2>
-    <ul id="cart-items">
-      {{#each cartItems}}
-        <li>{{name}} - ${{price}}</li>
-      {{/each}}
-    </ul>
-    <p>Total: ${{cartTotal}}</p>
-    <button id="checkout-btn">Checkout</button>
+<section id="cart_section" class="banner_main container container_fluid">
+  <div class="container-fluid">
+    <h1 id="cart_h1">My Shopping Cart</h1>
+    <div id="cart">
+      <h2 id="cart_h2">Cart Products</h2>
+      <ul id="cart-items">
+        {{#each cartItems}}
+          <li>{{name}} - ${{price}}</li>
+        {{/each}}
+      </ul>
+      <p>Total: ${{cartTotal}}</p>
+      <button id="checkout-btn">Checkout</button>
+    </div>
   </div>
-</div>
+</section>
   <script src="mycart.js"></script>
