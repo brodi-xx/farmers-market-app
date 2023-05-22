@@ -1,20 +1,52 @@
-<div class='menu-container'>
-  <div class='card-header col-md'>
-    <h2 class='text-center'>
-      Upcoming Events
-    </h2>
+{{!-- <div class="card m-4">
+  <div class="row d_flex" style="background-color: #6d797c">
+    <div class="col-xl-7 col-lg-7 col-md-12 padding_lert">
+      <div class="about_img">
+        <figure class="d-flex flex-row justify-content-center align-items-center">
+            <img class="rounded w-100 m-5" src="images/FMvendor3.jpg" alt="lady watering crops"/>
+            <img class="rounded w-100 m-5" src="images/FMgeneric.jpg" alt="lady watering crops"/>
+        </figure>   
+      </div>
+    </div>
   </div>
-  <div id="googleMap"></div>
-  {{#each events as |event|}}
-  <div  class='card text-center' >
-    <p style="color:black">Host: {{event.user.name}}</p>
-    <p style="color:black">Event: {{event.event_name}}</p>
-    <p style="color:black">Location: {{event.location}}</p>
-    <p style="color:black">Date: {{event.date}}</p>
-    <p style="color:black">Start: {{formatTime event.time_start}} Ends: {{formatTime event.time_end}}</p>
-  </div>
-  {{/each}}
 </div>
+  <!-- end about --> --}}
+
+<!-- Start Map -->
+<div id="map_section" class="d-flex flex-column align-items-center menu-container card p-3">
+  <h2 class="text-center">Search for Markets in Your Neighborhood</h2>
+  <div id="googleMap" class="card m-3"></div>
+  <h2 class="text-center p-2">Upcoming Market Events</h2>
+  <div class="d-flex flex-row justify-content-evenly">
+    {{#each events as |event|}}
+    <div id="event_card" class="card p-3 m-1 w-25">
+      <p><span id="p-text">Event: </span>{{event.event_name}}</p>
+      <p><span id="p-text">Host: </span>{{event.user.name}}</p>
+      <p><span id="p-text">Location: </span>{{event.location}}</p>
+      <p><span id="p-text">Date: </span>{{event.date}}</p>
+      <p><span id="p-text">Start: </span>{{formatTime event.time_start}} Ends: {{formatTime event.time_end}}</p>
+    </div>
+    {{/each}}  
+</div>
+  <!-- end about --> --}}
+
+<!-- Start Map -->
+<div id="map_section" class="d-flex flex-column align-items-center menu-container card p-3">
+  <h2 class="text-center">Search for Markets in Your Neighborhood</h2>
+  <div id="googleMap" class="card m-3"></div>
+  <h2 class="text-center p-2">Upcoming Market Events</h2>
+  <div class="d-flex flex-row justify-content-evenly">
+    {{#each events as |event|}}
+    <div id="event_card" class="card p-3 m-1 w-25">
+      <p><span id="p-text">Event: </span>{{event.event_name}}</p>
+      <p><span id="p-text">Host: </span>{{event.user.name}}</p>
+      <p><span id="p-text">Location: </span>{{event.location}}</p>
+      <p><span id="p-text">Date: </span>{{event.date}}</p>
+      <p><span id="p-text">Start: </span>{{formatTime event.time_start}} Ends: {{formatTime event.time_end}}</p>
+    </div>
+    {{/each}}  
+</div>
+
 
 <!-- JavaScript files -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7LSZB-NbGaXCie1yVVi5ptF0Mta50NvA&libraries=places&callback=initMap"></script>
