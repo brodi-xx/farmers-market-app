@@ -1,22 +1,29 @@
-<div class="profile_card mb-2 p-3 flexy">
-  <img class="profile_img" src={{user.profile_picture}} alt="Profile Picture">
-  <div class="p-3">
-    <h1>{{user.name}}</h1>
-    <p>User ID: {{user.user_id}}</p>
-    <p>Address: {{user.address}}</p>
-    <p>Birthday: {{user.birthday}}</p>
-    <h2>About Me</h2>
-    <p>{{user.about}}</p>
-    <h2>Contact Information</h2>
-    <p>Email: {{user.email}}</p>
-    <p>Phone: {{user.phone}}</p>
+<!-- banner -->
+<section class="banner_main">
+  <div class="container-fluid">
+    <div class="row" style="background-color: #498292">
+      <img class="col-4 p-4" src="images/FM-consumer1.jpg" alt="brand logo"/>
+      <div class="col-4 profile_card d-flex flex-column align-items-center mb-2 p-3 flexy">
+        <img class="profile_img rounded-circle w-75 h-auto" src={{user.profile_picture}} alt="Profile Picture">
+        <div class="p-3">
+          <h2>About Me</h2>
+          <p><span class="fs-5">Name: </span>{{user.name}}</p>
+          <p><span class="fs-5">Address: </span>{{user.address}}</p>
+          <p><span class="fs-5">Birthday: </span>{{user.birthday}}</p>
+          <p>{{user.about}}</p>
+          <h2>Contact Information</h2>
+          <p><span class="fs-5">Email: </span>{{user.email}}</p>
+          <p><span class="fs-5">Phone: </span>{{user.phone}}</p>
+        </div>
+      </div>
+      <img class="col-4 p-4" src="images/FM-vendor2-2.jpg" alt="brand logo"/>
+    </div>
   </div>
   <div class="p-3">
+    <button class="blocky" id="logout">Logout</button>
     <button id="createEvent" class="blocky">Create Event</button>
   </div>
-</div>
-<button class="blocky" id="logout">Logout</button>
-
+</section>
 <!-- Modal -->
 <div id="eventModal" class="modal">
   <div class="modal-content">
