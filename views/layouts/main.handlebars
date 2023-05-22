@@ -21,9 +21,10 @@
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <!-- Responsive-->
   <link rel="stylesheet" href="css/responsive.css">
+  <!-- Main handlebar stylesheet -->
+  <link rel="stylesheet" href="css/mainhandlebar.css">
   <!-- Event Stylesheet -->
   <link rel="stylesheet" href="css/events.css">
-  <!-- Products Hover -->
   <!-- Products stylesheet -->
   <link rel="stylesheet" href="css/productspage.css">
   <!-- Profile stylesheet-->
@@ -44,17 +45,17 @@
   <script src="https://kit.fontawesome.com/91552cb926.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="d-flex flex-column flex-wrap" style="background-color: #efeadd">
+<body class="main_background d-flex flex-column flex-wrap">
   <!-- loader  -->
-  <div class="loader_bg" style="background-color: #efeadd">
+  <div class="main_background loader_bg">
     <div class="loader"><img src="images/loadingPlant.gif" alt="plant" /></div>
   </div>
   <!-- end loader -->
   <header class="p-4">
-    <nav class="navbar fixed-top" style="background-color: #b66850; border-bottom: 2px solid #498292">
+    <nav class="navbar fixed-top">
       <div class="container-fluid">
         <div class="col-4">
-          <a class="navbar-brand" href="../homepage"><i class="fa-sharp fa-solid fa-house-chimney fa-xl" style="color: #498292;"></i></a>
+          <a class="navbar-brand" href="../homepage"><i class="navbar_icon fa-sharp fa-solid fa-house-chimney fa-xl" style=";"></i></a>
         </div>
         <div class="col-4">
           <form class="d-flex" role="search">
@@ -63,20 +64,20 @@
           </form>
         </div>
         <div class="col-1 d-flex flex-column align-items-center">
-          <a href="../events"><i class="fa-solid fa-store fa-xl" style="color: #498292;"></i></a>
-          <a href="../events" style="font-size:small; color: #498292">Markets</a>
+          <a href="../events"><i class="navbar_icon fa-solid fa-store fa-xl"></i></a>
+          <a href="../events" class="navbar_title">Markets</a>
         </div>
         <div class="col-1 d-flex flex-column align-items-center">
-          <a href="../productspage"><i class="fa-solid fa-carrot fa-xl" style="color: #498292;"></i></a>
-          <a href="../productspage" style="font-size:small; color: #498292">Products</a>
+          <a href="../productspage"><i class=" navbar_icon fa-solid fa-carrot fa-xl"></i></a>
+          <a href="../productspage" class="navbar_title">Products</a>
         </div>
         <div class="col-1 d-flex flex-column align-items-center">
-          <a href="../mycart"><i class="fa-solid fa-cart-shopping fa-xl" style="color: #498292"></i></a>
-          <a href="../mycart" style="font-size:small; color: #498292">My Cart</a>
+          <a href="../mycart"><i class="navbar_icon fa-solid fa-cart-shopping fa-xl"></i></a>
+          <a href="../mycart" class="navbar_title">My Cart</a>
         </div>
         <div class="col-1 d-flex flex-column align-items-center">
-          <a href="../profile"><i class="fa-regular fa-user fa-xl" style="color: #498292"></i></a>
-          <a href="../profile" style="font-size:small; color: #498292">My Profile</a>
+          <a href="../profile"><i class="navbar_icon fa-regular fa-user fa-xl"></i></a>
+          <a href="../profile" class="navbar_title">My Profile</a>
         </div>
       </div>
     </nav>
@@ -87,13 +88,13 @@
   </main>
 
   <!--  footer -->
-  <footer class="pt-5">
-    <div class="footer p-0" style="border: 5px solid #b66850">
+  <footer>
+    <div id="footer_border" class="footer p-0">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
             <div class="cont pt-3">
-              <h3 style="color:#b66850">Let’s talk Business</h3>
+              <h3 id="footer_title">Let’s talk Business</h3>
               <p>Are you a local farmer, artisan, or producer looking to expand your reach and connect with a wider customer base? Join our Farmers Market app as a vendor and become a part of the movement to promote sustainable agriculture, support local farmers, and provide customers with access to fresh, wholesome products. Together, let's cultivate a thriving local food ecosystem and empower communities to make conscious, responsible choices. Contact us today to explore the possibilities of joining our project as a vendor!</p>
               <a class="read_more" href="../aboutus">About Us</a>
             </div>
@@ -101,7 +102,7 @@
         </div>
       </div>
       <!-- Section: Social media -->
-      <div class="copyright mt-4 p-2" style="background-color:#498292">
+      <div id="copyright_section" class="copyright mt-4 p-2">
         <div class="container">
           <div class="row">
             <div class="col-md-12">
