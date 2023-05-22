@@ -25,7 +25,9 @@ label {
 }
 
 .modal-content {
-    margin: 10% 25%
+    position: relative;
+    top: 10rem;
+    left: 20rem;
 }
 
 /* ID Selectors */
