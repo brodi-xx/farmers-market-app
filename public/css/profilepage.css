@@ -1,0 +1,55 @@
+/* Element Selectors */
+label {
+    font-size: larger;
+}
+
+/* Class Selectors */
+.profile_card,
+.profile_container,
+.event_container {
+    background-color:#498292
+}
+
+.profile_img {
+    border: 5px solid #b66850
+}
+
+.btn.btn-outline-secondary {
+    color:#efeadd;
+    border-color:#efeadd
+}
+
+.btn.btn-outline-secondary:hover {
+    /* Set styles for hover state */
+    background-color: #b66850;
+}
+
+.modal-content {
+    position: relative;
+    top: 10rem;
+    left: 20rem;
+}
+
+/* ID Selectors */
+h2,
+#eventForm {
+    color:#efeadd;
+    background-color: #498292;
+    border:3px solid #b66850;
+    padding: .5rem 1rem
+}
+
+#eventName,
+#eventLocation,
+#eventDate,
+#startTime,
+#endTime {
+    background-color: #efeadd;
+    border: 1px solid #b66850;
+    margin: 0 0 .5rem 0;
+    padding: 0 0 .25rem .5rem
+}
+
+#eventModal {
+    background-color: rgb(109, 121, 124, .8);
+}
