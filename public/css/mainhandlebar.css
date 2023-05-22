@@ -10,7 +10,8 @@
 }
 
 .navbar {
-    background-color: #b66850
+    background-color: #b66850;
+    border-bottom: 2px solid #498292
 }
 
 .navbar_icon {
