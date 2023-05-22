@@ -49,6 +49,7 @@ User.init(
     profile_picture: {
       type: DataTypes.STRING,
       allowNull: true,
+      defaultValue: "/images/pig-default-profile.png"
     },
     privatepolicyagreement: {
       type: DataTypes.BOOLEAN,
