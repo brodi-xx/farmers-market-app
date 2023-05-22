@@ -10,7 +10,8 @@
 }
 
 .navbar {
-    background-color: #b66850
+    background-color: #b66850;
+    border-bottom: 2px solid var(--icon-main);
 }
 
 .navbar_icon {
@@ -43,7 +44,8 @@
 }
 
 #footer_title {
-    color:#b66850
+    color:#b66850;
+    font-size: xx-large
 }
 
 #copyright_section {

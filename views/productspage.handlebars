@@ -1,10 +1,10 @@
-<body class="main-layout">
+<title>TLP - Products</title>
 
 <!-- our_fruit -->
 <div id="our_fruit" class="header-section our_fruit p-4">
     <div class="text-center">
         <div class="col-xl-12">
-            <h1 class="card-title m-3">Vendor Products</h1>
+            <h1 id="product_h1" class="card-title m-3">Vendor Products</h1>
             <div class="header-section d_flex">
                 <div class="col-xl-8 col-lg-8 col-md-8 padding_lert">
                     <div class="d-flex flex-row">
@@ -14,8 +14,8 @@
                             <div class="our_fruit_img card" style="background-color: #498292">
                                 <img class="card-img-top rounded pt-3" style="background-color: #498292"src="/images/produce-img1.jpg" alt="fruits-vegetables"/>
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">Fruits and Vegetables</h5>
-                                    <p class="card-text flex-wrap">We have scoured the region to find farmers who have mastered the art of growing premium-grade fruits and vegetables. From succulent, vine-ripened tomatoes to crisp, organic lettuce leaves, the produce from our vendors will transport you to a world of unparalleled freshness. </p>
+                                    <h5 class="product_h5 card-title">Fruits and Vegetables</h5>
+                                    <p class="product_p card-text flex-wrap">We have scoured the region to find farmers who have mastered the art of growing premium-grade fruits and vegetables. From succulent, vine-ripened tomatoes to crisp, organic lettuce leaves, the produce from our vendors will transport you to a world of unparalleled freshness. </p>
                                 </div>
                             </div>
                         </div>
@@ -25,8 +25,8 @@
                             <div class="our_fruit_img card" style="background-color: #498292">
                                 <img class="card-img-top rounded pt-3" style="background-color: #498292"src="images/Meat-img1.jpg" alt="meat-poultry"/>
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">Meats and Poultry</h5>
-                                    <p class="card-text">Our vendors offer meats and poultry that are equally exceptional, sourced from ethically raised animals that enjoy a life of blissful freedom. Delight in the tenderness of grass-fed beef, savor the succulence of pasture-raised chicken, and indulge in the rich flavors of thoughtfully cured charcuterie selections..</p>
+                                    <h5 class="product_h5 card-title">Meats and Poultry</h5>
+                                    <p class="product_p card-text">Our vendors offer meats and poultry that are equally exceptional, sourced from ethically raised animals that enjoy a life of blissful freedom. Delight in the tenderness of grass-fed beef, savor the succulence of pasture-raised chicken, and indulge in the rich flavors of thoughtfully cured charcuterie selections..</p>
                                 </div>
                             </div>
                         </div>
@@ -36,8 +36,8 @@
                             <div class="our_fruit_img card" style="background-color: #498292">
                                 <img class="card-img-top rounded pt-3" style="background-color: #498292"src="images/artisinal-img1.jpg" alt="meat-poultry"/>
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">Artisanal Goods</h5>
-                                    <p class="card-text">It doesn't stop there! Our artisanal producers bring their passion and expertise to every batch of cheese, bread, honey, and preserves they create. Each product showcases the dedication and skill that goes into its making, resulting in culinary delights that will leave you craving more.</p>
+                                    <h5 class="product_h5 card-title">Artisanal Goods</h5>
+                                    <p class="product_p card-text">It doesn't stop there! Our artisanal producers bring their passion and expertise to every batch of cheese, bread, honey, and preserves they create. Each product showcases the dedication and skill that goes into its making, resulting in culinary delights that will leave you craving more.</p>
                                 </div>
                             </div>
                         </div>
@@ -85,31 +85,6 @@
             </div>
         </div>
     </div>
+<script src="js/productspage.js"></script>
 </section>
 
-<!-- Modal -->
-<div class="modal fade" id="addToCartModal" tabindex="-1" aria-labelledby="addToCartModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="addToCartModalLabel">Add to Cart</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form id="addToCartForm">
-          <div class="mb-3">
-            <label for="amountInput" class="form-label">Amount:</label>
-            <input type="number" class="form-control" id="amountInput" placeholder="Enter the amount" required>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button type="submit" form="addToCartForm" class="btn btn-primary">Add to Cart</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<script src="js/productspage.js"></script>
