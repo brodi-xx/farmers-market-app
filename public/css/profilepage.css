@@ -1,8 +1,13 @@
+/* Element Selectors */
+label {
+    font-size: larger;
+}
+
+/* Class Selectors */
 .profile_card,
 .profile_container,
 .event_container {
     background-color:#498292
-
 }
 
 .profile_img {
@@ -23,10 +28,7 @@
     margin: 10% 25%
 }
 
-label {
-    font-size: larger;
-}
-
+/* ID Selectors */
 h2,
 #eventForm {
     color:#efeadd;
