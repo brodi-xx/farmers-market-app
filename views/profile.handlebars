@@ -1,43 +1,75 @@
-<div class="profile_card mb-2 p-3 flexy">
-  <img class="profile_img" src={{user.profile_picture}} alt="Profile Picture">
-  <div class="p-3">
-    <h1>{{user.name}}</h1>
-    <p>User ID: {{user.user_id}}</p>
-    <p>Address: {{user.address}}</p>
-    <p>Birthday: {{user.birthday}}</p>
-    <h2>About Me</h2>
-    <p>{{user.about}}</p>
-    <h2>Contact Information</h2>
-    <p>Email: {{user.email}}</p>
-    <p>Phone: {{user.phone}}</p>
+<!-- start profile -->
+<section class="banner_main">
+  <div class="container-fluid">
+    <div class="profile_container row p-5">
+      <div class="profile_card d-flex flex-row align-items-start mb-2 p-3 flexy">
+        <img class="profile_img rounded-circle w-25 h-auto" src="/images/pig-default-profile.png" alt="Profile Picture">
+        {{!-- <img class="profile_img rounded-circle w-25 h-auto" src={{user.profile_picture}} alt="Profile Picture"> --}}
+        <div class="m-5 p-3">
+          <h2 class="profile_h2">About Me</h2>
+          <p><span class="fs-5">Name: </span>{{user.name}}</p>
+          <p><span class="fs-5">Address: </span>{{user.address}}</p>
+          <p><span class="fs-5">Birthday: </span>{{user.birthday}}</p>
+          <p>{{user.about}}</p>
+        </div>
+        <div class="m-5 p-3">
+          <h2 class="profile_h2">Contact Information</h2>
+          <p><span class="fs-5">Email: </span>{{user.email}}</p>
+          <p><span class="fs-5">Phone: </span>{{user.phone}}</p>
+        </div>
+      </div>
+        <button type="button" class="btn btn-outline-secondary blocky w-25" id="logout">Logout</button>
+    </div>
   </div>
-  <div class="p-3">
-    <button id="createEvent" class="blocky">Create Event</button>
+</section>
+<!-- end profile -->
+
+<!-- start event section -->
+<section class="banner_main mt-5">
+  <div class="container-fluid">
+    <div class="profile_container row p-3">
+      <div class=" event_container d-flex flex-row">
+        <img class="col-4 p-4" src="images/FM-consumer1.jpg" alt="consumer stock image"/>
+        <div class="d-flex flex-column justify-content-between text-center my-5">
+          <h2 class="profile_h2">Add Your Market Event</h2>
+          <p>Exciting News! We are thrilled to announce that we now offer the option for event organizers to add their farmers market events to our app's comprehensive list. If you are hosting a farmers market, food festival, or any related event, we invite you to join our platform and reach a wider audience of eager food enthusiasts. By adding your event to our list, you can connect with individuals who are passionate about supporting local agriculture and experiencing the vibrant atmosphere of farmers markets. Our app provides a convenient way for attendees to explore event details, browse participating vendors, and plan their visit. Join us in celebrating the beauty of community gatherings and the joy of local food by adding your event to our app today!</p>
+          <div class="d-flex align-items-end">
+            <button type="button" class="btn btn-outline-secondary blocky w-50" id="createEvent">Create Event</button>
+          </div>
+        </div>
+        <img class="col-4 p-4" src="images/FM-vendor2-2.jpg" alt="vendor stock image"/>
+      </div>
+    </div>
   </div>
-</div>
-<button class="blocky" id="logout">Logout</button>
+</section>
+<!-- end event section -->
 
 <!-- Modal -->
 <div id="eventModal" class="modal">
-  <div class="modal-content">
-    <h2>Create Event</h2>
+  <div class="modal-content w-50">
+    <h2 id="modal_h2" class="m-0">Create Event</h2>
     <form id="eventForm">
-      <label for="eventName">Event Name:</label>
+      <label class="formLabel m-0" for="eventName">Event Name:</label>
       <input type="text" id="eventName" name="eventName">
-
-      <label for="eventDate">Date:</label>
-      <input type="date" id="eventDate" name="eventDate">
-
-      <label for="startTime">Start Time:</label>
-      <input type="time" id="startTime" name="startTime">
-
-      <label for="endTime">End Time:</label>
-      <input type="time" id="endTime" name="endTime">
-
-      <label for="eventLocation">Location:</label>
+      <div class="formLabel d-flex flex-wrap justify-content-between">
+        <div>
+          <label for="eventDate">Date:</label>
+          <input type="date" id="eventDate" name="eventDate">
+        </div>
+        <div>
+          <label for="startTime">Start Time:</label>
+          <input type="time" id="startTime" name="startTime">
+        </div>
+        <div>
+          <label for="endTime">End Time:</label>
+          <input type="time" id="endTime" name="endTime">
+        </div>
+      </div>
+      <label class="formLabel" for="eventLocation">Location:</label>
       <input type="text" id="eventLocation" name="eventLocation">
-
-      <button type="submit" id="submitEvent" class="blocky">Create</button>
+      <div class="d-flex justify-content-center">
+        <button type="submit" id="submitEvent" class="btn btn-outline-secondary blocky w-25">Create</button>
+      </div>
     </form>
   </div>
 </div>
