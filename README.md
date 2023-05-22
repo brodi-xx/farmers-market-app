@@ -30,7 +30,9 @@ Here are a few screenshots showcasing the features of the This Little Piggy appl
 2.  Upcoming Markets
 ![Markets](public\images\ssevents1.png)  
 3.  Products Page 
-![Products](screenshot2.png): 
+![Products1](public\images\ssprodpage1.png):
+![Products2](public\images\ssprodpage2.png):
+![Products3](public\images\ssprodpage3.png): 
 4. My Cart 
 ![My Cart](public\images\ssmycart.png)
 5. Sign Up 
