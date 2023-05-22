@@ -1,21 +1,58 @@
 /* Class selectors */
-.banner_section {
-    background-color: #498292
+.margin_color {
+    background-color: #efeadd
 }
 
-#banner_h2 {
+.fa-github {
+    color: #498292
+}
+
+.fa-user {
+    color: #917066
+}
+
+.fa-linkedin {
     color: #b66850
 }
 
+/* ID Selectors */
+#about_h2,
+#banner_h2,
+#brand_title {
+    color: #b66850
+}
+
+#team_h2,
+#testimonial_text,
+#product_text,
+#about_text,
 #banner_text {
     color:#efeadd
 }
 
+#github,
+#testimonial_h2,
+#product_h2 {
+    color: #498292
+}
+
 #brand_title {
     font-size:x-large;
-    color:#b66850
 }
 
 #brand_img {
     border: 5px solid #b66850
+}
+
+#banner_section {
+    background-color: #498292
+}
+#team_section,
+#about_section {
+    background-color: #6d797c
+}
+
+#testimonial_section,
+#product_section {
+    background-color: #917066
 }
