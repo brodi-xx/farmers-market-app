@@ -8,6 +8,7 @@ const unregisteredShoppingCartRoutes = require('./unregisteredShoppingCartRoutes
 const unregisteredCartProduct = require('./unregisteredCartProductRoutes')
 const purchaseHistoryRoutes = require('./purchaseHistoryRoutes');
 const userEventRoutes = require('./userEventRoutes')
+const sessionRoutes = require('./sessionRoutes')
 
 router.use('/user', userRoutes);
 router.use('/user-payment', userPaymentMethod);
@@ -19,5 +20,6 @@ router.use('/unregistered-cart-product', unregisteredCartProduct);
 router.use('/user-purchase-history', purchaseHistoryRoutes);
 router.use('/userEventRoutes', userEventRoutes);
 router.use('/events', userEventRoutes);
+router.use('/session', sessionRoutes)
 
 module.exports = router;
