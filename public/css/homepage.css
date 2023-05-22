@@ -1,0 +1,66 @@
+/* CSS Variables */
+:root {
+    --color-white: #efeadd;
+    --color-blue: #498292;
+    --color-brown: #917066;
+    --color-rust: #b66850;
+}
+
+/* Class selectors */
+.margin_color {
+    background-color: var(--color-white)
+}
+
+.fa-github {
+    color: var(--color-blue)
+}
+
+.fa-user {
+    color: var(--color-brown)
+}
+
+.fa-linkedin {
+    color: var(--color-rust)
+}
+
+/* ID Selectors */
+#about_h2,
+#banner_h2,
+#brand_title {
+    color: var(--color-rust)
+}
+
+#team_h2,
+#testimonial_text,
+#product_text,
+#about_text,
+#banner_text {
+    color: var(--color-white)
+}
+
+#github,
+#testimonial_h2,
+#product_h2 {
+    color: var(--color-blue)
+}
+
+#brand_title {
+    font-size:x-large;
+}
+
+#brand_img {
+    border: 5px solid var(--color-rust)
+}
+
+#banner_section {
+    background-color: var(--color-blue)
+}
+#team_section,
+#about_section {
+    background-color: #6d797c
+}
+
+#testimonial_section,
+#product_section {
+    background-color: var(--color-brown)
+}
