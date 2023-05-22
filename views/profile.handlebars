@@ -46,26 +46,34 @@
 
 <!-- Modal -->
 <div id="eventModal" class="modal">
-  <div class="modal-content w-50 p-3">
-    <h2 class="m-0">Create Event</h2>
-    <form id="eventForm">
-      <label for="eventName">Event Name:</label>
-      <input type="text" id="eventName" name="eventName">
+  <div id="modalPosition">
+    <div class="modal-content w-50">
+      <h2 class="m-0">Create Event</h2>
+      <form id="eventForm">
+        <label class="formLabel m-0" for="eventName">Event Name:</label>
+        <input type="text" id="eventName" name="eventName">
+        <div class="formLabel d-flex flex-wrap justify-content-between">
+          <div>
+            <label for="eventDate">Date:</label>
+            <input type="date" id="eventDate" name="eventDate">
+          </div>
+          <div>
+            <label for="startTime">Start Time:</label>
+            <input type="time" id="startTime" name="startTime">
+          </div>
+          <div>
+            <label for="endTime">End Time:</label>
+            <input type="time" id="endTime" name="endTime">
+          </div>
+        </div>
 
-      <label for="eventDate">Date:</label>
-      <input type="date" id="eventDate" name="eventDate">
-
-      <label for="startTime">Start Time:</label>
-      <input type="time" id="startTime" name="startTime">
-
-      <label for="endTime">End Time:</label>
-      <input type="time" id="endTime" name="endTime">
-
-      <label for="eventLocation">Location:</label>
-      <input type="text" id="eventLocation" name="eventLocation">
-
-      <button type="submit" id="submitEvent" class="blocky">Create</button>
-    </form>
+        <label class="formLabel" for="eventLocation">Location:</label>
+        <input type="text" id="eventLocation" name="eventLocation">
+        <div class="d-flex justify-content-center">
+          <button type="submit" id="submitEvent" class="btn btn-outline-secondary blocky w-25">Create</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
 
