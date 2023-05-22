@@ -1,25 +1,33 @@
+/* CSS Variables */
+:root {
+    --color-white: #efeadd;
+    --color-blue: #498292;
+    --color-brown: #917066;
+    --color-rust: #b66850;
+}
+
 /* Class selectors */
 .margin_color {
-    background-color: #efeadd
+    background-color: var(--color-white)
 }
 
 .fa-github {
-    color: #498292
+    color: var(--color-blue)
 }
 
 .fa-user {
-    color: #917066
+    color: var(--color-brown)
 }
 
 .fa-linkedin {
-    color: #b66850
+    color: var(--color-rust)
 }
 
 /* ID Selectors */
 #about_h2,
 #banner_h2,
 #brand_title {
-    color: #b66850
+    color: var(--color-rust)
 }
 
 #team_h2,
@@ -27,13 +35,13 @@
 #product_text,
 #about_text,
 #banner_text {
-    color:#efeadd
+    color: var(--color-white)
 }
 
 #github,
 #testimonial_h2,
 #product_h2 {
-    color: #498292
+    color: var(--color-blue)
 }
 
 #brand_title {
@@ -41,11 +49,11 @@
 }
 
 #brand_img {
-    border: 5px solid #b66850
+    border: 5px solid var(--color-rust)
 }
 
 #banner_section {
-    background-color: #498292
+    background-color: var(--color-blue)
 }
 #team_section,
 #about_section {
@@ -54,5 +62,5 @@
 
 #testimonial_section,
 #product_section {
-    background-color: #917066
+    background-color: var(--color-brown)
 }
