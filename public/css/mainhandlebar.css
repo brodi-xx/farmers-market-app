@@ -11,7 +11,7 @@
 
 .navbar {
     background-color: #b66850;
-    border-bottom: 2px solid #498292
+    border-bottom: 2px solid var(--icon-main);
 }
 
 .navbar_icon {
