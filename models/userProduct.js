@@ -43,7 +43,7 @@ UserProduct.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    amount_available: {
+    amount: {
       type: DataTypes.FLOAT,
       allowNull: false,
       validate: {

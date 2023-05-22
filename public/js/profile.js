@@ -38,9 +38,7 @@ submitBtn.onclick = async function(event) {
   // Fetch the user_id from the current session
   try {
     const response = await fetch('/api/session');
-    console.log(response);
     const data = await response.json();
-    console.log(data);
 
     if (data.user_id) {
       let eventName = document.getElementById("eventName").value;

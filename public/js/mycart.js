@@ -1,3 +1,5 @@
+
+
 const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
 const cartItemsList = document.getElementById("cart-items");
 const cartTotal = document.getElementById("cart-total");
