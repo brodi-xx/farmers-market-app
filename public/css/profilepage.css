@@ -22,3 +22,17 @@ h2 {
     /* Set styles for hover state */
     background-color: #b66850;
 }
+
+.modal-content {
+    margin: 10% 25%
+}
+
+#eventModal {
+    background-color: rgb(109, 121, 124, .8);
+}
+h2,
+#eventForm,
+#eventName {
+    background-color: #498292;
+    border-bottom:2px dashed #b66850;
+}
