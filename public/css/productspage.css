@@ -6,10 +6,10 @@
     background-color: #498292;
 }
 
-h5,
-h4,
-h1,
-p {
+.product_h5,
+.product_h4,
+#product_h1,
+.product_p {
     color:#efeadd
 }
 
