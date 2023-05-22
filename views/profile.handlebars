@@ -1,27 +1,29 @@
 <!-- banner -->
 <section class="banner_main">
   <div class="container-fluid">
-    <div class="row" style="background-color: #498292">
-      <img class="col-4 p-4" src="images/FM-consumer1.jpg" alt="consumer stock image"/>
-      <div class="col-4 profile_card d-flex flex-column align-items-center mb-2 p-3 flexy">
-        <img class="profile_img rounded-circle w-75 h-auto" src={{user.profile_picture}} alt="Profile Picture">
-        <div class="p-3">
+    <div class="profile_container row p-5">
+      <div class="profile_card d-flex flex-row align-items-start mb-2 p-3 flexy">
+        <img class="profile_img rounded-circle w-25 h-auto" src={{user.profile_picture}} alt="Profile Picture">
+        <div class="m-5 p-3">
           <h2>About Me</h2>
           <p><span class="fs-5">Name: </span>{{user.name}}</p>
           <p><span class="fs-5">Address: </span>{{user.address}}</p>
           <p><span class="fs-5">Birthday: </span>{{user.birthday}}</p>
           <p>{{user.about}}</p>
+        </div>
+        <div class="m-5 p-3">
           <h2>Contact Information</h2>
           <p><span class="fs-5">Email: </span>{{user.email}}</p>
           <p><span class="fs-5">Phone: </span>{{user.phone}}</p>
         </div>
-        <button type="button" class="btn btn-outline-secondary blocky" id="logout">Logout</button>
       </div>
-      <img class="col-4 p-4" src="images/FM-vendor2-2.jpg" alt="vendor stock image"/>
+        <button type="button" class="btn btn-outline-secondary blocky w-25" id="logout">Logout</button>
     </div>
   </div>
   <div class="p-3">
+      {{!-- <img class="col-4 p-4" src="images/FM-consumer1.jpg" alt="consumer stock image"/> --}}
     <button id="createEvent" class="blocky">Create Event</button>
+      {{!-- <img class="col-4 p-4" src="images/FM-vendor2-2.jpg" alt="vendor stock image"/> --}}
   </div>
 </section>
 <!-- Modal -->
