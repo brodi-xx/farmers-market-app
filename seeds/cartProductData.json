@@ -2,67 +2,67 @@
     {
       "cart_id": 1,
       "product_id": 3,
-      "quantity": 3
+      "amount": 3
     },
     {
       "cart_id": 1,
       "product_id": 7,
-      "quantity": 2
+      "amount": 2
     },
     {
       "cart_id": 1,
       "product_id": 10,
-      "quantity": 4
+      "amount": 4
     },
     {
       "cart_id": 2,
       "product_id": 5,
-      "quantity": 1
+      "amount": 1
     },
     {
       "cart_id": 2,
       "product_id": 12,
-      "quantity": 5
+      "amount": 5
     },
     {
       "cart_id": 2,
       "product_id": 17,
-      "quantity": 3
+      "amount": 3
     },
     {
       "cart_id": 3,
       "product_id": 2,
-      "quantity": 2
+      "amount": 2
     },
     {
       "cart_id": 3,
       "product_id": 9,
-      "quantity": 4
+      "amount": 4
     },
     {
       "cart_id": 4,
       "product_id": 8,
-      "quantity": 5
+      "amount": 5
     },
     {
       "cart_id": 5,
       "product_id": 1,
-      "quantity": 3
+      "amount": 3
     },
     {
       "cart_id": 5,
       "product_id": 6,
-      "quantity": 1
+      "amount": 1
     },
     {
       "cart_id": 5,
       "product_id": 14,
-      "quantity": 2
+      "amount": 2
     },
     {
       "cart_id": 5,
       "product_id": 19,
-      "quantity": 4
+      "amount": 4
     }
   ]
   

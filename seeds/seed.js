@@ -48,14 +48,32 @@ const seedDatabase = async () => {
   const userProducts = await Promise.all(userProductsPromises);
   console.log('\n----- USER PRODUCTS SEEDED -----\n');
 
-  // Seed user shopping carts
-  const userShoppingCartsPromises = userShoppingCartData.map((cart, index) => {
-    const foundUser = users[index % users.length];
-    return UserShoppingCart.create({
-      ...cart,
-      user_id: foundUser.user_id,
-    });
+// Seed user shopping carts
+const userShoppingCartsPromises = userShoppingCartData.map((cart, index) => {
+  const foundUser = users[index % users.length];
+  return UserShoppingCart.create({
+    ...cart,
+    user_id: foundUser.user_id,
   });
+});
+const userShoppingCarts = await Promise.all(userShoppingCartsPromises);
+console.log('\n----- USER SHOPPING CARTS SEEDED -----\n');
+
+// Seed cart products
+const cartProductPromises = cartProductData.map((cartProduct, index) => {
+  const foundUserProduct = userProducts[index % userProducts.length];
+  const foundUserShoppingCart = userShoppingCarts[index % userShoppingCarts.length];
+  
+  return CartProduct.create({
+    ...cartProduct,
+    product_id: foundUserProduct.product_id,
+    cart_id: foundUserShoppingCart.cart_id,
+  });
+});
+await Promise.all(cartProductPromises);
+console.log('\n----- CART PRODUCTS SEEDED -----\n');
+
+
 
   function convertTo12Hour(time) {
     const [hours, minutes, seconds] = time.split(':');

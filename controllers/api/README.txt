@@ -24,7 +24,7 @@ userProductRoutes:
         "product_name": "Oranges",
         "description": "Sweet and tangy oranges from Florida.",
         "category": "Fruit",
-        "quantity": 8, //Int
+        "amount": 8, //Int
         "price": 2.49, //Float
         "image_url": "https://images.unsplash.com/photo-1603337013576-7b08f1c93d7d"
         }
@@ -42,7 +42,7 @@ cartProductRoutes:
         {
         "cart_id": 1, //Int
         "product_id": 3, //Int
-        "quantity": 3 //Int
+        "amount": 3 //Int
         }
 
     Note: Many to Many accociation with userShoppingCart and userProduct

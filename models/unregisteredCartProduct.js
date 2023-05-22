@@ -27,7 +27,7 @@ UnregisteredCartProduct.init(
         key: 'product_id',
       },
     },
-    quantity: {
+    amount: {
       type: DataTypes.INTEGER,
       defaultValue: 1,
     },

@@ -4,11 +4,12 @@ const User = require('./User');
 const UserProduct = require('./userProduct');
 const CartProduct = require('./cartProduct');
 
+
 class UserShoppingCart extends Model {}
 
 UserShoppingCart.init(
   {
-    id: {
+    cart_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -26,13 +27,6 @@ UserShoppingCart.init(
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
     },
-    product: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: UserProduct,
-        key: 'product_id'
-      }
-    }
   },
   {
     sequelize,
@@ -65,7 +59,5 @@ UserProduct.belongsToMany(UserShoppingCart, {
   foreignKey: 'product_id',
   onDelete: 'CASCADE',
 });
-
-// console.log(Object.keys(UserShoppingCart.prototype));
 
 module.exports = UserShoppingCart;
