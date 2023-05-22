@@ -10,3 +10,13 @@ h2 {
 .profile_img {
     border: 5px solid #b66850
 }
+
+.btn.btn-outline-secondary {
+    color:#efeadd;
+    border-color:#efeadd
+}
+
+.btn.btn-outline-secondary:hover {
+    /* Set styles for hover state */
+    background-color: #b66850;
+}

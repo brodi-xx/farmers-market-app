@@ -2,7 +2,7 @@
 <section class="banner_main">
   <div class="container-fluid">
     <div class="row" style="background-color: #498292">
-      <img class="col-4 p-4" src="images/FM-consumer1.jpg" alt="brand logo"/>
+      <img class="col-4 p-4" src="images/FM-consumer1.jpg" alt="consumer stock image"/>
       <div class="col-4 profile_card d-flex flex-column align-items-center mb-2 p-3 flexy">
         <img class="profile_img rounded-circle w-75 h-auto" src={{user.profile_picture}} alt="Profile Picture">
         <div class="p-3">
@@ -15,12 +15,12 @@
           <p><span class="fs-5">Email: </span>{{user.email}}</p>
           <p><span class="fs-5">Phone: </span>{{user.phone}}</p>
         </div>
+        <button type="button" class="btn btn-outline-secondary blocky" id="logout">Logout</button>
       </div>
-      <img class="col-4 p-4" src="images/FM-vendor2-2.jpg" alt="brand logo"/>
+      <img class="col-4 p-4" src="images/FM-vendor2-2.jpg" alt="vendor stock image"/>
     </div>
   </div>
   <div class="p-3">
-    <button class="blocky" id="logout">Logout</button>
     <button id="createEvent" class="blocky">Create Event</button>
   </div>
 </section>
