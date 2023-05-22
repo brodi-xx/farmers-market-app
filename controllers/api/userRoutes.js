@@ -79,22 +79,6 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
-router.get('/session', async (req, res) => {
-  // Check if the user is logged in
-  if (req.session.logged_in) {
-    try {
-      // Assuming the session user data contains the data.user_id property
-      const user_id = req.session.data.user_id;
-      res.json({ user_id });
-    } catch (error) {
-      res.status(500).json({ message: 'Error retrieving user ID from session' });
-    }
-  } else {
-    res.status(401).json({ message: 'Unauthorized' });
-  }
-});
-
-
 
 // POST /user/login - User login
 router.post('/login', async (req, res) => {
