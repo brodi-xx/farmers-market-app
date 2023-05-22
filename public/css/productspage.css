@@ -1,0 +1,28 @@
+.header-section {
+    background-color: #917066
+}
+
+.card.h-100 {
+    background-color: #498292;
+}
+
+h5,
+h4,
+h1,
+p {
+    color:#efeadd
+}
+
+.btn.btn-outline-dark {
+    color:#efeadd;
+    border-color:#efeadd
+}
+
+.btn.btn-outline-dark:hover {
+    /* Set styles for hover state */
+    background-color: #6d797c;
+}
+
+.rounded-circle {
+    border: 5px solid #498292
+}

@@ -133,7 +133,7 @@ router.post('/login', async (req, res) => {
 // POST /user/logout - User logout
 router.post('/logout', async (req, res) => {
   if (req.session.logged_in) {
-    const userId = req.session.user.user_id; // changed from .id to .user_id
+    const userId = req.session.user.user_id;
     await User.update({ loginstatus: false }, { where: { user_id: userId } }); // Set loginstatus to false in the database
 
     try {
