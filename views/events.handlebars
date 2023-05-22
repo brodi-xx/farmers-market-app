@@ -6,12 +6,12 @@
   </div>
   <div id="googleMap"></div>
   {{#each events as |event|}}
-  <div class='card text-center'>
-    <p>Host: {{event.user.name}}</p>
-    <p>Event: {{event.event_name}}</p>
-    <p>Location: {{event.location}}</p>
-    <p>Date: {{event.date}}</p>
-    <p>Start: {{formatTime event.time_start}} Ends: {{formatTime event.time_end}}</p>
+  <div  class='card text-center' >
+    <p style="color:black">Host: {{event.user.name}}</p>
+    <p style="color:black">Event: {{event.event_name}}</p>
+    <p style="color:black">Location: {{event.location}}</p>
+    <p style="color:black">Date: {{event.date}}</p>
+    <p style="color:black">Start: {{formatTime event.time_start}} Ends: {{formatTime event.time_end}}</p>
   </div>
   {{/each}}
 </div>
