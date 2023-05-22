@@ -19,7 +19,7 @@
   <h2 class="text-center p-2">Upcoming Market Events</h2>
   <div class="d-flex flex-row justify-content-evenly">
     {{#each events as |event|}}
-    <div id="event_card" class="card text-center m-3 w-25" style="">
+    <div id="event_card" class="card p-3 m-1 w-25">
       <p><span id="p-text">Event: </span>{{event.event_name}}</p>
       <p><span id="p-text">Host: </span>{{event.user.name}}</p>
       <p><span id="p-text">Location: </span>{{event.location}}</p>
