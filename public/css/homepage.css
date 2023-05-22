@@ -1,0 +1,21 @@
+/* Class selectors */
+.banner_section {
+    background-color: #498292
+}
+
+#banner_h2 {
+    color: #b66850
+}
+
+#banner_text {
+    color:#efeadd
+}
+
+#brand_title {
+    font-size:x-large;
+    color:#b66850
+}
+
+#brand_img {
+    border: 5px solid #b66850
+}
