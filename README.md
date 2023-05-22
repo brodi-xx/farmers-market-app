@@ -1,6 +1,6 @@
 # This Little Piggy
 
-![logo](public\images\P2-logo.png)
+![logo](./public/images/P2-logo.png)
 
 ## Introduction
 
