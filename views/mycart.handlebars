@@ -1,37 +1,61 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Shopping Cart</title>
-</head>
-<body>
-  <h1 style="color: black;">My Shopping Cart</h1>
-  <div id="cart" style="border: 1px solid black; padding: 10px;">
-    <h2>Cart</h2>
-    <table>
-      <thead>
-        <tr>
-          <th class="col-1">Product Name</th>
-          <th class="col-1">Price</th>
-          <th class="col-1">Amount</th>
-          <th class="col-1">Total</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each products}}
-        <tr>
-          <td>{{product_name}}</td>
-          <td>${{price}}</td>
-          <td>{{amount}}</td>
-          <td>${{total}}</td>
-        </tr>
-        {{/each}}
-      </tbody>
-    </table>
-    <br>
-    <p style="color: black; text-align:center">Total: ${{grandtotal}}</p>
-    <button id="checkout-btn" style="background-color: green; color: white; padding: 5px 10px;">Checkout</button>
-  </div>
-</body>
+<title>My Cart</title>
 
-</html>
-
+<!-- banner -->
+<figure class="d-flex flex-row justify-content-center align-items-center mb-4">
+  <img id="brand_img" class="rounded-circle w-25" src="images/P2-logo.png" alt="brand logo"/>
+</figure>
+<section class="banner_main">
+    <div id="cart_section" class="container-fluid d-flex flex-row align-items-center justify-content-evenly">
+      <div class="icon_columns d-flex flex-column align-items-between">
+          <i class="fa-solid fa-carrot fa-2xl"></i>
+          <i class="fa-solid fa-wheat-awn fa-2xl"></i>
+          <i class="fa-solid fa-apple-whole fa-2xl"></i>
+          <i class="fa-solid fa-seedling fa-2xl"></i>
+          <i class="fa-solid fa-wine-bottle fa-2xl"></i>
+          <i class="fa-solid fa-cheese fa-2xl"></i>
+          <i class="fa-solid fa-store fa-2xl"></i>
+      </div>
+      <div id="cart_card" class="card w-75 my-5">
+        <div class="d-flex flex-column align-items-center text-center" >
+          <h1 id="cart_h1" class="mb-4">My Shopping Cart</h1>
+          <div id="cart">
+            <h2 id="cart_h2">Order #:</h2> <!-- Needs handler for purchase order number -->
+            <table>
+              <thead>
+                <tr class="items_section">
+                  <th class="col-1">Product Name</th>
+                  <th class="col-1">Price</th>
+                  <th class="col-1">Amount</th>
+                  <th class="col-1">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each products}}
+                <tr class="items_section">
+                  <td>{{product_name}}</td>
+                  <td>${{price}}</td>
+                  <td>{{amount}}</td>
+                  <td>${{total}}</td>
+                </tr>
+                {{/each}}
+              </tbody>
+            </table>
+            <br>
+            <p id="cart_total">Total: ${{grandtotal}}</p>
+          </div>
+        </div>
+        <div class="d-flex flex-row justify-content-center align-items-center">
+          <button id="checkout-btn" class="btn btn-outline-dark m-3 w-50">Checkout</button>
+        </div>
+      </div>
+      <div class="icon_columns d-flex flex-column align-items-between">
+        <i class="fa-solid fa-egg fa-2xl"></i>
+        <i class="fa-solid fa-jar fa-2xl"></i>
+        <i class="fa-solid fa-leaf fa-2xl"></i>
+        <i class="fa-solid fa-lemon fa-2xl"></i>
+        <i class="fa-solid fa-recycle fa-2xl"></i>
+        <i class="fa-solid fa-pepper-hot fa-2xl"></i>
+        <i class="fa-brands fa-pagelines fa-2xl"></i>      </div>
+    </div>
+</section>
+<!-- end banner -->

@@ -1,9 +1,39 @@
+/* Element Selectors */
+.items_section {
+    color: #efeadd;
+}
+
+.icon_columns i {
+    color: #498292;
+    margin: 2rem;
+}
+
+/* ID Selectors */
 #cart_section {
     background-color: #b66850
 }
 
+#cart_card {
+    background-color: #498292;
+    padding: 2rem 5rem 2rem 5rem
+}
+
+#cart {
+    border: 2px solid #efeadd
+}
+
+#cart_total,
 #cart_h2,
 #cart_h1 {
     color: #efeadd;
-    background-color: #b66850
+}
+
+#checkout-btn {
+    color:#efeadd;
+    border-color:#efeadd
+}
+
+#checkout-btn:hover {
+    /* Set styles for hover state */
+    background-color: #b66850;
 }

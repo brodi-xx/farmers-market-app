@@ -449,7 +449,6 @@ button {
      width: 100%;
 }
 
-
 /** end about section **/
 
 
@@ -795,6 +794,7 @@ nav {
 .copyright a:hover {
      color: #000;
 }
+/* End Footer */
 
 /* Profile Image */
 .profile_card {
@@ -830,32 +830,6 @@ nav {
        margin: 0 auto;
      }
    }
-
-
-/**my cart **/
-
-
-#cart {
-     float: left;
-     width: 40%;
-   }
-   #products {
-     float: right;
-     width: 40%;
-   }
-   #products li {
-     margin-bottom: 10px;
-   }
-   .add-to-cart-btn {
-     margin-left: 10px;
-   }
-   #cart-total {
-     font-weight: bold;
-   }
-   #checkout-btn {
-     margin-top: 10px;
-   }
-/** end footer **/
 
 /** sign up **/
 
