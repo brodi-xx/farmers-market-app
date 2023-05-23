@@ -4,7 +4,7 @@ const { CartProduct, UserShoppingCart, User, UserProduct } = require('../../mode
 // Get all cart products
 router.get('/', async (req, res) => {
     try {
-      const cartProducts = await CartProduct.findAll({
+      let query = {
         include: [
           {
             model: UserShoppingCart,
@@ -21,14 +21,20 @@ router.get('/', async (req, res) => {
             attributes: ['product_id', 'product_name', 'description', 'category', 'price'],
           },
         ],
-      });
+      };
+      if (req.query.cart_id) {
+        query.where = { cart_id: req.query.cart_id,
+          product_id: req.query.product_id
+         }
+      } 
+    
+      const cartProducts = await CartProduct.findAll(query);
       res.status(200).json(cartProducts);
     } catch (err) {
       res.status(500).json(err);
     }
   });
   
-  // Get a single cart product
   router.get('/:id', async (req, res) => {
     try {
       const cartProduct = await CartProduct.findOne({
@@ -42,11 +48,15 @@ router.get('/', async (req, res) => {
                 model: User,
                 attributes: ['user_id', 'name', 'email', 'address', 'phone'],
               },
+              {
+                model: CartProduct,
+                include: {
+                  model: UserProduct,
+                  attributes: ['product_id', 'product_name', 'description', 'category', 'price'],
+                },
+                attributes: ['cart_product_id', 'amount'],
+              },
             ],
-          },
-          {
-            model: UserProduct,
-            attributes: ['product_id', 'product_name', 'description', 'category', 'price'],
           },
         ],
       });
@@ -59,6 +69,7 @@ router.get('/', async (req, res) => {
       res.status(500).json(err);
     }
   });
+  
   
   // Add a new cart product
   router.post('/', async (req, res) => {

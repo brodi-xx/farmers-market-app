@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const { User, UserProduct, UserEvent, UserShoppingCart, CartProduct} = require('../models');
+const { User, UserProduct, UserEvent, UserShoppingCart, CartProduct } = require('../models');
 const withAuth = require('../utils/auth');
+
 
 router.get('/', async (req, res) => {
   try {
@@ -50,6 +51,7 @@ router.get('/mycart', withAuth, async (req, res) => {
         },
       ],
     });
+
     const cartProducts = cartData.cart_products.map(cartProduct => cartProduct.user_product.dataValues);
     let total = 0;
     for (let i = 0; i < cartProducts.length; i++){
@@ -72,7 +74,7 @@ router.get('/productspage', async (req, res) => {
   // findAll on the userProducts to retrieve all of the products in the database, and pass that as an array of objects
   const productData = await UserProduct.findAll();
 
-  const products = productData.map(product => product.get({ plain: true}));
+  const products = productData.map(product => product.get({ plain: true }));
 
   res.render('productspage', {
     products

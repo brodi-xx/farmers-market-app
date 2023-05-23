@@ -20,6 +20,6 @@ router.use('/unregistered-cart-product', unregisteredCartProduct);
 router.use('/user-purchase-history', purchaseHistoryRoutes);
 router.use('/userEventRoutes', userEventRoutes);
 router.use('/events', userEventRoutes);
-router.use('/session', sessionRoutes)
+router.use('/session', sessionRoutes);
 
 module.exports = router;

@@ -5,7 +5,7 @@
         "description": "Fresh, juicy apples from the orchard.",
         "category": "Fruit",
         "sold_by": "lb",
-        "amount_available": 10,
+        "amount": 10,
         "price": 1.99,
         "image_url": "https://cdn.pixabay.com/photo/2016/11/30/15/00/apples-1872997_960_720.jpg"
     },
@@ -15,7 +15,7 @@
         "description": "Sweet and tangy oranges from Florida.",
         "category": "Fruit",
         "sold_by": "lb",
-        "amount_available": 8,
+        "amount": 8,
         "price": 2.49,
         "image_url": "https://cdn.pixabay.com/photo/2017/01/20/15/06/oranges-1995056_960_720.jpg"
     },
@@ -25,7 +25,7 @@
         "description": "Organic, farm-fresh carrots.",
         "category": "Vegetable",
         "sold_by": "lb",
-        "amount_available": 20,
+        "amount": 20,
         "price": 1.25,
         "image_url": "https://cdn.pixabay.com/photo/2015/03/14/14/00/carrots-673184_960_720.jpg"
     },
@@ -35,7 +35,7 @@
         "description": "Fresh, leafy spinach for salads and cooking.",
         "category": "Vegetable",
         "sold_by": "lb",
-        "amount_available": 15,
+        "amount": 15,
         "price": 1.75,
         "image_url": "https://cdn.pixabay.com/photo/2018/09/27/22/37/spinach-3708115_960_720.jpg"
     },
@@ -45,7 +45,7 @@
         "description": "Plump, ripe blueberries for snacking or baking.",
         "category": "Fruit",
         "sold_by": "lb",
-        "amount_available": 12,
+        "amount": 12,
         "price": 3.99,
         "image_url": "https://cdn.pixabay.com/photo/2018/06/07/16/38/blueberries-3460423_960_720.jpg"
     },
@@ -55,7 +55,7 @@
         "description": "Yellow, ripe bananas for smoothies or snacks.",
         "category": "Fruit",
         "sold_by": "lb",
-        "amount_available": 8,
+        "amount": 8,
         "price": 1.99,
         "image_url": "https://cdn.pixabay.com/photo/2015/11/05/23/08/banana-1025109_960_720.jpg"
     },
@@ -65,7 +65,7 @@
         "description": "Plump, juicy tomatoes for sandwiches and salads.",
         "category": "Vegetable",
         "sold_by": "lb",
-        "amount_available": 16,
+        "amount": 16,
         "price": 1.49,
         "image_url": "https://cdn.pixabay.com/photo/2016/03/26/16/44/tomatoes-1280859_960_720.jpg"
     },
@@ -75,7 +75,7 @@
         "description": "Sweet, seedless grapes for snacking.",
         "category": "Fruit",
         "sold_by": "lb",
-        "amount_available": 15,
+        "amount": 15,
         "price": 2.99,
         "image_url": "https://cdn.pixabay.com/photo/2018/07/20/14/02/grapes-3550733_960_720.jpg"
     },
@@ -85,7 +85,7 @@
         "description": "Fresh, red strawberries for desserts and snacks.",
         "category": "Fruit",
         "sold_by": "lb",
-        "amount_available": 10,
+        "amount": 10,
         "price": 4.49,
         "image_url": "https://cdn.pixabay.com/photo/2018/05/26/10/54/strawberries-3431122_960_720.jpg"
     },
@@ -95,7 +95,7 @@
         "description": "Organic, farm-fresh broccoli for salads and cooking.",
         "category": "Vegetable",
         "sold_by": "lb",
-        "amount_available": 12,
+        "amount": 12,
         "price": 2.25,
         "image_url": "https://cdn.pixabay.com/photo/2014/10/19/21/50/broccoli-494754_960_720.jpg"
     },
@@ -105,7 +105,7 @@
         "description": "Fresh, green zucchini for grilling and sautéing.",
         "category": "Vegetable",
         "sold_by": "lb",
-        "amount_available": 8,
+        "amount": 8,
         "price": 1.99,
         "image_url": "https://cdn.pixabay.com/photo/2016/09/10/13/25/zucchini-1659094_960_720.jpg"
     },
@@ -115,7 +115,7 @@
         "description": "Crisp, refreshing cucumbers for salads and sandwiches.",
         "category": "Vegetable",
         "sold_by": "lb",
-        "amount_available": 10,
+        "amount": 10,
         "price": 1.49,
         "image_url": "https://cdn.pixabay.com/photo/2015/07/17/13/44/cucumbers-849269_960_720.jpg"
     },
@@ -125,7 +125,7 @@
         "description": "Sweet, juicy peaches for desserts and snacks.",
         "category": "Fruit",
         "sold_by": "lb",
-        "amount_available": 8,
+        "amount": 8,
         "price": 2.99,
         "image_url": "https://cdn.pixabay.com/photo/2016/07/16/20/48/peaches-1522680_960_720.jpg"
     },
@@ -135,7 +135,7 @@
         "description": "Tangy grapefruits for juice and snacks.",
         "category": "Fruit",
         "sold_by": "lb",
-        "amount_available": 6,
+        "amount": 6,
         "price": 2.49,
         "image_url": "https://cdn.pixabay.com/photo/2016/09/05/20/52/grapefruit-1647688_1280.jpg"
     },
@@ -145,7 +145,7 @@
         "description": "Fresh, colorful bell peppers for salads and cooking.",
         "category": "Vegetable",
         "sold_by": "lb",
-        "amount_available": 12,
+        "amount": 12,
         "price": 1.99,
         "image_url": "https://cdn.pixabay.com/photo/2014/10/22/21/54/bell-peppers-499068_960_720.jpg"
     },
@@ -155,7 +155,7 @@
         "description": "Fresh, green asparagus for grilling and sautéing.",
         "category": "Vegetable",
         "sold_by": "lb",
-        "amount_available": 10,
+        "amount": 10,
         "price": 2.99,
         "image_url": "https://cdn.pixabay.com/photo/2018/05/29/23/14/asparagus-3440348_960_720.jpg"
     },
@@ -165,7 +165,7 @@
         "description": "Fresh, red strawberries for desserts and snacks.",
         "category": "Fruit",
         "sold_by": "lb",
-        "amount_available": 12,
+        "amount": 12,
         "price": 3.49,
         "image_url": "https://cdn.pixabay.com/photo/2013/04/02/21/47/strawberries-99551_960_720.jpg"
     },
@@ -175,7 +175,7 @@
         "description": "Juicy, refreshing watermelons for summer parties.",
         "category": "Fruit",
         "sold_by": "Count",
-        "amount_available": 4,
+        "amount": 4,
         "price": 7.99,
         "image_url": "https://cdn.pixabay.com/photo/2010/12/13/10/18/watermelons-2636_960_720.jpg"
     },
@@ -185,7 +185,7 @@
         "description": "Sweet, ripe cantaloupes for breakfast and snacks.",
         "category": "Fruit",
         "sold_by": "Count",
-        "amount_available": 6,
+        "amount": 6,
         "price": 2.99,
         "image_url": "https://cdn.pixabay.com/photo/2018/02/12/18/51/fruit-3148885_960_720.jpg"
     },
@@ -195,7 +195,7 @@
         "description": "Fresh, crisp green beans for salads and cooking.",
         "category": "Vegetable",
         "sold_by": "lb",
-        "amount_available": 10,
+        "amount": 10,
         "price": 1.75,
         "image_url": "https://cdn.pixabay.com/photo/2013/02/18/18/35/soya-83087_960_720.jpg"
     },
@@ -205,7 +205,7 @@
         "description": "Organic, farm-fresh cauliflower for salads and cooking.",
         "category": "Vegetable",
         "sold_by": "lb",
-        "amount_available": 8,
+        "amount": 8,
         "price": 2.49,
         "image_url": "https://cdn.pixabay.com/photo/2016/06/18/21/56/cauliflower-1465732_960_720.jpg"
     }

@@ -1,19 +1,24 @@
 const router = require('express').Router();
-const { UserShoppingCart, User, UserProduct } = require('../../models');
+const { UserShoppingCart, User, UserProduct, CartProduct } = require('../../models');
 
-// Get all user shopping carts
+
 router.get('/', async (req, res) => {
   try {
+    let user_id = req.query.user_id;
     const shoppingCarts = await UserShoppingCart.findAll({
+      where: { user_id: user_id },
       include: [
         {
           model: User,
-          attributes: ['user_id', 'name', 'email', 'address', 'phone'],
+          attributes: ['name', 'email', 'address', 'phone'],
         },
         {
-          model: UserProduct,
-          attributes: ['product_id', 'product_name', 'description', 'category', 'price'],
-          through: { attributes: ['quantity'] },
+          model: CartProduct,
+          include: {
+            model: UserProduct,
+            attributes: ['product_id', 'product_name', 'description', 'category', 'price'],
+          },
+          attributes: ['amount'],
         },
       ],
     });
@@ -23,22 +28,24 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Get a single user shopping cart
 router.get('/:id', async (req, res) => {
   try {
     const shoppingCart = await UserShoppingCart.findOne({
-      where: { id: req.params.id },
+      where: { cart_id: req.params.id },
       include: [
         {
           model: User,
-          attributes: ['user_id', 'name', 'email', 'address', 'phone']
+          attributes: ['name', 'email', 'address', 'phone'],
         },
         {
-          model: UserProduct,
-          attributes: ['product_id', 'product_name', 'description', 'category', 'price'],
-          through: { attributes: ['quantity'] },
-        }
-      ]
+          model: CartProduct,
+          include: {
+            model: UserProduct,
+            attributes: ['product_id', 'product_name', 'description', 'category', 'price'],
+          },
+          attributes: ['cart_product_id', 'amount'],
+        },
+      ],
     });
     if (!shoppingCart) {
       res.status(404).json({ message: 'No shopping cart found with this id' });
@@ -49,6 +56,7 @@ router.get('/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 // Add a new user shopping cart
 router.post('/', async (req, res) => {
@@ -64,7 +72,7 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   try {
     const updatedShoppingCart = await UserShoppingCart.update(req.body, {
-      where: { id: req.params.id }
+      where: { cart_id: req.params.id }
     });
     if (!updatedShoppingCart[0]) {
       res.status(404).json({ message: 'No shopping cart found with this id' });
@@ -80,7 +88,7 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   try {
     const deletedShoppingCart = await UserShoppingCart.destroy({
-      where: { id: req.params.id }
+      where: { cart_id: req.params.id }
     });
     if (!deletedShoppingCart) {
       res.status(404).json({ message: 'No shopping cart found with this id' });
