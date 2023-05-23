@@ -35,7 +35,7 @@ router.get('/homepage', (req, res) => {
 router.get('/mycart', withAuth, async (req, res) => {
   try {
     const cartData = await UserShoppingCart.findOne({
-      // where: { user_id: req.session.user.user_id },
+      where: { user_id: req.session.user.user_id },
       include: [
         {
           model: User,
