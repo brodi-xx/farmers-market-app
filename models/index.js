@@ -1,5 +1,5 @@
 // Model definitions
-const User = require('./User');
+const User = require('./user');
 const UserPaymentMethod = require('./userPaymentMethod');
 const UserProduct = require('./userProduct');
 const UserShoppingCart = require('./userShoppingCart');
