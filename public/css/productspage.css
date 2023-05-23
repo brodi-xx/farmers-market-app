@@ -20,9 +20,15 @@
 
 .btn.btn-outline-dark:hover {
     /* Set styles for hover state */
-    background-color: #6d797c;
+    background-color: #917066;
+    border-color:#efeadd
+
 }
 
 .rounded-circle {
     border: 5px solid #498292
+}
+
+#add-to-cart-btn {
+    color:#efeadd
 }
