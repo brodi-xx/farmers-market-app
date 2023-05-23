@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, UserProduct, UserEvent} = require('../models');
+const { User, UserProduct, UserEvent, UserShoppingCart, CartProduct} = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -31,8 +31,41 @@ router.get('/homepage', (req, res) => {
   res.render('homepage');
 });
 
-router.get('/mycart', (req, res) => {
-  res.render('mycart');
+router.get('/mycart', withAuth, async (req, res) => {
+  try {
+    const cartData = await UserShoppingCart.findOne({
+      // where: { user_id: req.session.user.user_id },
+      include: [
+        {
+          model: User,
+          attributes: ['name', 'email', 'address', 'phone'],
+        },
+        {
+          model: CartProduct,
+          include: {
+            model: UserProduct,
+            attributes: ['product_id', 'product_name', 'description', 'category', 'price'],
+          },
+          attributes: ['cart_product_id', 'amount'],
+        },
+      ],
+    });
+    const cartProducts = cartData.cart_products.map(cartProduct => cartProduct.user_product.dataValues);
+    let total = 0;
+    for (let i = 0; i < cartProducts.length; i++){
+      cartProducts[i].amount=cartData.cart_products[i].dataValues.amount;
+      cartProducts[i].total=cartProducts[i].amount*cartProducts[i].price;
+      total += cartProducts[i].total
+    }
+    const product = cartData.cart_products.map(cartProduct => cartProduct.dataValues)
+    res.render('mycart', {
+      products: cartProducts,
+      grandtotal: total
+    });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 router.get('/productspage', async (req, res) => {
