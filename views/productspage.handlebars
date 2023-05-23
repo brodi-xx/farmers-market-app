@@ -69,12 +69,12 @@
                                 <h4 class="product_h4 product-name fw-bolder">{{product.product_name}} </h4>
                                 <h5 class="product_h5 seller-name">Seller: {{product.seller_name}} </h5>
                                 <p class="product_p price"> Price: ${{product.price}}/{{product.sold_by}} </p>
-                                <p class="product_p amount-available"> Amount available: {{product.amount_available}} </p>
+                                <p class="product_p amount-available"> Amount available: {{product.amount}} </p>
                             </div>
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/mycart">Add To Cart</a>
+                            <div class="text-center"><a id="add-to-cart-btn" class="btn btn-outline-dark mt-auto">Add To Cart<div hidden>{{product.product_id}}</div></a>
                             </div>
                         </div>
                     </div>
@@ -83,4 +83,6 @@
             </div>
         </div>
     </div>
+<script src="js/productspage.js"></script>
 </section>
+
