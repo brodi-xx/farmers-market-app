@@ -128,9 +128,9 @@ async function addToCart(productId) {
   try {
     // Retrieve the user ID
     const userId = await getUserId();
-    if(!userId || userId == '') {
-      return
-    };
+    // if(!userId || userId == '') {
+    //   return
+    // };
 
     // 1. Check if the user already has a shopping cart
     let userShoppingCart = await getUserShoppingCart(userId);
