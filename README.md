@@ -1,6 +1,6 @@
 # This Little Piggy
 
-![logo](./public/images/P2-logo.png)
+![logo](./public/images/README-logo.png)
 
 ## Introduction
 
@@ -18,29 +18,30 @@ This Little Piggy offers the following features:
 
 4. **Profile**: Users can sign up and create a profile to gain access to the entire application and streamline the checkout process.
 
-
 ## Screenshots
 
 Here are a few screenshots showcasing the features of the This Little Piggy application:
 
-1.  Home Page   
-![Home](public\images\sshome.png)
-![Home2](public\images\sshome2.png)
-![Home3](public\images\sshome3.png)
-2.  Upcoming Markets
-![Markets](public\images\ssevents1.png)  
-3.  Products Page 
-![Products1](public\images\ssprodpage1.png):
-![Products2](public\images\ssprodpage2.png):
-![Products3](public\images\ssprodpage3.png): 
-4. My Cart 
-![My Cart](public\images\ssmycart.png)
-5. Sign Up 
-![Sign Up 1](public\images\sssignup1.png)
-![Sign Up 2](public\images\sssignup2.png)
-6. Login 
-![Login](public\images\sslogin.png)
+1. Home Page
+![Home](public/images/TLP-homepage.png)
 
+2. Upcoming Markets
+![Markets](public/images/TLP-eventpage.png)  
+
+3. Products Page
+![Products1](public/images/TLP-productpage.png):
+
+4. My Cart
+![My Cart](public/images/TLP-mycartpage.png)
+
+5. Sign Up
+![Sign Up 1](public/images/TLP-signuppage.png)
+
+6. Login
+![Login](public/images/TLP-loginpage.png)
+
+7. Profile
+![Login](public/images/TLP-myprofilepage.png)
 
 
 Please note that these screenshots are for illustrative purposes and may not reflect the current version of the application.
@@ -52,7 +53,7 @@ This application was developed by the following contributors:
 - [Brodi LeBlanc](https://github.com/brodi-xx)  
 - [Erica Leyba](https://github.com/LeybaAir)  
 - [Joey Stanion](https://github.com/Jstanion)  
-- [Lanre Abu](https://github.com/lanreabu77)   
+- [Lanre Abu](https://github.com/lanreabu77)
 - [Russo Borneo](https://github.com/RussoB22)  
 - [Stephanie Jauch](https://github.com/SKJauch)  
 
@@ -66,9 +67,9 @@ The This Little Piggy application was built using the following:
 -Express.js  
 -Sequelize  
 -MySQL  
--Bootstrap   
--Handlebars    
-*   
+-Bootstrap
+-Handlebars
+
 *Miro* was used to organize and streamline collaboration
 
 ## Conclusion
