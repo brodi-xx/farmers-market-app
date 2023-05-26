@@ -1,1 +1,1 @@
-var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+const myModal = new bootstrap.Modal(document.getElementById('myModal'))

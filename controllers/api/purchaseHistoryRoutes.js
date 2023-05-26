@@ -1,5 +1,5 @@
-const router = require('express').Router();
-const { UserShoppingCart, PurchaseHistory, UserProduct } = require('../../models');
+const router = require('express').Router()
+const { UserShoppingCart, PurchaseHistory, UserProduct } = require('../../models')
 
 // Endpoint /user-purchase-history
 
@@ -11,20 +11,20 @@ router.get('/', async (req, res) => {
         {
           model: UserShoppingCart,
           attributes: ['user_id'],
-          include: [UserProduct],
-        },
-      ],
-    });
-    res.status(200).json(purchaseHistory);
+          include: [UserProduct]
+        }
+      ]
+    })
+    res.status(200).json(purchaseHistory)
   } catch (err) {
-    console.error(err);
-    res.status(500).json(err);
+    console.error(err)
+    res.status(500).json(err)
   }
-});
+})
 
 // Get all purchase history records for a cart
 router.get('/:cart_id', async (req, res) => {
-  const cartId = req.params.cart_id;
+  const cartId = req.params.cart_id
   try {
     const purchaseHistory = await PurchaseHistory.findAll({
       where: { cart_id: cartId },
@@ -32,60 +32,57 @@ router.get('/:cart_id', async (req, res) => {
         {
           model: UserShoppingCart,
           attributes: ['user_id'],
-          include: [UserProduct],
-        },
-      ],
-    });
+          include: [UserProduct]
+        }
+      ]
+    })
 
     if (purchaseHistory.length === 0) {
-      return res.status(404).json({ message: 'The purchase record you requested could not be found.' });
+      return res.status(404).json({ message: 'The purchase record you requested could not be found.' })
     };
-    res.status(200).json(purchaseHistory);
-    
+    res.status(200).json(purchaseHistory)
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json(err)
   }
-});
+})
 
 // Create new purchase history record from cart data
 router.post('/', async (req, res) => {
-  const cartId = req.body.cart_id;
+  const cartId = req.body.cart_id
   try {
-    const cart = await UserShoppingCart.findByPk(cartId);
-    
+    const cart = await UserShoppingCart.findByPk(cartId)
+
     if (!cart) {
-      res.status(404).json({ message: 'There was no cart found with that ID.' });
-      return;
+      res.status(404).json({ message: 'There was no cart found with that ID.' })
+      return
     }
     const purchaseHistory = await PurchaseHistory.create({
       purchase_date: new Date(),
       user_id: cart.user_id,
-      cart_id: cart.id,
-    });
+      cart_id: cart.id
+    })
 
-    res.status(200).json(purchaseHistory);
-  
+    res.status(200).json(purchaseHistory)
   } catch (err) {
-    console.error(err);
-    res.status(500).json(err);
+    console.error(err)
+    res.status(500).json(err)
   }
-});
+})
 
 // Delete a purchase history record by ID
 router.delete('/:id', async (req, res) => {
   try {
     const purchaseHistory = await PurchaseHistory.destroy({
-      where: { id: req.params.id },
-    });
+      where: { id: req.params.id }
+    })
 
     if (!purchaseHistory) {
-      return res.status(404).json({ message: 'The purchase record you requested could not be found.' });
+      return res.status(404).json({ message: 'The purchase record you requested could not be found.' })
     }
-    res.status(200).json({ message: 'The purchase record was deleted.' });
-
+    res.status(200).json({ message: 'The purchase record was deleted.' })
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json(err)
   }
-});
+})
 
-module.exports = router;
+module.exports = router

@@ -1,6 +1,6 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
-const User = require('./User');
+const { Model, DataTypes } = require('sequelize')
+const sequelize = require('../config/connection')
+const User = require('./User')
 
 class UserPaymentMethod extends Model {}
 
@@ -10,44 +10,44 @@ UserPaymentMethod.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true
     },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
-        key: 'user_id',
-      },
+        key: 'user_id'
+      }
     },
     card_number: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     expiration_date: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     cvv: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
+      allowNull: false
+    }
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user_payment_method',
+    modelName: 'user_payment_method'
   }
-);
+)
 
 User.hasMany(UserPaymentMethod, {
   foreignKey: 'user_id',
-  onDelete: 'CASCADE',
-});
+  onDelete: 'CASCADE'
+})
 
 UserPaymentMethod.belongsTo(User, {
-  foreignKey: 'user_id',
-});
+  foreignKey: 'user_id'
+})
 
-module.exports = UserPaymentMethod;
+module.exports = UserPaymentMethod

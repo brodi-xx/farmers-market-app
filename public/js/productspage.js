@@ -1,75 +1,74 @@
 // Assuming you have a button with the ID "add-to-cart-btn"
-const addToCartButton = document.getElementById("add-to-cart-btn");
+const addToCartButton = document.getElementById('add-to-cart-btn')
 
 // Add an event listener to the button
-document.addEventListener("click", function (event) {
-  if (event.target && event.target.id === "add-to-cart-btn") {
-    const productId = event.target.children[0].innerText;
-    addToCart(productId);
-
+document.addEventListener('click', function (event) {
+  if (event.target && event.target.id === 'add-to-cart-btn') {
+    const productId = event.target.children[0].innerText
+    addToCart(productId)
   }
-});
+})
 
-async function getUserId() {
+async function getUserId () {
   try {
-    const response = await fetch('/api/session');
-    const data = await response.json();
-    return data.user_id;
+    const response = await fetch('/api/session')
+    const data = await response.json()
+    return data.user_id
   } catch (error) {
-    console.error('Error:', error);
-    return null;
+    console.error('Error:', error)
+    return null
   }
 }
 
-async function getProduct(cart_id, product_id) {
+async function getProduct (cart_id, product_id) {
   try {
-    const response = await fetch(`/api/cart-product?cart_id=${cart_id}&product_id=${product_id}`);
-    const data = await response.json();
-    console.log(data);
-    if(data) {
-      return data[0];
+    const response = await fetch(`/api/cart-product?cart_id=${cart_id}&product_id=${product_id}`)
+    const data = await response.json()
+    console.log(data)
+    if (data) {
+      return data[0]
     }
-    return null;
+    return null
   } catch (error) {
-    console.error('Error:', error);
-    return null;
+    console.error('Error:', error)
+    return null
   }
 }
 
 // Fetch user shopping cart from the server
-async function getUserShoppingCart(userId) {
-  console.log("user test");
+async function getUserShoppingCart (userId) {
+  console.log('user test')
   try {
-    const response = await fetch(`/api/user-shopping-cart?` + new URLSearchParams({
+    const response = await fetch('/api/user-shopping-cart?' + new URLSearchParams({
       user_id: userId
     }), {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
       }
-    });
+    })
 
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error('Network response was not ok')
     }
 
-    const shoppingCart = await response.json();
+    const shoppingCart = await response.json()
 
     // If the user has no shopping cart, return null
     if (shoppingCart.length === 0) {
-      return null;
+      return null
     }
 
     // Otherwise, return the shopping cart
-    return shoppingCart[0];  // Assuming the API returns an array
+    return shoppingCart[0] // Assuming the API returns an array
   } catch (error) {
-    console.error('Error:', error);
-    return null;
+    console.error('Error:', error)
+    return null
   }
 }
 
 // Create user shopping cart on the server
-async function createUserShoppingCart(userId) {
+async function createUserShoppingCart (userId) {
   try {
     const response = await fetch('/api/user-shopping-cart/', {
       method: 'POST',
@@ -77,79 +76,79 @@ async function createUserShoppingCart(userId) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ user_id: userId }) // replace this with the actual data you want to send
-    });
+    })
 
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error('Network response was not ok')
     }
 
-    const newShoppingCart = await response.json();
+    const newShoppingCart = await response.json()
 
-    return newShoppingCart;
+    return newShoppingCart
   } catch (error) {
-    console.error('Error:', error);
-    return null;
+    console.error('Error:', error)
+    return null
   }
 }
 
 // Add product to the user's shopping cart
-async function addProductToCart(cartId, productId, amount, cartProductId) {
+async function addProductToCart (cartId, productId, amount, cartProductId) {
   try {
-    console.log(amount);
-    let method = 'POST' 
+    console.log(amount)
+    let method = 'POST'
     let path = '/api/cart-product/'
-    if(amount > 1) {
+    if (amount > 1) {
       method = 'PUT'
       path += cartProductId
     };
-    
-    const response = await fetch( path, {
-      method: method,
+
+    const response = await fetch(path, {
+      method,
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ cart_id: cartId, product_id: productId, amount: amount })
-    });
+      body: JSON.stringify({ cart_id: cartId, product_id: productId, amount })
+    })
 
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error('Network response was not ok')
     }
 
-    const cartProduct = await response.json();
+    const cartProduct = await response.json()
 
-    return cartProduct;
+    return cartProduct
   } catch (error) {
-    console.error('Error:', error);
-    return null;
+    console.error('Error:', error)
+    return null
   }
 }
 
-async function addToCart(productId) {
+async function addToCart (productId) {
   try {
     // Retrieve the user ID
-    const userId = await getUserId();
+    const userId = await getUserId()
     // if(!userId || userId == '') {
     //   return
     // };
 
     // 1. Check if the user already has a shopping cart
-    let userShoppingCart = await getUserShoppingCart(userId);
+    let userShoppingCart = await getUserShoppingCart(userId)
 
     // If not, create one
     if (!userShoppingCart) {
-      userShoppingCart = await createUserShoppingCart(userId);
+      userShoppingCart = await createUserShoppingCart(userId)
     }
-    let product = await getProduct(userShoppingCart.cart_id, productId);
+    const product = await getProduct(userShoppingCart.cart_id, productId)
     let amount = 1
-    let cartProductId = null;
-    console.log(product);
-    if(product) {
+    let cartProductId = null
+    console.log(product)
+    if (product) {
       cartProductId = product.cart_product_id
       amount = product.amount + 1
     }
     // 2. Add product to the user's shopping cart
-    await addProductToCart(userShoppingCart.cart_id, productId, amount, cartProductId);
+    await addProductToCart(userShoppingCart.cart_id, productId, amount, cartProductId)
   } catch (err) {
-    console.error(err);
+    console.error(err)
   }
 }
